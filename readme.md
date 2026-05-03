@@ -1,3 +1,5 @@
+<img src="image.png" alt="image" width="200"/>
+
 ## Frontend Startup
 ```bash
 cd frontend
