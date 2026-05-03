@@ -1,1 +1,13 @@
-## Start
+## Frontend Startup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+## Python setup
+```bash
+python -m venv .venv
+source .venv/bin/activate #unix
+.venv\Scripts\activate #windows
+pip install -r requirements.txt
+```
