@@ -1,4 +1,7 @@
+<div style="display: flex">
 <img src="image.png" alt="image" width="200"/>
+<img src="image2.png" alt="image" width="200"/>
+</div>
 
 ## Frontend Startup
 ```bash
