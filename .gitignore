@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 dataset/
+
+Datasets/
+encoder.pkl
+model.pkl
+scaler.pkl
