@@ -1,0 +1,807 @@
+\documentclass[12pt]{report}
+\usepackage{times}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\setstretch{1.15}
+
+\title{\textbf{Software Requirements Specification for Bon Voyage}}
+\author{Development Team}
+\date{May 4, 2026}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+{\huge\textbf{Software Requirements Specification}}\\
+\vspace{0.5cm}
+{\LARGE\textbf{for}}\\
+\vspace{0.5cm}
+{\LARGE\textbf{Bon Voyage}}\\
+\vspace{1cm}
+{\large Version 1.0 Approved}\\
+\vspace{3cm}
+\begin{tabular}{ll}
+Prepared by: & Mukul Aggarwal (2401030239)\\
+Prepared by: & Dhvani JOneja (2401030240)\\
+Prepared by: & Swasti Garg (2401030257)\\
+Prepared by: & Harsh Agrawal (2401030239)\\
+Organization: & Bon Voyage Development \\
+Date: & May 4, 2026 \\
+\end{tabular}
+\vspace{4cm}
+\end{titlepage}
+
+% Revision History
+\newpage
+\section*{Revision History}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|l|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Author} & \textbf{Description} \\
+\hline
+1.0 & May 4, 2026 & Development Team & Initial document creation \\
+\hline
+\end{tabular}
+\end{table}
+
+% Table of Contents
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+% Introduction
+\chapter{Introduction}
+
+\section{Purpose}
+This Software Requirements Specification (SRS) document describes the functional and non-functional requirements for the Bon Voyage application. Bon Voyage is a comprehensive travel planning platform that leverages machine learning algorithms to provide personalized travel recommendations based on user personality profiles and travel preferences. This document is intended for use by the development team, stakeholders, project managers, and quality assurance personnel to ensure a clear understanding of the system requirements and expected functionality.
+
+\section{Document Conventions}
+This document adheres to the following conventions:
+\begin{itemize}
+\item Functional requirements are prefixed with ``REQ-'' followed by a unique identifier (e.g., REQ-1, REQ-2).
+\item Non-functional requirements are prefixed with ``NFREQ-'' followed by a unique identifier.
+\item All requirement statements use the keywords ``shall,'' ``should,'' ``must,'' and ``will'' according to RFC 2119.
+\item ``Shall'' indicates a mandatory requirement.
+\item ``Should'' indicates a highly desirable requirement.
+\item ``May'' or ``will'' indicates an optional or future consideration.
+\item Cross-references are provided for related requirements.
+\item Section numbering follows the standard hierarchy: 1, 1.1, 1.1.1, etc.
+\end{itemize}
+
+\section{Intended Audience and Reading Suggestions}
+This SRS document is intended for the following audiences:
+\begin{itemize}
+\item \textbf{Software Development Team:} Developers should review all sections, with particular attention to Chapters 2, 3, 4, and 5 for implementation details.
+\item \textbf{Quality Assurance Team:} QA personnel should focus on Chapter 4 (System Features) and Chapter 5 (Other Nonfunctional Requirements) for test case development.
+\item \textbf{Project Managers:} Project managers should review Chapters 1 and 2 for project scope and overall vision.
+\item \textbf{Stakeholders:} Business stakeholders should review Chapter 2 (Overall Description) and Chapter 4 (System Features) to understand product capabilities.
+\item \textbf{System Architects:} Architects should review all sections to understand system integration points and interface requirements.
+\end{itemize}
+
+\section{Product Scope}
+Bon Voyage is a web-based travel planning application that combines machine learning with an intuitive user interface to deliver personalized travel recommendations. The system comprises three primary components:
+
+\begin{enumerate}
+\item \textbf{Frontend Application:} A responsive web-based user interface built with React and TypeScript, featuring an interactive globe visualization and multi-step questionnaire.
+\item \textbf{Backend API:} A Python Flask-based REST API that orchestrates communication between the frontend and machine learning models.
+\item \textbf{Machine Learning Pipeline:} Multiple trained models that classify travel personalities, predict user preferences, and recommend cities based on input features.
+\end{enumerate}
+
+The system shall enable users to:
+\begin{itemize}
+\item Complete a personality assessment questionnaire using a Likert scale interface.
+\item Receive AI-driven travel recommendations tailored to their personality profile.
+\item Visualize travel destinations on an interactive globe.
+\item Manage and organize trip itineraries and travel images.
+\item Filter recommendations based on climate preferences and travel styles.
+\end{itemize}
+
+\section{References}
+\begin{itemize}
+\item Karl E. Wiegers, ``Software Requirements Specifications: What, Why, and How,'' 2003.
+\item IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications.
+\item REST API Design Rulebook by Mark Masse, O'Reilly Media, 2011.
+\item Keras Documentation: \texttt{https://keras.io}
+\item Flask Documentation: \texttt{https://flask.palletsprojects.com}
+\item React Documentation: \texttt{https://react.dev}
+\end{itemize}
+
+% Overall Description
+\chapter{Overall Description}
+
+\section{Product Perspective}
+Bon Voyage operates as a standalone web application with a three-tier architecture. The system is designed as an independent product but may integrate with third-party travel APIs and geographical databases in future iterations. The application functions without dependence on existing systems but may benefit from integration with travel booking platforms and weather services.
+
+The architecture consists of:
+\begin{itemize}
+\item \textbf{Presentation Layer:} React-based Single Page Application (SPA) deployed on a web server.
+\item \textbf{Application Layer:} Python Flask backend providing REST API endpoints and model orchestration.
+\item \textbf{Data Layer:} Machine learning models, training datasets, and user preference storage.
+\end{itemize}
+
+\section{Product Functions}
+The primary functions of the Bon Voyage system are:
+
+\begin{enumerate}
+\item \textbf{User Assessment and Personality Classification:} Administer a multi-question Likert-scale questionnaire to users and classify their travel personality profile using machine learning models trained on travel personality data.
+
+\item \textbf{Personalized Recommendation Engine:} Generate customized city and travel destination recommendations based on user personality profiles, preferences, travel style, and climate preferences.
+
+\item \textbf{Interactive Visualization:} Display recommended destinations on a dynamic, interactive 3D globe with filtering and detail capabilities.
+
+\item \textbf{Trip Planning and Itinerary Management:} Enable users to create, modify, and organize travel itineraries with support for image uploads, activity scheduling, and duration planning.
+
+\item \textbf{Image Management:} Provide functionality for users to upload, organize, and manage travel-related images with categorization by trip or destination.
+
+\item \textbf{Climate-Based Filtering:} Allow users to filter travel recommendations based on preferred climate conditions (e.g., tropical, temperate, arid) using day/night classification and climate analytics.
+\end{enumerate}
+
+\section{User Classes and Characteristics}
+Bon Voyage serves the following user classes:
+
+\begin{itemize}
+\item \textbf{Individual Travelers (Primary Users):} Persons aged 18 and above planning personal or group vacations. These users have varying levels of technical proficiency and travel experience.
+
+\item \textbf{Travel Planners and Coordinators:} Professionals who plan travel itineraries for groups or organizations. These users require advanced filtering and organization capabilities.
+
+\item \textbf{Adventure Seekers:} Users interested in active, experiential travel who value personalization and AI-driven discovery.
+
+\item \textbf{Leisure Travelers:} Users seeking relaxation-focused destinations who benefit from climate and comfort-based recommendations.
+
+\item \textbf{System Administrators:} Personnel responsible for system maintenance, data updates, and model retraining. These users possess technical expertise.
+\end{itemize}
+
+Each user class has distinct needs and interaction patterns with the system. The system shall support concurrent usage by multiple user classes without degradation of performance.
+
+\section{Operating Environment}
+The Bon Voyage application operates within the following environment:
+
+\begin{itemize}
+\item \textbf{Frontend Platform:} Modern web browsers supporting HTML5, CSS3, and ES6 JavaScript. Supported browsers include Chrome (version 90+), Firefox (version 88+), Safari (version 14+), and Edge (version 90+).
+
+\item \textbf{Backend Platform:} Linux or Windows servers running Python 3.9 or later with Flask 2.0+.
+
+\item \textbf{Database:} JSON-based data storage with support for relational schemas. The system utilizes pre-computed model files and state vectors for efficient recommendation generation.
+
+\item \textbf{Machine Learning Framework:} Keras 3.0+ with TensorFlow backend for model inference and predictions.
+
+\item \textbf{Network Requirements:} HTTP/HTTPS connectivity between client and server. The system requires internet connectivity for initial data downloads but may support offline mode for cached recommendations in future versions.
+
+\item \textbf{Storage:} File system storage for model artifacts, training datasets, user-uploaded images, and application data. Minimum 500 MB storage capacity for models and datasets.
+\end{itemize}
+
+\section{Design and Implementation Constraints}
+The following constraints apply to the design and implementation of Bon Voyage:
+
+\begin{itemize}
+\item \textbf{Model Availability:} The system is constrained by the availability and accuracy of pre-trained machine learning models. Model retraining shall occur quarterly or upon notification of performance degradation.
+
+\item \textbf{Data Dependency:} The system depends on the accuracy and completeness of travel personality data, city metadata, climate classifications, and geographical information.
+
+\item \textbf{Technology Stack Constraints:} The frontend shall use React with TypeScript. The backend shall use Python with Flask. Changes to this stack require approval from the architecture review board.
+
+\item \textbf{Response Time Constraints:} Recommendation queries shall complete within 3 seconds to provide acceptable user experience. Model inference optimizations may be required to meet this constraint.
+
+\item \textbf{Data Privacy and Compliance:} The system shall comply with applicable data protection regulations including GDPR and CCPA. User data retention policies shall be defined and enforced.
+
+\item \textbf{Scalability Limitations:} The current architecture supports up to 10,000 concurrent users. Horizontal scaling via API load balancing may be required for higher concurrency.
+
+\item \textbf{Browser Compatibility:} The frontend shall not use proprietary browser features and shall maintain compatibility across all supported browsers without feature degradation.
+\end{itemize}
+
+\section{User Documentation}
+The following user documentation shall be provided:
+
+\begin{itemize}
+\item \textbf{User Guide:} Comprehensive guide covering application navigation, questionnaire completion, recommendation interpretation, and itinerary management.
+
+\item \textbf{FAQ Document:} Frequently asked questions addressing common user concerns and troubleshooting steps.
+
+\item \textbf{API Documentation:} RESTful API specification for developers integrating with Bon Voyage services.
+
+\item \textbf{Administrator Manual:} Technical documentation for system administrators covering deployment, configuration, and maintenance procedures.
+
+\item \textbf{Video Tutorials:} Screen capture videos demonstrating primary user workflows including personality assessment, recommendation review, and itinerary planning.
+\end{itemize}
+
+All documentation shall be maintained in accessible formats and updated coincident with software releases.
+
+\section{Assumptions and Dependencies}
+The following assumptions and dependencies are identified:
+
+\begin{itemize}
+\item \textbf{Assumption 1:} Users will have stable internet connectivity during application usage.
+
+\item \textbf{Assumption 2:} Machine learning models remain accurate for travel personality classification with minimal performance degradation over time.
+
+\item \textbf{Assumption 3:} User-provided image files are in standard web-compatible formats (JPEG, PNG, WebP).
+
+\item \textbf{Assumption 4:} The travel destination database remains relatively stable with seasonal variations in weather and availability.
+
+\item \textbf{Dependency 1:} The system depends on the Keras framework remaining compatible with the TensorFlow backend.
+
+\item \textbf{Dependency 2:} The system depends on Flask continuing to support REST API development patterns.
+
+\item \textbf{Dependency 3:} The system depends on React ecosystem stability and continued support for React 18.0+.
+
+\item \textbf{Dependency 4:} The system depends on availability of accurate geographical and climate data from source providers.
+\end{itemize}
+
+% External Interface Requirements
+\chapter{External Interface Requirements}
+
+\section{User Interfaces}
+\subsection{Web Application Interface}
+The user interface shall consist of the following primary screens and components:
+
+\begin{enumerate}
+\item \textbf{Landing Page:} Welcome screen featuring application overview, call-to-action buttons, and feature highlights. This screen shall load within 2 seconds and be mobile-responsive.
+
+\item \textbf{Personality Assessment Interface:} Multi-step questionnaire displaying 20-30 Likert-scale questions organized into logical sections. The interface shall provide progress indication and support navigation between questions without data loss.
+
+\item \textbf{Recommendation Display Screen:} Interactive 3D globe visualization showing recommended destinations. The interface shall support zooming, rotation, filtering by category, and destination detail modals.
+
+\item \textbf{Itinerary Management Dashboard:} Screen enabling users to view, create, edit, and delete travel itineraries. The interface shall display trip duration, destination list, and image gallery.
+
+\item \textbf{Trip Details View:} Detailed view of individual trips showing itinerary activities, uploaded images, user notes, and estimated costs.
+
+\item \textbf{Image Gallery:} Photo management interface enabling users to upload, organize, tag, and delete travel photos with support for batch operations.
+
+\item \textbf{User Profile Screen:} Screen displaying user preferences, personality profile results, saved destinations, and account settings.
+\end{enumerate}
+
+All user interface elements shall follow accessibility standards (WCAG 2.1 Level AA) with proper contrast ratios, alt text for images, and keyboard navigation support.
+
+\subsection{Interface Design Standards}
+\begin{itemize}
+\item Consistent typography using Helvetica or system default sans-serif fonts.
+\item Color palette emphasizing blues and greens with sufficient contrast for readability.
+\item Responsive design supporting screen sizes from 320px (mobile) to 2560px (ultra-wide displays).
+\item Consistent button styling with visual feedback for hover and active states.
+\item Loading indicators and error messaging for all asynchronous operations.
+\end{itemize}
+
+\section{Hardware Interfaces}
+The Bon Voyage application shall interface with the following hardware components:
+
+\begin{itemize}
+\item \textbf{Client Computer or Mobile Device:} Standard workstations, laptops, tablets, and smartphones with web browser support. Minimum recommended specifications: 2 GB RAM, 1.5 GHz processor.
+
+\item \textbf{Server Hardware:} Web server and application server capable of handling REST API requests. Minimum specifications: 4 GB RAM, 2 GHz dual-core processor, 100 Mbps network connection.
+
+\item \textbf{Storage Devices:} Mass storage systems for model artifacts, training data, and user-generated content. Minimum 1 TB storage capacity for production deployment.
+
+\item \textbf{Input Devices:} Keyboard, mouse, touchscreen, or touch pad for user interaction.
+
+\item \textbf{Output Devices:} Monitor or display screen for visual feedback and information presentation.
+
+\item \textbf{Network Interface:} Ethernet or wireless network adapter for internet connectivity.
+\end{itemize}
+
+\section{Software Interfaces}
+The Bon Voyage application shall interface with the following software systems and frameworks:
+
+\begin{itemize}
+\item \textbf{Keras Neural Network Framework:} The system shall use Keras 3.0+ with TensorFlow backend for model inference. The interface shall support loading pre-trained model files and executing predictions on input feature vectors.
+
+\item \textbf{Python Flask Framework:} The backend API shall be implemented using Flask 2.0+ with support for RESTful endpoint design, middleware integration, and error handling.
+
+\item \textbf{React JavaScript Library:} The frontend application shall use React 18.0+ with TypeScript for component-based UI development and state management.
+
+\item \textbf{Node.js Build Tools:} The frontend build process shall use Vite 4.0+ for development server and production bundling.
+
+\item \textbf{Database Systems:} JSON-formatted data files shall serve as the primary data store. The system shall support integration with relational databases (PostgreSQL, MySQL) in future versions.
+
+\item \textbf{Third-Party APIs (Future):} The system shall support integration with travel booking platforms, weather services, and geographical data providers through standardized REST interfaces.
+\end{itemize}
+
+\section{Communications Interfaces}
+The Bon Voyage application shall utilize the following communication protocols and interfaces:
+
+\begin{itemize}
+\item \textbf{HTTP/HTTPS Protocol:} All client-server communication shall use HTTP/1.1 or HTTP/2 over secure HTTPS (TLS 1.2+). The system shall enforce HTTPS for all production deployments.
+
+\item \textbf{REST API Endpoints:} The backend shall provide RESTful endpoints for:
+  \begin{itemize}
+  \item User personality assessment submission and retrieval
+  \item Recommendation generation and filtering
+  \item Itinerary creation, retrieval, update, and deletion
+  \item Image upload and management
+  \item User preference management
+  \end{itemize}
+
+\item \textbf{JSON Data Format:} All data exchange between client and server shall use JSON format with UTF-8 encoding.
+
+\item \textbf{WebSocket Support (Future):} Real-time notifications for recommendation updates and collaborative trip planning shall be implemented using WebSocket protocol in future releases.
+
+\item \textbf{Error Response Format:} All error responses shall include HTTP status codes, error codes, descriptive messages, and request identifiers for debugging.
+
+\item \textbf{Rate Limiting:} API rate limiting shall be implemented at 1000 requests per hour per user to prevent abuse and ensure fair resource allocation.
+\end{itemize}
+
+% System Features
+\chapter{System Features}
+
+\section{Feature 1: Personality-Based Travel Recommendation Engine}
+
+\subsection{Description and Priority}
+This feature enables users to complete a personality assessment questionnaire and receive AI-driven travel destination recommendations tailored to their personality profile. The system classifies users into personality categories based on their responses and matches them with compatible travel destinations.
+
+\textbf{Priority: HIGH} - This is the core differentiator and primary value proposition of the Bon Voyage application.
+
+\subsection{Stimulus/Response Sequences}
+
+\begin{enumerate}
+\item \textbf{Sequence 1: Initial Assessment Completion}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User navigates to personality assessment screen and completes all questionnaire items.
+  \item \textbf{Response:} System validates responses, transmits data to backend API, processes through personality classification model, and displays results with recommended destinations.
+  \item \textbf{Time Constraint:} Response generation shall complete within 3 seconds.
+  \end{itemize}
+
+\item \textbf{Sequence 2: Recommendation Filtering}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User applies filters to recommendations (e.g., climate preference, travel style, budget).
+  \item \textbf{Response:} System re-filters destination list and updates globe visualization without requiring new model inference.
+  \item \textbf{Time Constraint:} Filtering response shall be immediate (< 500ms).
+  \end{itemize}
+
+\item \textbf{Sequence 3: Destination Detail Retrieval}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User clicks on recommended destination for detailed information.
+  \item \textbf{Response:} System displays destination details including climate information, attractions, best travel season, and estimated costs.
+  \item \textbf{Time Constraint:} Detail retrieval shall complete within 1 second.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Functional Requirements}
+
+\begin{itemize}
+\item \textbf{REQ-1.1:} The system shall accept personality assessment responses in Likert scale format (1-5 range) from users.
+
+\item \textbf{REQ-1.2:} The system shall validate that all required assessment questions have been answered before processing.
+
+\item \textbf{REQ-1.3:} The system shall classify user personality into one of the following categories: Adventure Seeker, Cultural Explorer, Luxury Traveler, Nature Enthusiast, City Explorer, or Relaxation Focused.
+
+\item \textbf{REQ-1.4:} The system shall generate a set of 5-15 personalized destination recommendations ordered by compatibility score.
+
+\item \textbf{REQ-1.5:} The system shall associate each recommendation with a compatibility score (0-100) indicating alignment with user personality.
+
+\item \textbf{REQ-1.6:} The system shall support filtering recommendations by:
+  \begin{itemize}
+  \item Climate type (tropical, temperate, arid, polar)
+  \item Travel season (spring, summer, autumn, winter)
+  \item Travel duration (weekend, 1 week, 2 weeks, 1 month+)
+  \item Estimated budget (budget, moderate, premium, luxury)
+  \item Travel style (backpacking, comfort, adventure, cultural immersion)
+  \end{itemize}
+
+\item \textbf{REQ-1.7:} The system shall persist user personality profile and recommendations for future sessions.
+
+\item \textbf{REQ-1.8:} The system shall display recommendations on an interactive 3D globe visualization with city markers and information popups.
+
+\item \textbf{REQ-1.9:} The system shall allow users to save or bookmark recommendations to their profile for later review.
+
+\item \textbf{REQ-1.10:} The system shall provide explanation text describing why each destination is recommended (e.g., ``This destination matches your Adventure Seeker profile with 92\% compatibility due to your interest in outdoor activities and wildlife exploration.'').
+\end{itemize}
+
+\section{Feature 2: Trip Planning and Itinerary Management}
+
+\subsection{Description and Priority}
+This feature provides users with tools to create, organize, and manage travel itineraries. Users can plan multi-day trips, organize activities, manage budgets, upload travel photos, and share itineraries with other users.
+
+\textbf{Priority: HIGH} - Essential functionality supporting the core user workflow of converting recommendations into actionable travel plans.
+
+\subsection{Stimulus/Response Sequences}
+
+\begin{enumerate}
+\item \textbf{Sequence 1: Itinerary Creation}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User selects a recommended destination and initiates trip creation.
+  \item \textbf{Response:} System displays itinerary creation form with destination pre-filled. User specifies dates, duration, budget, and traveling companions.
+  \item \textbf{Response:} System generates suggested day-by-day itinerary based on destination popularity and activity types.
+  \item \textbf{Time Constraint:} Itinerary generation shall complete within 2 seconds.
+  \end{itemize}
+
+\item \textbf{Sequence 2: Activity Scheduling}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User adds, modifies, or deletes activities from itinerary.
+  \item \textbf{Response:} System updates itinerary, recalculates costs, and validates scheduling conflicts.
+  \item \textbf{Response:} System persists changes in real-time.
+  \end{itemize}
+
+\item \textbf{Sequence 3: Image Upload and Organization}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User uploads travel photos during or after trip.
+  \item \textbf{Response:} System stores images, extracts metadata, generates thumbnails, and enables user to organize photos by trip or date.
+  \item \textbf{Time Constraint:} Image processing shall complete within 10 seconds per image.
+  \end{itemize}
+
+\item \textbf{Sequence 4: Itinerary Sharing}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User generates shareable link or exports itinerary to PDF.
+  \item \textbf{Response:} System creates time-limited share link with specified permissions or generates formatted PDF document.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Functional Requirements}
+
+\begin{itemize}
+\item \textbf{REQ-2.1:} The system shall allow users to create new itineraries with the following required fields: destination, start date, end date, number of travelers, estimated budget.
+
+\item \textbf{REQ-2.2:} The system shall validate that end date is after start date and that trip duration does not exceed 365 days.
+
+\item \textbf{REQ-2.3:} The system shall generate suggested daily activities based on destination characteristics, user interests, and optimal time allocation.
+
+\item \textbf{REQ-2.4:} The system shall allow users to customize suggested itineraries by adding, removing, or reordering activities.
+
+\item \textbf{REQ-2.5:} The system shall track estimated costs per activity and provide daily and trip-level budget summaries.
+
+\item \textbf{REQ-2.6:} The system shall support upload of travel photos with maximum file size of 10 MB per image.
+
+\item \textbf{REQ-2.7:} The system shall automatically extract photo metadata (date taken, GPS coordinates if available) and enable manual tagging and organization.
+
+\item \textbf{REQ-2.8:} The system shall store photos in compressed format while maintaining quality suitable for web viewing.
+
+\item \textbf{REQ-2.9:} The system shall allow users to add notes, costs, and duration estimates to individual activities.
+
+\item \textbf{REQ-2.10:} The system shall support generation of shareable links with optional password protection valid for 30 days.
+
+\item \textbf{REQ-2.11:} The system shall support export of itineraries to PDF format with formatting suitable for printing.
+
+\item \textbf{REQ-2.12:} The system shall allow users to mark itineraries as completed and archive them for historical reference.
+
+\item \textbf{REQ-2.13:} The system shall support duplication of existing itineraries for planning similar trips.
+
+\item \textbf{REQ-2.14:} The system shall display list of all user itineraries with sorting options (date, destination, duration, budget).
+\end{itemize}
+
+\section{Feature 3: Climate-Based Filtering and Image Classification}
+
+\subsection{Description and Priority}
+This feature enables filtering of travel recommendations based on climate preferences through analysis of day/night patterns and environmental characteristics. The system uses a trained CNN model to classify climate types from images.
+
+\textbf{Priority: MEDIUM} - Enhances recommendation personalization and enables users to filter for comfort-based travel experiences.
+
+\subsection{Stimulus/Response Sequences}
+
+\begin{enumerate}
+\item \textbf{Sequence 1: Climate Filter Application}
+  \begin{itemize}
+  \item \textbf{Stimulus:} User selects climate preference from filter options.
+  \item \textbf{Response:} System filters recommendations to include only destinations matching selected climate.
+  \item \textbf{Time Constraint:} Filter application shall complete within 500 ms.
+  \end{itemize}
+
+\item \textbf{Sequence 2: Day/Night Classification Analysis}
+  \begin{itemize}
+  \item \textbf{Stimulus:} System processes destination images through CNN model for climate classification.
+  \item \textbf{Response:} System updates destination climate attributes based on model output.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Functional Requirements}
+
+\begin{itemize}
+\item \textbf{REQ-3.1:} The system shall classify destination climate into categories: Tropical, Temperate, Arid, Polar, or Mixed.
+
+\item \textbf{REQ-3.2:} The system shall use a pre-trained CNN model for image-based climate classification with minimum 85\% accuracy.
+
+\item \textbf{REQ-3.3:} The system shall allow users to filter recommendations by climate preference.
+
+\item \textbf{REQ-3.4:} The system shall provide climate information including average temperature, humidity, precipitation, and seasonal variations.
+
+\item \textbf{REQ-3.5:} The system shall analyze day/night image characteristics to determine optimal travel periods for outdoor activities.
+
+\item \textbf{REQ-3.6:} The system shall display climate warnings (e.g., ``Typhoon season: June-November'') for affected destinations during unfavorable periods.
+\end{itemize}
+
+% Other Nonfunctional Requirements
+\chapter{Other Nonfunctional Requirements}
+
+\section{Performance Requirements}
+
+\begin{itemize}
+\item \textbf{NFREQ-1.1:} Personality assessment processing shall complete within 3 seconds after form submission.
+
+\item \textbf{NFREQ-1.2:} Recommendation filtering shall complete within 500 milliseconds.
+
+\item \textbf{NFREQ-1.3:} Landing page and initial screen load shall complete within 2 seconds on connections with minimum 3 Mbps download speed.
+
+\item \textbf{NFREQ-1.4:} API endpoints shall respond within 1 second for 95\% of requests under normal operating conditions.
+
+\item \textbf{NFREQ-1.5:} Image upload processing shall complete within 10 seconds per image (including compression and thumbnail generation).
+
+\item \textbf{NFREQ-1.6:} The system shall support concurrent processing of at least 100 personality assessments simultaneously without performance degradation.
+
+\item \textbf{NFREQ-1.7:} Memory usage of the backend application shall not exceed 2 GB under normal load conditions.
+
+\item \textbf{NFREQ-1.8:} Model inference latency shall not exceed 1 second for single prediction requests.
+
+\item \textbf{NFREQ-1.9:} Database queries shall complete within 500 milliseconds for 99\% of operations.
+
+\item \textbf{NFREQ-1.10:} The globe visualization shall maintain 30+ frames per second on standard desktop hardware when rendering 50+ destination markers.
+\end{itemize}
+
+\section{Safety Requirements}
+
+\begin{itemize}
+\item \textbf{NFREQ-2.1:} The system shall prevent unauthorized access to user personal data through implementation of access controls and authentication.
+
+\item \textbf{NFREQ-2.2:} The system shall validate all user input to prevent injection attacks (SQL injection, XSS attacks, command injection).
+
+\item \textbf{NFREQ-2.3:} The system shall implement automatic session timeout after 30 minutes of inactivity, requiring re-authentication.
+
+\item \textbf{NFREQ-2.4:} The system shall provide data recovery mechanisms to prevent data loss from application crashes or server failures.
+
+\item \textbf{NFREQ-2.5:} The system shall maintain audit logs of all significant user actions and system events for security analysis.
+
+\item \textbf{NFREQ-2.6:} The system shall disable client-side caching of sensitive user data.
+
+\item \textbf{NFREQ-2.7:} The system shall support account recovery through verified email addresses or security questions.
+
+\item \textbf{NFREQ-2.8:} The system shall enforce password complexity requirements: minimum 8 characters, including uppercase, lowercase, numbers, and special characters.
+\end{itemize}
+
+\section{Security Requirements}
+
+\begin{itemize}
+\item \textbf{NFREQ-3.1:} All data transmission shall use HTTPS with TLS 1.2 or higher encryption.
+
+\item \textbf{NFREQ-3.2:} User passwords shall be hashed using bcrypt or equivalent with cost factor of at least 12.
+
+\item \textbf{NFREQ-3.3:} API authentication shall use token-based authentication (JWT) with expiration times of 1 hour for access tokens.
+
+\item \textbf{NFREQ-3.4:} Refresh tokens shall have expiration time of 30 days and shall be stored securely using HttpOnly cookies.
+
+\item \textbf{NFREQ-3.5:} Cross-Origin Resource Sharing (CORS) shall be configured to allow only authorized domains.
+
+\item \textbf{NFREQ-3.6:} The system shall implement rate limiting to prevent brute force attacks: maximum 5 login attempts per 15-minute window per IP address.
+
+\item \textbf{NFREQ-3.7:} Sensitive environment variables (API keys, database credentials) shall be stored securely and not committed to version control.
+
+\item \textbf{NFREQ-3.8:} The system shall encrypt sensitive user data at rest (personal information, payment details if supported).
+
+\item \textbf{NFREQ-3.9:} The system shall support two-factor authentication (2FA) using time-based one-time passwords (TOTP) or SMS delivery.
+
+\item \textbf{NFREQ-3.10:} API endpoints shall implement input validation and output encoding to prevent injection vulnerabilities.
+
+\item \textbf{NFREQ-3.11:} Database access shall be restricted to authorized application accounts with minimal required privileges.
+
+\item \textbf{NFREQ-3.12:} Security patches and updates shall be applied within 30 days of release for critical vulnerabilities.
+\end{itemize}
+
+\section{Software Quality Attributes}
+
+\begin{itemize}
+\item \textbf{NFREQ-4.1 Usability:} The system shall achieve a System Usability Scale (SUS) score of at least 70 points as determined by user testing with minimum 20 participants.
+
+\item \textbf{NFREQ-4.2 Usability:} All primary user workflows shall be completable within 5 minutes by users without prior application experience.
+
+\item \textbf{NFREQ-4.3 Reliability:} The system shall achieve 99.5\% uptime over any 30-day period, excluding scheduled maintenance windows.
+
+\item \textbf{NFREQ-4.4 Reliability:} System failures shall be detected and logged automatically for post-incident analysis.
+
+\item \textbf{NFREQ-4.5 Maintainability:} Code shall follow established style guides with cyclomatic complexity not exceeding 10 per function.
+
+\item \textbf{NFREQ-4.6 Maintainability:} Unit test coverage shall exceed 80\% for critical business logic.
+
+\item \textbf{NFREQ-4.7 Maintainability:} All code contributions shall be reviewed by minimum one team member before merge.
+
+\item \textbf{NFREQ-4.8 Portability:} The application shall run without modification on Windows, macOS, and Linux servers.
+
+\item \textbf{NFREQ-4.9 Portability:} The frontend shall render correctly on browsers: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+.
+
+\item \textbf{NFREQ-4.10 Scalability:} The system architecture shall support horizontal scaling of API servers and machine learning inference services.
+
+\item \textbf{NFREQ-4.11 Scalability:} The system shall support growth to 100,000 registered users without architectural changes.
+
+\item \textbf{NFREQ-4.12 Accessibility:} The application shall conform to WCAG 2.1 Level AA accessibility guidelines.
+\end{itemize}
+
+\section{Business Rules}
+
+\begin{itemize}
+\item \textbf{BR-1:} Free tier users shall have access to the core personality assessment and recommendation features with maximum 3 itinerary creations per month.
+
+\item \textbf{BR-2:} Premium tier users (subscription-based) shall have unlimited itinerary creation, advanced filtering, and priority support.
+
+\item \textbf{BR-3:} User account data shall be retained for 12 months after account deletion, then permanently purged.
+
+\item \textbf{BR-4:} The system shall not make recommendations for destinations in countries under travel advisories or sanctions.
+
+\item \textbf{BR-5:} Recommendations shall be updated quarterly or more frequently when significant destination information changes.
+
+\item \textbf{BR-6:} User-generated content (photos, reviews) shall undergo moderation within 48 hours of submission.
+
+\item \textbf{BR-7:} Machine learning models shall be retrained quarterly using updated training data.
+
+\item \textbf{BR-8:} Shared itineraries shall expire after 30 days unless explicitly renewed by the creator.
+
+\item \textbf{BR-9:} The system shall enforce a maximum file size of 10 MB per image upload.
+
+\item \textbf{BR-10:} System administrators shall maintain backup copies of all critical data with minimum weekly backup frequency.
+\end{itemize}
+
+% Other Requirements
+\chapter{Other Requirements}
+
+\section{Legal and Regulatory Requirements}
+
+The Bon Voyage application shall comply with applicable legal and regulatory requirements including:
+
+\begin{itemize}
+\item \textbf{Data Protection:} Compliance with General Data Protection Regulation (GDPR) for EU users and California Consumer Privacy Act (CCPA) for California residents.
+
+\item \textbf{Terms of Service:} Establishment and enforcement of terms of service governing user conduct and intellectual property rights.
+
+\item \textbf{Privacy Policy:} Clear privacy policy documenting data collection, usage, and retention practices.
+
+\item \textbf{Intellectual Property:} Protection of proprietary machine learning models and algorithms through appropriate legal mechanisms.
+
+\item \textbf{Third-Party Licenses:} Compliance with open-source software licenses used in the project (e.g., MIT, Apache 2.0).
+
+\item \textbf{Accessibility Requirements:} Compliance with Americans with Disabilities Act (ADA) requirements for digital accessibility.
+\end{itemize}
+
+\section{Technical Debt and Future Considerations}
+
+\begin{itemize}
+\item Implementation of real-time collaborative itinerary editing using WebSocket technology.
+
+\item Integration with external travel booking platforms for seamless reservation capabilities.
+
+\item Mobile native applications for iOS and Android platforms.
+
+\item Advanced personalization through integration of social networking features.
+
+\item Machine learning model optimization for improved inference performance on edge devices.
+
+\item Database migration from JSON files to relational database for improved scalability.
+
+\item Implementation of offline mode for cached recommendations and previously loaded content.
+
+\item Voice interface support for accessibility and hands-free operation.
+
+\item Integration with weather services for real-time climate information.
+
+\item Gamification features including achievement badges and travel milestones.
+\end{itemize}
+
+% Appendices
+\appendix
+
+\chapter{Glossary}
+
+\begin{description}
+\item[API] Application Programming Interface---standardized interface for software communication.
+
+\item[CNN] Convolutional Neural Network---deep learning model for image classification.
+
+\item[CORS] Cross-Origin Resource Sharing---security mechanism for allowing cross-domain requests.
+
+\item[GDPR] General Data Protection Regulation---European Union data protection regulation.
+
+\item[HTTPS] Hypertext Transfer Protocol Secure---encrypted protocol for web communication.
+
+\item[JWT] JSON Web Token---token-based authentication standard.
+
+\item[Keras] High-level neural networks API built on TensorFlow.
+
+\item[Likert Scale] Ordinal response scale used in questionnaires (typically 1-5 range).
+
+\item[REST] Representational State Transfer---architectural style for web API design.
+
+\item[SPA] Single Page Application---web application that loads content dynamically without page reloads.
+
+\item[TLS] Transport Layer Security---cryptographic protocol for secure communications.
+
+\item[WCAG] Web Content Accessibility Guidelines---standards for web accessibility.
+
+\item[WebSocket] Protocol enabling bidirectional communication over single TCP connection.
+
+\item[XSS] Cross-Site Scripting---security vulnerability allowing injection of malicious scripts.
+\end{description}
+
+\chapter{Analysis Models}
+
+\section{Data Flow Diagram}
+
+The following data flow diagram illustrates primary system processes:
+
+\begin{itemize}
+\item \textbf{User Input Processing:} User responses $\rightarrow$ Frontend validation $\rightarrow$ API transmission $\rightarrow$ Backend processing.
+
+\item \textbf{Model Inference Pipeline:} Feature extraction $\rightarrow$ Model loading $\rightarrow$ Prediction generation $\rightarrow$ Post-processing $\rightarrow$ Response formatting.
+
+\item \textbf{Recommendation Storage:} Database query $\rightarrow$ Results aggregation $\rightarrow$ Ranking and filtering $\rightarrow$ Client-side visualization.
+
+\item \textbf{Image Processing Pipeline:} File upload $\rightarrow$ Validation $\rightarrow$ Compression $\rightarrow$ Storage $\rightarrow$ Metadata extraction.
+\end{itemize}
+
+\section{Class Diagram}
+
+Primary entities and relationships:
+
+\begin{itemize}
+\item \textbf{User:} Contains user profile, authentication credentials, personality profile, and preferences.
+
+\item \textbf{PersonalityProfile:} Stores personality classification, response scores, and recommendation history.
+
+\item \textbf{Destination:} Represents travel destination with attributes (climate, attractions, costs, ratings).
+
+\item \textbf{Itinerary:} Contains trip details, activities, budget tracking, and associated images.
+
+\item \textbf{Activity:} Individual activity within itinerary with duration, cost, and description.
+
+\item \textbf{Image:} User-uploaded travel photo with metadata and organization tags.
+
+\item \textbf{Recommendation:} Generated recommendation linking user to destination with compatibility score and explanation.
+\end{itemize}
+
+\section{State Diagrams}
+
+\textbf{User Session States:}
+\begin{itemize}
+\item Unauthenticated $\rightarrow$ Authenticating $\rightarrow$ Authenticated $\rightarrow$ Session Active $\rightarrow$ Session Expired $\rightarrow$ Unauthenticated.
+\end{itemize}
+
+\textbf{Assessment Process States:}
+\begin{itemize}
+\item Not Started $\rightarrow$ In Progress $\rightarrow$ Submitted $\rightarrow$ Processing $\rightarrow$ Complete $\rightarrow$ Results Displayed.
+\end{itemize}
+
+\textbf{Itinerary States:}
+\begin{itemize}
+\item Created $\rightarrow$ Planning $\rightarrow$ Confirmed $\rightarrow$ Active/In Progress $\rightarrow$ Completed $\rightarrow$ Archived.
+\end{itemize}
+
+\chapter{To Be Determined List}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Item} & \textbf{Description} & \textbf{Status} \\
+\hline
+User Subscription Tiers & Detailed pricing and feature allocation & To Be Determined \\
+\hline
+Third-Party Integrations & Specific travel booking platforms and APIs & To Be Determined \\
+\hline
+Mobile Application & Platform selection and feature parity & To Be Determined \\
+\hline
+Analytics Platform & User behavior tracking and reporting system & To Be Determined \\
+\hline
+Multi-Language Support & Supported languages and localization approach & To Be Determined \\
+\hline
+Recommendation Algorithm & Detailed ML model selection and hyperparameters & To Be Determined \\
+\hline
+Payment Processing & Payment gateway selection and implementation & To Be Determined \\
+\hline
+Customer Support System & Support channel selection and SLA definitions & To Be Determined \\
+\hline
+Backup and Recovery & Detailed disaster recovery procedures & To Be Determined \\
+\hline
+Performance Monitoring & Monitoring tools and alerting thresholds & To Be Determined \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}
