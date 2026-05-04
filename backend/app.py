@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import os
 import cv2
 import numpy as np
+import pickle
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -9,20 +10,31 @@ import tensorflow as tf
 
 app = Flask(__name__)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 ALLOWED = {"png", "jpg", "jpeg"}
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-_model_path = os.path.normpath(
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'CNN', 'best_daynight_model.keras')
+_cnn_model_path = os.path.normpath(
+    os.path.join(BASE_DIR, '..', 'CNN', 'best_daynight_model.keras')
 )
-if not os.path.exists(_model_path):
+if not os.path.exists(_cnn_model_path):
     raise FileNotFoundError(
-        f"Model not found at {_model_path}\n"
+        f"Model not found at {_cnn_model_path}\n"
         "Run the CNN/main.ipynb notebook end-to-end first to train and save the model."
     )
-model = tf.keras.models.load_model(_model_path)
-print(f"Model loaded from {_model_path}")
+cnn_model = tf.keras.models.load_model(_cnn_model_path)
+print(f"CNN model loaded from {_cnn_model_path}")
+
+_personality_dir = os.path.normpath(os.path.join(BASE_DIR, '..', 'ML', 'Model1', 'model'))
+with open(os.path.join(_personality_dir, "model.pkl"), "rb") as f:
+    personality_model = pickle.load(f)
+with open(os.path.join(_personality_dir, "encoder.pkl"), "rb") as f:
+    encoder = pickle.load(f)
+with open(os.path.join(_personality_dir, "scaler.pkl"), "rb") as f:
+    scaler = pickle.load(f)
+
 
 def allowed_file(filename: str) -> bool:
     return filename.rsplit('.', 1)[-1].lower() in ALLOWED
@@ -35,7 +47,12 @@ def preprocess(file_bytes: bytes):
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, (128, 128), interpolation=cv2.INTER_AREA)
     img = img.astype('float32') / 255.0
-    return np.expand_dims(img, axis=0)   # (1, 128, 128, 3)
+    return np.expand_dims(img, axis=0)
+
+
+@app.route("/")
+def home():
+    return "API is running"
 
 @app.route("/upload", methods=["POST"])
 def upload():
@@ -63,7 +80,7 @@ def classify():
             results.append({"filename": file.filename, "error": "Could not read image"})
             continue
 
-        prob = float(model.predict(img, verbose=0)[0, 0])
+        prob = float(cnn_model.predict(img, verbose=0)[0, 0])
         results.append({
             "filename": file.filename,
             "label":    "Day" if prob >= 0.5 else "Night",
@@ -71,6 +88,43 @@ def classify():
         })
 
     return jsonify(results)
+
+@app.route("/predict_personality", methods=["POST"])
+def predict_personality():
+    try:
+        data = request.get_json()
+        answers = data.get("answers")
+
+        if not answers or len(answers) != 12:
+            return jsonify({"error": "Exactly 12 answers required"}), 400
+
+        input_data = np.array(answers).reshape(1, -1)
+        input_data = scaler.transform(input_data)
+
+        prediction = personality_model.predict(input_data)
+        personality = encoder.inverse_transform(prediction)[0]
+
+        return jsonify({"personality": personality})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/plan_trip", methods=["POST"])
+def plan_trip():
+    try:
+        data = request.get_json()
+        personality = data.get("personality")
+        days = data.get("days")
+
+        if not personality or not days:
+            return jsonify({"error": "Missing personality or days"}), 400
+
+        return jsonify({
+            "message": f"Planning a {days}-day trip for {personality}"
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

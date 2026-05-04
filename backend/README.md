@@ -1,0 +1,81 @@
+# Bon Voyage Backend API
+
+Run with: `python app.py` — starts on `http://localhost:5000`
+
+---
+
+## Routes
+
+### `GET /`
+Health check.
+
+**Response**
+```
+API is running
+```
+
+---
+
+### `POST /upload`
+Save a single image to the server.
+
+**Body** — `form-data`
+| Key | Type | Description |
+|-----|------|-------------|
+| `image` | File | PNG, JPG, or JPEG only |
+
+**Response**
+```json
+{ "message": "uploaded" }
+```
+
+---
+
+### `POST /classify`
+Classify one or more images as **Day** or **Night** using the CNN model.
+
+**Body** — `form-data`
+| Key | Type | Description |
+|-----|------|-------------|
+| `images` | File (repeatable) | PNG, JPG, or JPEG — send multiple with the same key |
+
+**Response**
+```json
+[
+  { "filename": "photo.jpg", "label": "Day", "probability": 0.9312 },
+  { "filename": "night.png", "label": "Night", "probability": 0.1045 }
+]
+```
+`probability` is the raw Day score (≥ 0.5 → Day, < 0.5 → Night).
+
+---
+
+### `POST /predict_personality`
+Predict travel personality from a 12-question survey.
+
+**Body** — `application/json`
+```json
+{ "answers": [3, 4, 2, 5, 1, 3, 4, 2, 5, 1, 3, 4] }
+```
+`answers` must be an array of exactly **12** numeric values.
+
+**Response**
+```json
+{ "personality": "Adventurer" }
+```
+
+---
+
+### `POST /plan_trip`
+Generate a trip plan message for a given personality and trip length.
+Intended to be called after `/predict_personality`.
+
+**Body** — `application/json`
+```json
+{ "personality": "Adventurer", "days": 5 }
+```
+
+**Response**
+```json
+{ "message": "Planning a 5-day trip for Adventurer" }
+```

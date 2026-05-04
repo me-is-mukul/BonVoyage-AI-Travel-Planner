@@ -26,6 +26,3 @@ dist-ssr
 dataset/
 
 Datasets/
-encoder.pkl
-model.pkl
-scaler.pkl
