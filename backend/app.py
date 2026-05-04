@@ -156,37 +156,45 @@ def plan_trip():
 @app.route("/get_itinerary", methods=["POST"])
 def get_itinerary():
     try:
-        data = request.get_json()
+        data = request.get_json(silent=True) or {}
 
         city = data.get("city")
-        days = data.get("days")
+        days_raw = data.get("days")
         personality = data.get("personality")
 
-        if not city or not days or not personality:
-            return jsonify({"error": "city, days, personality required"}), 400
+        if not city or days_raw is None or not personality:
+            return jsonify({"error": "city, days, and personality are required"}), 400
 
-        dataset_path = os.path.join(
-            ROOT_DIR,
-            "ML",
-            "Model3",
-            "Datasets",
-            "cleaned_travel.csv" 
+        try:
+            days = int(days_raw)
+        except (TypeError, ValueError):
+            return jsonify({"error": "days must be a whole number"}), 400
+
+        if days < 1 or days > 21:
+            return jsonify({"error": "days must be between 1 and 21"}), 400
+
+        dataset_path = os.path.normpath(
+            os.path.join(ROOT_DIR, "ML", "Model3", "Datasets", "cleaned_travel.csv")
         )
+        if not os.path.isfile(dataset_path):
+            return jsonify({"error": f"Itinerary dataset missing at {dataset_path}"}), 503
 
         itinerary = generate_itinerary(
-            city=city,
-            days=int(days),
-            personality=personality,
-            dataset_path=dataset_path
+            city=city.strip(),
+            days=days,
+            personality=personality.strip(),
+            dataset_path=dataset_path,
         )
 
         return jsonify({
-            "city": city,
+            "city": city.strip(),
             "days": days,
-            "personality": personality,
-            "itinerary": itinerary
+            "personality": personality.strip(),
+            "itinerary": itinerary,
         })
 
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

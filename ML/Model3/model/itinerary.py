@@ -117,6 +117,9 @@ def generate_itinerary(city, days, personality, dataset_path):
 
     attractions = build_attractions(df, city)
 
+    if not attractions:
+        raise ValueError(f"No attraction data found for '{city}' in itinerary dataset.")
+
     START_TIME = "08:00"
     END_TIME   = "20:00"
     BUFFER_MIN = 60

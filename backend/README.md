@@ -97,10 +97,54 @@ Intended to be called after `/predict_personality`.
 
 ---
 
+### `POST /get_itinerary`
+Generate a day-by-day itinerary for a chosen city using **Model3** (`ML/Model3/model/itinerary.py`) and attraction rows in **`ML/Model3/Datasets/cleaned_travel.csv`**.
+
+**Body** — `application/json`
+```json
+{
+  "city": "Manali",
+  "days": 5,
+  "personality": "Social Butterfly (The Cultural Explorer)"
+}
+```
+
+Rules:
+
+- **`personality`** must match one of the keys in `ML/Model2/Datasets/preference_model.json`.
+- **`days`** must be a whole number from **1** to **21**.
+
+**Success response**
+
+```json
+{
+  "city": "Manali",
+  "days": 5,
+  "personality": "Social Butterfly (The Cultural Explorer)",
+  "itinerary": {
+    "Day 1": [
+      { "time": "08:00 AM", "name": "...", "place": "..." }
+    ],
+    "Day 2": []
+  }
+}
+```
+
+**Errors**
+
+| Condition | Stat |
+|-----------|-----|
+| Missing field | **400** |
+| Invalid personality or unknown city | **400** |
+| Dataset file missing | **503** |
+| Other server error | **500** |
+
+---
+
 ## Frontend Flow
 
 1. User answers 12 survey questions in the frontend.
 2. Frontend calls `POST /predict_personality`.
 3. Frontend calls `POST /get_cities` using returned personality.
 4. Frontend shows top 5 cities and user selects one.
-5. User is redirected to itinerary page (placeholder text: `iterary will print here`).
+5. User is routed to **`/itinerary`**. The frontend calls **`POST /get_itinerary`** with `city`, `days`, and `personality`, then renders the returned schedule day by day.

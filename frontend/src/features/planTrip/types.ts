@@ -22,3 +22,24 @@ export type PredictPersonalityResponse =
 export type GetCitiesResponse =
   | { cities: string[] }
   | { error: string };
+
+/** One booked slot from Model3 itinerary generator */
+export type ItinerarySlot = {
+  time: string;
+  name: string;
+  place: string;
+};
+
+/** Keys are `"Day 1"`, `"Day 2"`, … */
+export type ItineraryByDay = Record<string, ItinerarySlot[]>;
+
+export type GetItinerarySuccess = {
+  city: string;
+  days: number;
+  personality: string;
+  itinerary: ItineraryByDay;
+};
+
+export type GetItineraryResponse =
+  | GetItinerarySuccess
+  | { error: string };
