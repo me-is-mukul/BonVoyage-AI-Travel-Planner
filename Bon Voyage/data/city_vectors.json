@@ -514,12 +514,12 @@
     },
     "Delhi": {
         "Adventure": 0.0,
-        "Historical": 0.5,
-        "Nature": 0.1875,
-        "Religious": 0.125,
-        "Urban": 0.1875,
-        "Google review rating": 4.38125,
-        "rating_norm": 0.6906249999999998
+        "Historical": 0.47368421052631576,
+        "Nature": 0.15789473684210525,
+        "Religious": 0.21052631578947367,
+        "Urban": 0.15789473684210525,
+        "Google review rating": 4.410526315789474,
+        "rating_norm": 0.7052631578947368
     },
     "Deoghar": {
         "Adventure": 0.0,
@@ -1357,15 +1357,6 @@
         "Urban": 0.0,
         "Google review rating": 4.5,
         "rating_norm": 0.75
-    },
-    "New Delhi": {
-        "Adventure": 0.0,
-        "Historical": 0.3333333333333333,
-        "Nature": 0.0,
-        "Religious": 0.6666666666666666,
-        "Urban": 0.0,
-        "Google review rating": 4.566666666666666,
-        "rating_norm": 0.7833333333333332
     },
     "Noida": {
         "Adventure": 0.0,
