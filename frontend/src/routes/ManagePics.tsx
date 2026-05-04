@@ -207,9 +207,6 @@ export const ManagePics = () => {
     which: 'day' | 'night';
   }) => {
     if (!items.length) return null;
-    const globalOffset = which === 'day'
-      ? 0
-      : images.indexOf(nightImages[0]);
 
     return (
       <div className="mt-8">

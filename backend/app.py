@@ -103,8 +103,9 @@ def predict_personality():
 
         prediction = personality_model.predict(input_data)
         personality = encoder.inverse_transform(prediction)[0]
+        personality_str = str(personality)
 
-        return jsonify({"personality": personality})
+        return jsonify({"personality": personality_str})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
