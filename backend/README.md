@@ -66,6 +66,21 @@ Predict travel personality from a 12-question survey.
 
 ---
 
+### `POST /get_cities`
+Return top 5 recommended cities for a predicted personality.
+
+**Body** — `application/json`
+```json
+{ "personality": "Adventurer" }
+```
+
+**Response**
+```json
+{ "cities": ["Manali", "Rishikesh", "Leh", "Coorg", "Kasol"] }
+```
+
+---
+
 ### `POST /plan_trip`
 Generate a trip plan message for a given personality and trip length.
 Intended to be called after `/predict_personality`.
@@ -79,3 +94,13 @@ Intended to be called after `/predict_personality`.
 ```json
 { "message": "Planning a 5-day trip for Adventurer" }
 ```
+
+---
+
+## Frontend Flow
+
+1. User answers 12 survey questions in the frontend.
+2. Frontend calls `POST /predict_personality`.
+3. Frontend calls `POST /get_cities` using returned personality.
+4. Frontend shows top 5 cities and user selects one.
+5. User is redirected to itinerary page (placeholder text: `iterary will print here`).

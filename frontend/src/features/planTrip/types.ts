@@ -18,3 +18,7 @@ export type SurveyQuestion = {
 export type PredictPersonalityResponse =
   | { personality: string }
   | { error: string };
+
+export type GetCitiesResponse =
+  | { cities: string[] }
+  | { error: string };

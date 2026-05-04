@@ -1,23 +1,26 @@
 import json
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+from pathlib import Path
 
-with open("../Model2/Datasets/zone_vectors.json") as f:
+DATASETS_DIR = Path(__file__).resolve().parents[1] / "Datasets"
+
+with open(DATASETS_DIR / "zone_vectors.json", encoding="utf-8") as f:
     zone_vectors = json.load(f)
 
-with open("../Model2/Datasets/state_vectors.json") as f:
+with open(DATASETS_DIR / "state_vectors.json", encoding="utf-8") as f:
     state_vectors = json.load(f)
 
-with open("../Model2/Datasets/city_vectors.json") as f:
+with open(DATASETS_DIR / "city_vectors.json", encoding="utf-8") as f:
     city_vectors = json.load(f)
 
-with open("../Model2/Datasets/city_to_state.json") as f:
+with open(DATASETS_DIR / "city_to_state.json", encoding="utf-8") as f:
     city_to_state = json.load(f)
 
-with open("../Model2/Datasets/state_to_zone.json") as f:
+with open(DATASETS_DIR / "state_to_zone.json", encoding="utf-8") as f:
     state_to_zone = json.load(f)
 
-with open("../Model2/Datasets/preference_model.json") as f:
+with open(DATASETS_DIR / "preference_model.json", encoding="utf-8") as f:
     preference_model = json.load(f)
 
 

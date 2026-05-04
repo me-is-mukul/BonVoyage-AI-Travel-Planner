@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 import os
+import sys
+from pathlib import Path
 import cv2
 import numpy as np
 import pickle
@@ -11,6 +13,13 @@ import tensorflow as tf
 app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = Path(BASE_DIR).parent
+
+ml_dir = ROOT_DIR / "ML"
+if str(ml_dir) not in sys.path:
+    sys.path.append(str(ml_dir))
+
+from Model2.cityRecommender.recommender import recommend
 
 ALLOWED = {"png", "jpg", "jpeg"}
 UPLOAD_FOLDER = "uploads"
@@ -106,6 +115,21 @@ def predict_personality():
         personality_str = str(personality)
 
         return jsonify({"personality": personality_str})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/get_cities", methods=["POST"])
+def get_cities():
+    try:
+        data = request.get_json()
+        personality = data.get("personality")
+
+        if not personality:
+            return jsonify({"error": "Personality is required"}), 400
+
+        cities = recommend(personality=personality, top_k=5)
+        return jsonify({"cities": cities})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500

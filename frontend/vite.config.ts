@@ -10,6 +10,7 @@ export default defineConfig({
       '/classify': 'http://localhost:5000',
       '/upload': 'http://localhost:5000',
       '/predict_personality': 'http://localhost:5000',
+      '/get_cities': 'http://localhost:5000',
       '/plan_trip': 'http://localhost:5000',
     },
   },
