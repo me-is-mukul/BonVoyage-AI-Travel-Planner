@@ -2,6 +2,12 @@ from flask import Flask, request, jsonify
 import numpy as np
 import pickle
 import os
+import sys
+
+# Add ML root to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from Model2.cityRecommender.recommender import recommend
 
 app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,18 +50,19 @@ def predict_personality():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/plan_trip", methods=["POST"])
-def plan_trip():
+@app.route("/get_cities", methods=["POST"])
+def get_cities():
     try:
         data = request.get_json()
         personality = data.get("personality")
-        days = data.get("days")
 
-        if not personality or not days:
-            return jsonify({"error": "Missing personality or days"}), 400
+        if not personality:
+            return jsonify({"error": "Personality is required"}), 400
+
+        cities = recommend(personality=personality)
 
         return jsonify({
-            "message": f"Planning a {days}-day trip for {personality}"
+            "cities": cities
         })
 
     except Exception as e:

@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 dataset/
-
+__pycache__
 Datasets/
 encoder.pkl
 model.pkl
