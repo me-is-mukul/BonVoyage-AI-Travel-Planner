@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getCities } from '../../features/planTrip/api/getCities';
 import { predictPersonality } from '../../features/planTrip/api/predictPersonality';
 import { likertFiveIndexToModelAnswer } from '../../features/planTrip/likertMap';
 import {
@@ -26,6 +27,9 @@ export function PlanTripQuiz() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [personality, setPersonality] = useState<string | null>(null);
+  const [cities, setCities] = useState<string[]>([]);
+  const [isFetchingCities, setIsFetchingCities] = useState(false);
+  const [citiesError, setCitiesError] = useState<string | null>(null);
 
   const question = SURVEY_QUESTIONS[step];
   const currentValue = answers[step];
@@ -74,17 +78,36 @@ export function PlanTripQuiz() {
     }
 
     setPersonality(result.personality);
+    setIsFetchingCities(true);
+    setCitiesError(null);
+
+    const cityResult = await getCities(result.personality);
+    setIsFetchingCities(false);
+
+    if ('error' in cityResult) {
+      setCities([]);
+      setCitiesError(cityResult.error);
+      return;
+    }
+
+    setCities(cityResult.cities);
   }, [answers]);
 
   if (personality !== null) {
     return (
       <PersonalityReveal
         personality={personality}
+        cities={cities}
+        loadingCities={isFetchingCities}
+        cityError={citiesError}
+        onSelectCity={(city) => navigate('/itinerary', { state: { city, personality } })}
         onRetake={() => {
           setPersonality(null);
           setStep(0);
           setAnswers(Array.from({ length: SURVEY_QUESTION_COUNT }, () => null));
           setSubmitError(null);
+          setCities([]);
+          setCitiesError(null);
         }}
         onBackHome={() => navigate('/')}
       />
@@ -95,7 +118,7 @@ export function PlanTripQuiz() {
     <div className="w-full max-w-3xl mx-auto">
       <div className="mb-10">
         <div
-          className="h-1 rounded-full bg-white/[0.08] overflow-hidden ring-1 ring-white/[0.06]"
+          className="h-1 rounded-full bg-white/8 overflow-hidden ring-1 ring-white/6"
           role="progressbar"
           aria-valuenow={step + 1}
           aria-valuemin={1}
@@ -112,7 +135,7 @@ export function PlanTripQuiz() {
       </div>
 
       <div
-        className="rounded-3xl border border-white/[0.1] bg-[#121a2e]/90 backdrop-blur-xl px-6 py-10 sm:px-12 sm:py-12 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset,0_32px_64px_-32px_rgba(0,0,0,0.65)]"
+        className="rounded-3xl border border-white/10 bg-[#121a2e]/90 backdrop-blur-xl px-6 py-10 sm:px-12 sm:py-12 shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset,0_32px_64px_-32px_rgba(0,0,0,0.65)]"
       >
         <LikertScale
           statement={question.text}
@@ -136,7 +159,7 @@ export function PlanTripQuiz() {
             type="button"
             onClick={goPrev}
             disabled={step === 0 || isSubmitting}
-            className="px-5 py-3 rounded-xl font-semibold text-slate-300 border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/15 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
+            className="px-5 py-3 rounded-xl font-semibold text-slate-300 border border-white/10 bg-white/4 hover:bg-white/8 hover:border-white/15 disabled:opacity-40 disabled:pointer-events-none transition-colors cursor-pointer"
           >
             Previous
           </button>
