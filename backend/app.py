@@ -20,6 +20,7 @@ if str(ml_dir) not in sys.path:
     sys.path.append(str(ml_dir))
 
 from Model2.cityRecommender.recommender import recommend
+from Model3.model.itinerary import generate_itinerary
 
 ALLOWED = {"png", "jpg", "jpeg"}
 UPLOAD_FOLDER = "uploads"
@@ -146,6 +147,44 @@ def plan_trip():
 
         return jsonify({
             "message": f"Planning a {days}-day trip for {personality}"
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+@app.route("/get_itinerary", methods=["POST"])
+def get_itinerary():
+    try:
+        data = request.get_json()
+
+        city = data.get("city")
+        days = data.get("days")
+        personality = data.get("personality")
+
+        if not city or not days or not personality:
+            return jsonify({"error": "city, days, personality required"}), 400
+
+        dataset_path = os.path.join(
+            ROOT_DIR,
+            "ML",
+            "Model3",
+            "Datasets",
+            "cleaned_travel.csv" 
+        )
+
+        itinerary = generate_itinerary(
+            city=city,
+            days=int(days),
+            personality=personality,
+            dataset_path=dataset_path
+        )
+
+        return jsonify({
+            "city": city,
+            "days": days,
+            "personality": personality,
+            "itinerary": itinerary
         })
 
     except Exception as e:
