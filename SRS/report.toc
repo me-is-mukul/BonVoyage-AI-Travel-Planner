@@ -1,49 +1,57 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Purpose}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Document Conventions}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Intended Audience and Reading Suggestions}{2}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Product Scope}{2}{section.1.4}%
-\contentsline {section}{\numberline {1.5}References}{3}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Overall Description}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Product Perspective}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Product Functions}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}User Classes and Characteristics}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Operating Environment}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Design and Implementation Constraints}{6}{section.2.5}%
-\contentsline {section}{\numberline {2.6}User Documentation}{7}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Assumptions and Dependencies}{7}{section.2.7}%
-\contentsline {chapter}{\numberline {3}External Interface Requirements}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}User Interfaces}{9}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Web Application Interface}{9}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Interface Design Standards}{10}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Hardware Interfaces}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Software Interfaces}{10}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Communications Interfaces}{11}{section.3.4}%
-\contentsline {chapter}{\numberline {4}System Features}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Feature 1: Personality-Based Travel Recommendation Engine}{13}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Description and Priority}{13}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Stimulus/Response Sequences}{13}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Functional Requirements}{14}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Feature 2: Trip Planning and Itinerary Management}{15}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Description and Priority}{15}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Stimulus/Response Sequences}{15}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Functional Requirements}{16}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Feature 3: Climate-Based Filtering and Image Classification}{17}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Description and Priority}{17}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Stimulus/Response Sequences}{17}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Functional Requirements}{17}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Other Nonfunctional Requirements}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Performance Requirements}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Safety Requirements}{20}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Security Requirements}{20}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Software Quality Attributes}{21}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Business Rules}{22}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Other Requirements}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Legal and Regulatory Requirements}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Technical Debt and Future Considerations}{23}{section.6.2}%
-\contentsline {chapter}{\numberline {A}Glossary}{25}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Analysis Models}{26}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Data Flow Diagram}{26}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Class Diagram}{26}{section.B.2}%
-\contentsline {section}{\numberline {B.3}State Diagrams}{27}{section.B.3}%
-\contentsline {chapter}{\numberline {C}To Be Determined List}{28}{appendix.C}%
+\contentsline {chapter}{Table of Contents}{i}{section*.1}%
+\contentsline {chapter}{Revision History}{iii}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Customer Problem Statement}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Decomposition into Sub-problems}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Goals, Requirements, and Analysis}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Business Goals}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Enumerated Functional Requirements}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Enumerated Non-functional Requirements}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Use Cases}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Stakeholders}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Actors and Goals}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Use Case Diagram}{9}{section.3.3}%
+\contentsline {chapter}{\numberline {4}UML Diagrams}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class Diagram}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Activity Diagram}{10}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Sequence Diagram}{11}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Implementation}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Screenshots and Explanations}{13}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Engineering and deployment notes}{15}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Data governance and dataset hygiene}{15}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Error handling philosophy}{16}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Security and privacy posture (coursework scope)}{16}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Performance considerations and measurement protocol}{16}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Future evolution roadmap}{17}{subsection.5.1.6}%
+\contentsline {chapter}{\numberline {6}Test Case Report}{19}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Contribution of Team Members}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {8}References}{24}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Standard SRS Structure (Karl Wiegers Template)}{25}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Introduction}{25}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Purpose}{25}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Document Conventions}{25}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Intended Audience and Reading Suggestions}{25}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Product Scope}{25}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}References}{26}{subsection.9.1.5}%
+\contentsline {section}{\numberline {9.2}Overall Description}{26}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Product Perspective}{26}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Product Functions}{26}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}User Classes and Characteristics}{26}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Operating Environment}{26}{subsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.2.5}Design and Implementation Constraints}{26}{subsection.9.2.5}%
+\contentsline {subsection}{\numberline {9.2.6}User Documentation}{26}{subsection.9.2.6}%
+\contentsline {subsection}{\numberline {9.2.7}Assumptions and Dependencies}{27}{subsection.9.2.7}%
+\contentsline {section}{\numberline {9.3}External Interface Requirements}{27}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}User Interfaces}{27}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Hardware Interfaces}{27}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Software Interfaces}{27}{subsection.9.3.3}%
+\contentsline {subsection}{\numberline {9.3.4}Communications Interfaces}{27}{subsection.9.3.4}%
+\contentsline {section}{\numberline {9.4}System Features}{27}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Feature SF-A: Personality inference and city recommendation}{27}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Feature SF-B: Itinerary generation for a chosen destination}{27}{subsection.9.4.2}%
+\contentsline {section}{\numberline {9.5}Other Nonfunctional Requirements}{28}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Other Requirements}{28}{section.9.6}%
+\contentsline {chapter}{Appendices}{28}{section.9.6}%
+\contentsline {chapter}{\numberline {A}Glossary}{29}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Analysis Models}{30}{appendix.B}%
+\contentsline {chapter}{\numberline {C}To Be Determined List}{31}{appendix.C}%

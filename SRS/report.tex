@@ -1,807 +1,841 @@
-\documentclass[12pt]{report}
+% =============================================================================
+% Bon Voyage -- Combined SRS + Project Report (Karl Wiegers + Academic Template)
+% Compile: pdflatex (run twice for TOC/references)
+% =============================================================================
+\documentclass[12pt,oneside,openany]{report}
+
 \usepackage{times}
+\usepackage[T1]{fontenc}
 \usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
 \usepackage{fancyhdr}
-\usepackage{setspace}
-\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,calc}
+
+% ---------- Heading sizes (~14pt bold hierarchy) ----------
+\newcommand{\hdrfont}{\fontsize{14}{17}\selectfont\bfseries}
+\titleformat{\chapter}[display]
+  {\normalfont\hdrfont}{\chaptertitlename\ \thechapter}{0.5em}{\hdrfont}
+\titleformat{\section}
+  {\normalfont\fontsize{13}{15.5}\selectfont\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14}\selectfont\bfseries}{\thesubsection}{0.6em}{}
+
+\titlespacing*{\chapter}{0pt}{2.2ex plus .2ex minus .1ex}{1.6ex plus .2ex}
+\titlespacing*{\section}{0pt}{1.6ex plus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.3ex plus .2ex}{0.8ex plus .2ex}
+
+% TOC depth
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+% ---------- Page style ----------
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\thepage}
+\fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
-
-\setstretch{1.15}
-
-\title{\textbf{Software Requirements Specification for Bon Voyage}}
-\author{Development Team}
-\date{May 4, 2026}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
 
 \begin{document}
 
-% Title Page
+% -----------------------------------------------------------------------------
+% FRONT MATTER (roman page numbers)
+% -----------------------------------------------------------------------------
+\pagenumbering{roman}
+\thispagestyle{empty}
+
 \begin{titlepage}
 \centering
-\vspace*{2cm}
-{\huge\textbf{Software Requirements Specification}}\\
-\vspace{0.5cm}
-{\LARGE\textbf{for}}\\
-\vspace{0.5cm}
-{\LARGE\textbf{Bon Voyage}}\\
-\vspace{1cm}
-{\large Version 1.0 Approved}\\
-\vspace{3cm}
+\vspace*{1.2cm}
+
+{\Large\bfseries Software Requirements Specification for\\[0.35cm]
+Bon Voyage\par}
+
+\vspace{1.2cm}
+
+{\large Capstone Project --- Software Engineering\par}
+{\normalsize (Machine Learning--Enhanced Web Application)\par}
+
+\vspace{2.2cm}
+
+{\normalsize\bfseries Prepared by (Team Members)\par}
+\vspace{0.6cm}
+
 \begin{tabular}{ll}
-Prepared by: & Mukul Aggarwal (2401030239)\\
-Prepared by: & Dhvani JOneja (2401030240)\\
-Prepared by: & Swasti Garg (2401030257)\\
-Prepared by: & Harsh Agrawal (2401030239)\\
-Organization: & Bon Voyage Development \\
-Date: & May 4, 2026 \\
+Mukul Aggarwal & (Roll: 2401030239) \\
+Dhvani Joneja  & (Roll: 2401030240) \\
+Swasti Garg    & (Roll: 2401030247) \\
+Harsh Agrawal  & (Roll: 2401030248) \\
 \end{tabular}
-\vspace{4cm}
+
+\vspace{1.8cm}
+
+{\normalsize\bfseries Jaypee Institute of Information Technology\par}
+{\normalsize Department of Computer Science and Engineering\par}
+
+
+\vfill
+
+\begin{tabular}{rl}
+\textbf{Subject / Course:} & Software Engineering \\
+\textbf{Submission Date:}  & May 5, 2026 \\
+\textbf{Document Version:} & 2.0 (Complete SRS + Project Report) \\
+\end{tabular}
+
+\vspace{1.2cm}
 \end{titlepage}
 
-% Revision History
-\newpage
-\section*{Revision History}
-\begin{table}[h]
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
+\cleardoublepage
+\chapter*{Revision History}
+\addcontentsline{toc}{chapter}{Revision History}
+\thispagestyle{fancy}
+
+\begin{table}[H]
 \centering
-\begin{tabular}{|c|c|c|l|}
+\begin{tabularx}{0.95\textwidth}{|c|l|l|X|}
 \hline
 \textbf{Version} & \textbf{Date} & \textbf{Author} & \textbf{Description} \\
 \hline
-1.0 & May 4, 2026 & Development Team & Initial document creation \\
+1.0 & Feb 15, 2026 & Team Bon Voyage & Initial draft skeleton and scope statement. \\
 \hline
-\end{tabular}
+1.5 & Mar 10, 2026 & Team Bon Voyage & Added architecture notes, API list, and prototype UI mockups. \\
+\hline
+2.0 & May 5, 2026 & Team Bon Voyage & Consolidated Wiegers template sections, full requirements numbering, test traceability matrix, and implementation report. \\
+\hline
+\end{tabularx}
 \end{table}
 
-% Table of Contents
-\newpage
-\pagenumbering{roman}
-\tableofcontents
-\newpage
+\cleardoublepage
 \pagenumbering{arabic}
+\setcounter{page}{1}
 
-% Introduction
-\chapter{Introduction}
+% -----------------------------------------------------------------------------
+% CHAPTER NUMBERING: start at 1
+% -----------------------------------------------------------------------------
+\setcounter{chapter}{0}
 
-\section{Purpose}
-This Software Requirements Specification (SRS) document describes the functional and non-functional requirements for the Bon Voyage application. Bon Voyage is a comprehensive travel planning platform that leverages machine learning algorithms to provide personalized travel recommendations based on user personality profiles and travel preferences. This document is intended for use by the development team, stakeholders, project managers, and quality assurance personnel to ensure a clear understanding of the system requirements and expected functionality.
+% =============================================================================
+\chapter{Customer Problem Statement}\label{ch:customer}
+% =============================================================================
 
-\section{Document Conventions}
-This document adheres to the following conventions:
-\begin{itemize}
-\item Functional requirements are prefixed with ``REQ-'' followed by a unique identifier (e.g., REQ-1, REQ-2).
-\item Non-functional requirements are prefixed with ``NFREQ-'' followed by a unique identifier.
-\item All requirement statements use the keywords ``shall,'' ``should,'' ``must,'' and ``will'' according to RFC 2119.
-\item ``Shall'' indicates a mandatory requirement.
-\item ``Should'' indicates a highly desirable requirement.
-\item ``May'' or ``will'' indicates an optional or future consideration.
-\item Cross-references are provided for related requirements.
-\item Section numbering follows the standard hierarchy: 1, 1.1, 1.1.1, etc.
+\section{Problem Statement}
+
+Travellers today face a paradox of abundance. Thousands of destinations, itineraries, influencers, blogs, and booking sites compete for attention, yet many customers still feel unsure about where to go, what to do first, and how to construct a coherent multi-day plan that matches their temperament and priorities. From the \emph{customer} perspective, the pain is not the lack of raw information; it is the absence of trustworthy, personalized synthesis that respects a customer's time, risk tolerance, budget sensitivity, and emotional goals for a trip.
+
+First, \textbf{information overload and inconsistent guidance} force customers to browse endlessly. When a traveller searches for ``weekend getaway'' or ``heritage trip,'' they often receive generic lists that ignore the traveller's personality---whether they thrive in bustling markets or prefer quiet nature trails. Customers expect modern applications to behave like a thoughtful travel advisor who listens before recommending. When applications fail to do so, customers experience decision fatigue, second-guessing, and a lingering fear of missing ``the best'' sights for their style.
+
+Second, \textbf{poor alignment between the trip plan and the traveller's intrinsic preferences} creates disappointing experiences. A customer who values calm reflection may inadvertently book an itinerary dominated by nightlife districts and packed festivals; conversely, a social, experience-seeking traveller might find a ``relaxing'' beach-only plan unstimulating. This mismatch is costly not only financially but emotionally---vacation time is limited, and poor fit reduces satisfaction and increases complaints and refund requests for travel-related bookings.
+
+Third, \textbf{fragmented tooling} splits planning across maps, weather apps, booking engines, spreadsheets, and chat groups. Customers must mentally stitch together constraints such as opening hours, travel times, attraction durations, and budget. Many travellers---especially students and young professionals---want an integrated flow: discover destinations, shortlist them intelligently, and translate a chosen city into a day-by-day schedule without exporting data across five unrelated services.
+
+Fourth, \textbf{photography-centric travel workflows} remain poorly supported in mainstream planners. Customers returning from trips often manage large, unsorted photo sets. Helping travellers classify photos (for example, distinguishing daytime landmarks from evening scenes) is an operational pain that reduces sharing, archiving, and storytelling. Customers expect lightweight tools that assist classification without manual tagging burdens.
+
+Fifth, expectations around \textbf{reliability and transparency} have risen. Customers accept algorithmic recommendations only when they perceive the system as explainable enough and stable enough to trust---for example, when a recommendation clearly links to stated preferences and can be adjusted without opaque hidden rules. They also expect graceful handling of failure (network loss, incomplete datasets, model limitations) rather than cryptic errors.
+
+Bon Voyage is motivated by these customer-centred frustrations. The product intent is to deliver a cohesive experience that: (a) infers a traveller's \emph{travel personality} through a structured questionnaire aligned with real behavioural signals; (b) recommends a small set of high-suitability destinations; (c) converts a chosen destination and trip length into an interpretable day-by-day itinerary using a transparent attraction dataset; and (d) supports day/night labelling for travel photography management. The customer should feel that the application ``fits'' them---not that it merely dumps popular locations.
+
+Success is measured by customer outcomes: reduced time-to-decision, higher reported fit between expectations and experience, fewer abandoned sessions during planning, improved user trust in recommendations, and measurable engagement with itinerary features. The following subsections decompose the macro-problem into actionable engineering sub-problems without drifting into implementation jargon; they remain anchored in customer pains and expectations.
+
+\section{Decomposition into Sub-problems}
+
+To manage complexity, the overarching customer problem can be decomposed into five mutually reinforcing sub-problems. Each sub-problem is customer-observable and maps cleanly to product capabilities described later in this document.
+
+\textbf{Sub-problem SP-1: Preference elicitation without fatigue.} Customers dislike long surveys, yet short questionnaires often omit key behavioural dimensions. The system must collect enough signal to infer a stable ``travel personality'' label without exhausting users. The expectation is a guided flow (one question at a time), understandable scales, and a predictable completion time.
+
+\textbf{Sub-problem SP-2: Destination shortlisting that feels personal, not random.} Customers want a curated shortlist (for example, five cities) rather than an exhaustive catalog. The expectation is that cities align with inferred preferences and are presented with transparent rationale cues (e.g., how well each destination matches adventure versus heritage leanings).
+
+\textbf{Sub-problem SP-3: Itinerary generation under real constraints.} Once a destination is selected, customers need a schedule that respects time budgets, ordering, and sensible sequencing. They expect the plan to be legible: per-day structure, time-of-day cues, and understandable labels (attraction names and categories). They also expect the plan to degrade gracefully when attraction inventories are incomplete.
+
+\textbf{Sub-problem SP-4: Media workflow assistance.} Customers with large image sets need practical assistance for organization. The expectation for Bon Voyage's manage-photos workflow is fast upload/batch handling, classification feedback (day versus night), and export options suitable for sharing and archival.
+
+\textbf{Sub-problem SP-5: Trustworthy operation in realistic environments.} Customers expect responsive performance on typical broadband/mobile networks, clear error messages, respectful handling of personal inputs (survey answers and uploads), and stability when models or datasets are updated.
+
+These sub-problems provide the analytical backbone for requirements, use cases, and verification planning later in this report.
+
+% =============================================================================
+\chapter{Goals, Requirements, and Analysis}\label{ch:goals}
+% =============================================================================
+
+\section{Business Goals}
+
+\begin{description}[leftmargin=1.2cm,style=nextline,align=left]
+\item[\textbf{BG-1:}] Establish a differentiated travel-planning brand grounded in personality-driven recommendations rather than generic popularity lists.
+\begin{itemize}[nosep]
+  \item \textbf{BG-1.1:} Increase user engagement with the ``Plan a trip'' funnel (quiz completion rate, city selection rate).
+  \item \textbf{BG-1.2:} Improve perceived personalization (qualitative surveys, Net Promoter follow-ups).
 \end{itemize}
-
-\section{Intended Audience and Reading Suggestions}
-This SRS document is intended for the following audiences:
-\begin{itemize}
-\item \textbf{Software Development Team:} Developers should review all sections, with particular attention to Chapters 2, 3, 4, and 5 for implementation details.
-\item \textbf{Quality Assurance Team:} QA personnel should focus on Chapter 4 (System Features) and Chapter 5 (Other Nonfunctional Requirements) for test case development.
-\item \textbf{Project Managers:} Project managers should review Chapters 1 and 2 for project scope and overall vision.
-\item \textbf{Stakeholders:} Business stakeholders should review Chapter 2 (Overall Description) and Chapter 4 (System Features) to understand product capabilities.
-\item \textbf{System Architects:} Architects should review all sections to understand system integration points and interface requirements.
+\item[\textbf{BG-2:}] Reduce traveller decision time by providing a guided flow from personality inference to itinerary preview.
+\begin{itemize}[nosep]
+  \item \textbf{BG-2.1:} Decrease average session time required to reach a city shortlist.
+  \item \textbf{BG-2.2:} Increase itinerary page views after city selection.
 \end{itemize}
-
-\section{Product Scope}
-Bon Voyage is a web-based travel planning application that combines machine learning with an intuitive user interface to deliver personalized travel recommendations. The system comprises three primary components:
-
-\begin{enumerate}
-\item \textbf{Frontend Application:} A responsive web-based user interface built with React and TypeScript, featuring an interactive globe visualization and multi-step questionnaire.
-\item \textbf{Backend API:} A Python Flask-based REST API that orchestrates communication between the frontend and machine learning models.
-\item \textbf{Machine Learning Pipeline:} Multiple trained models that classify travel personalities, predict user preferences, and recommend cities based on input features.
-\end{enumerate}
-
-The system shall enable users to:
-\begin{itemize}
-\item Complete a personality assessment questionnaire using a Likert scale interface.
-\item Receive AI-driven travel recommendations tailored to their personality profile.
-\item Visualize travel destinations on an interactive globe.
-\item Manage and organize trip itineraries and travel images.
-\item Filter recommendations based on climate preferences and travel styles.
+\item[\textbf{BG-3:}] Improve operational efficiency for future expansion by modularizing ML services and dataset governance.
+\begin{itemize}[nosep]
+  \item \textbf{BG-3.1:} Centralize dataset updates (attractions, vectors) with versioning.
+  \item \textbf{BG-3.2:} Provide measurable regression tests tied to REQ identifiers.
 \end{itemize}
-
-\section{References}
-\begin{itemize}
-\item Karl E. Wiegers, ``Software Requirements Specifications: What, Why, and How,'' 2003.
-\item IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications.
-\item REST API Design Rulebook by Mark Masse, O'Reilly Media, 2011.
-\item Keras Documentation: \texttt{https://keras.io}
-\item Flask Documentation: \texttt{https://flask.palletsprojects.com}
-\item React Documentation: \texttt{https://react.dev}
+\item[\textbf{BG-4:}] Support academic and industry demonstration outcomes (capstone evaluation readiness).
+\begin{itemize}[nosep]
+  \item \textbf{BG-4.1:} Deliver reproducible build/run instructions and documented APIs.
+  \item \textbf{BG-4.2:} Provide defensible evaluation artifacts (tests, screenshots, traceability matrix).
 \end{itemize}
-
-% Overall Description
-\chapter{Overall Description}
-
-\section{Product Perspective}
-Bon Voyage operates as a standalone web application with a three-tier architecture. The system is designed as an independent product but may integrate with third-party travel APIs and geographical databases in future iterations. The application functions without dependence on existing systems but may benefit from integration with travel booking platforms and weather services.
-
-The architecture consists of:
-\begin{itemize}
-\item \textbf{Presentation Layer:} React-based Single Page Application (SPA) deployed on a web server.
-\item \textbf{Application Layer:} Python Flask backend providing REST API endpoints and model orchestration.
-\item \textbf{Data Layer:} Machine learning models, training datasets, and user preference storage.
-\end{itemize}
-
-\section{Product Functions}
-The primary functions of the Bon Voyage system are:
-
-\begin{enumerate}
-\item \textbf{User Assessment and Personality Classification:} Administer a multi-question Likert-scale questionnaire to users and classify their travel personality profile using machine learning models trained on travel personality data.
-
-\item \textbf{Personalized Recommendation Engine:} Generate customized city and travel destination recommendations based on user personality profiles, preferences, travel style, and climate preferences.
-
-\item \textbf{Interactive Visualization:} Display recommended destinations on a dynamic, interactive 3D globe with filtering and detail capabilities.
-
-\item \textbf{Trip Planning and Itinerary Management:} Enable users to create, modify, and organize travel itineraries with support for image uploads, activity scheduling, and duration planning.
-
-\item \textbf{Image Management:} Provide functionality for users to upload, organize, and manage travel-related images with categorization by trip or destination.
-
-\item \textbf{Climate-Based Filtering:} Allow users to filter travel recommendations based on preferred climate conditions (e.g., tropical, temperate, arid) using day/night classification and climate analytics.
-\end{enumerate}
-
-\section{User Classes and Characteristics}
-Bon Voyage serves the following user classes:
-
-\begin{itemize}
-\item \textbf{Individual Travelers (Primary Users):} Persons aged 18 and above planning personal or group vacations. These users have varying levels of technical proficiency and travel experience.
-
-\item \textbf{Travel Planners and Coordinators:} Professionals who plan travel itineraries for groups or organizations. These users require advanced filtering and organization capabilities.
-
-\item \textbf{Adventure Seekers:} Users interested in active, experiential travel who value personalization and AI-driven discovery.
-
-\item \textbf{Leisure Travelers:} Users seeking relaxation-focused destinations who benefit from climate and comfort-based recommendations.
-
-\item \textbf{System Administrators:} Personnel responsible for system maintenance, data updates, and model retraining. These users possess technical expertise.
-\end{itemize}
-
-Each user class has distinct needs and interaction patterns with the system. The system shall support concurrent usage by multiple user classes without degradation of performance.
-
-\section{Operating Environment}
-The Bon Voyage application operates within the following environment:
-
-\begin{itemize}
-\item \textbf{Frontend Platform:} Modern web browsers supporting HTML5, CSS3, and ES6 JavaScript. Supported browsers include Chrome (version 90+), Firefox (version 88+), Safari (version 14+), and Edge (version 90+).
-
-\item \textbf{Backend Platform:} Linux or Windows servers running Python 3.9 or later with Flask 2.0+.
-
-\item \textbf{Database:} JSON-based data storage with support for relational schemas. The system utilizes pre-computed model files and state vectors for efficient recommendation generation.
-
-\item \textbf{Machine Learning Framework:} Keras 3.0+ with TensorFlow backend for model inference and predictions.
-
-\item \textbf{Network Requirements:} HTTP/HTTPS connectivity between client and server. The system requires internet connectivity for initial data downloads but may support offline mode for cached recommendations in future versions.
-
-\item \textbf{Storage:} File system storage for model artifacts, training datasets, user-uploaded images, and application data. Minimum 500 MB storage capacity for models and datasets.
-\end{itemize}
-
-\section{Design and Implementation Constraints}
-The following constraints apply to the design and implementation of Bon Voyage:
-
-\begin{itemize}
-\item \textbf{Model Availability:} The system is constrained by the availability and accuracy of pre-trained machine learning models. Model retraining shall occur quarterly or upon notification of performance degradation.
-
-\item \textbf{Data Dependency:} The system depends on the accuracy and completeness of travel personality data, city metadata, climate classifications, and geographical information.
-
-\item \textbf{Technology Stack Constraints:} The frontend shall use React with TypeScript. The backend shall use Python with Flask. Changes to this stack require approval from the architecture review board.
-
-\item \textbf{Response Time Constraints:} Recommendation queries shall complete within 3 seconds to provide acceptable user experience. Model inference optimizations may be required to meet this constraint.
-
-\item \textbf{Data Privacy and Compliance:} The system shall comply with applicable data protection regulations including GDPR and CCPA. User data retention policies shall be defined and enforced.
-
-\item \textbf{Scalability Limitations:} The current architecture supports up to 10,000 concurrent users. Horizontal scaling via API load balancing may be required for higher concurrency.
-
-\item \textbf{Browser Compatibility:} The frontend shall not use proprietary browser features and shall maintain compatibility across all supported browsers without feature degradation.
-\end{itemize}
-
-\section{User Documentation}
-The following user documentation shall be provided:
-
-\begin{itemize}
-\item \textbf{User Guide:} Comprehensive guide covering application navigation, questionnaire completion, recommendation interpretation, and itinerary management.
-
-\item \textbf{FAQ Document:} Frequently asked questions addressing common user concerns and troubleshooting steps.
-
-\item \textbf{API Documentation:} RESTful API specification for developers integrating with Bon Voyage services.
-
-\item \textbf{Administrator Manual:} Technical documentation for system administrators covering deployment, configuration, and maintenance procedures.
-
-\item \textbf{Video Tutorials:} Screen capture videos demonstrating primary user workflows including personality assessment, recommendation review, and itinerary planning.
-\end{itemize}
-
-All documentation shall be maintained in accessible formats and updated coincident with software releases.
-
-\section{Assumptions and Dependencies}
-The following assumptions and dependencies are identified:
-
-\begin{itemize}
-\item \textbf{Assumption 1:} Users will have stable internet connectivity during application usage.
-
-\item \textbf{Assumption 2:} Machine learning models remain accurate for travel personality classification with minimal performance degradation over time.
-
-\item \textbf{Assumption 3:} User-provided image files are in standard web-compatible formats (JPEG, PNG, WebP).
-
-\item \textbf{Assumption 4:} The travel destination database remains relatively stable with seasonal variations in weather and availability.
-
-\item \textbf{Dependency 1:} The system depends on the Keras framework remaining compatible with the TensorFlow backend.
-
-\item \textbf{Dependency 2:} The system depends on Flask continuing to support REST API development patterns.
-
-\item \textbf{Dependency 3:} The system depends on React ecosystem stability and continued support for React 18.0+.
-
-\item \textbf{Dependency 4:} The system depends on availability of accurate geographical and climate data from source providers.
-\end{itemize}
-
-% External Interface Requirements
-\chapter{External Interface Requirements}
-
-\section{User Interfaces}
-\subsection{Web Application Interface}
-The user interface shall consist of the following primary screens and components:
-
-\begin{enumerate}
-\item \textbf{Landing Page:} Welcome screen featuring application overview, call-to-action buttons, and feature highlights. This screen shall load within 2 seconds and be mobile-responsive.
-
-\item \textbf{Personality Assessment Interface:} Multi-step questionnaire displaying 20-30 Likert-scale questions organized into logical sections. The interface shall provide progress indication and support navigation between questions without data loss.
-
-\item \textbf{Recommendation Display Screen:} Interactive 3D globe visualization showing recommended destinations. The interface shall support zooming, rotation, filtering by category, and destination detail modals.
-
-\item \textbf{Itinerary Management Dashboard:} Screen enabling users to view, create, edit, and delete travel itineraries. The interface shall display trip duration, destination list, and image gallery.
-
-\item \textbf{Trip Details View:} Detailed view of individual trips showing itinerary activities, uploaded images, user notes, and estimated costs.
-
-\item \textbf{Image Gallery:} Photo management interface enabling users to upload, organize, tag, and delete travel photos with support for batch operations.
-
-\item \textbf{User Profile Screen:} Screen displaying user preferences, personality profile results, saved destinations, and account settings.
-\end{enumerate}
-
-All user interface elements shall follow accessibility standards (WCAG 2.1 Level AA) with proper contrast ratios, alt text for images, and keyboard navigation support.
-
-\subsection{Interface Design Standards}
-\begin{itemize}
-\item Consistent typography using Helvetica or system default sans-serif fonts.
-\item Color palette emphasizing blues and greens with sufficient contrast for readability.
-\item Responsive design supporting screen sizes from 320px (mobile) to 2560px (ultra-wide displays).
-\item Consistent button styling with visual feedback for hover and active states.
-\item Loading indicators and error messaging for all asynchronous operations.
-\end{itemize}
-
-\section{Hardware Interfaces}
-The Bon Voyage application shall interface with the following hardware components:
-
-\begin{itemize}
-\item \textbf{Client Computer or Mobile Device:} Standard workstations, laptops, tablets, and smartphones with web browser support. Minimum recommended specifications: 2 GB RAM, 1.5 GHz processor.
-
-\item \textbf{Server Hardware:} Web server and application server capable of handling REST API requests. Minimum specifications: 4 GB RAM, 2 GHz dual-core processor, 100 Mbps network connection.
-
-\item \textbf{Storage Devices:} Mass storage systems for model artifacts, training data, and user-generated content. Minimum 1 TB storage capacity for production deployment.
-
-\item \textbf{Input Devices:} Keyboard, mouse, touchscreen, or touch pad for user interaction.
-
-\item \textbf{Output Devices:} Monitor or display screen for visual feedback and information presentation.
-
-\item \textbf{Network Interface:} Ethernet or wireless network adapter for internet connectivity.
-\end{itemize}
-
-\section{Software Interfaces}
-The Bon Voyage application shall interface with the following software systems and frameworks:
-
-\begin{itemize}
-\item \textbf{Keras Neural Network Framework:} The system shall use Keras 3.0+ with TensorFlow backend for model inference. The interface shall support loading pre-trained model files and executing predictions on input feature vectors.
-
-\item \textbf{Python Flask Framework:} The backend API shall be implemented using Flask 2.0+ with support for RESTful endpoint design, middleware integration, and error handling.
-
-\item \textbf{React JavaScript Library:} The frontend application shall use React 18.0+ with TypeScript for component-based UI development and state management.
-
-\item \textbf{Node.js Build Tools:} The frontend build process shall use Vite 4.0+ for development server and production bundling.
-
-\item \textbf{Database Systems:} JSON-formatted data files shall serve as the primary data store. The system shall support integration with relational databases (PostgreSQL, MySQL) in future versions.
-
-\item \textbf{Third-Party APIs (Future):} The system shall support integration with travel booking platforms, weather services, and geographical data providers through standardized REST interfaces.
-\end{itemize}
-
-\section{Communications Interfaces}
-The Bon Voyage application shall utilize the following communication protocols and interfaces:
-
-\begin{itemize}
-\item \textbf{HTTP/HTTPS Protocol:} All client-server communication shall use HTTP/1.1 or HTTP/2 over secure HTTPS (TLS 1.2+). The system shall enforce HTTPS for all production deployments.
-
-\item \textbf{REST API Endpoints:} The backend shall provide RESTful endpoints for:
-  \begin{itemize}
-  \item User personality assessment submission and retrieval
-  \item Recommendation generation and filtering
-  \item Itinerary creation, retrieval, update, and deletion
-  \item Image upload and management
-  \item User preference management
-  \end{itemize}
-
-\item \textbf{JSON Data Format:} All data exchange between client and server shall use JSON format with UTF-8 encoding.
-
-\item \textbf{WebSocket Support (Future):} Real-time notifications for recommendation updates and collaborative trip planning shall be implemented using WebSocket protocol in future releases.
-
-\item \textbf{Error Response Format:} All error responses shall include HTTP status codes, error codes, descriptive messages, and request identifiers for debugging.
-
-\item \textbf{Rate Limiting:} API rate limiting shall be implemented at 1000 requests per hour per user to prevent abuse and ensure fair resource allocation.
-\end{itemize}
-
-% System Features
-\chapter{System Features}
-
-\section{Feature 1: Personality-Based Travel Recommendation Engine}
-
-\subsection{Description and Priority}
-This feature enables users to complete a personality assessment questionnaire and receive AI-driven travel destination recommendations tailored to their personality profile. The system classifies users into personality categories based on their responses and matches them with compatible travel destinations.
-
-\textbf{Priority: HIGH} - This is the core differentiator and primary value proposition of the Bon Voyage application.
-
-\subsection{Stimulus/Response Sequences}
-
-\begin{enumerate}
-\item \textbf{Sequence 1: Initial Assessment Completion}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User navigates to personality assessment screen and completes all questionnaire items.
-  \item \textbf{Response:} System validates responses, transmits data to backend API, processes through personality classification model, and displays results with recommended destinations.
-  \item \textbf{Time Constraint:} Response generation shall complete within 3 seconds.
-  \end{itemize}
-
-\item \textbf{Sequence 2: Recommendation Filtering}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User applies filters to recommendations (e.g., climate preference, travel style, budget).
-  \item \textbf{Response:} System re-filters destination list and updates globe visualization without requiring new model inference.
-  \item \textbf{Time Constraint:} Filtering response shall be immediate (< 500ms).
-  \end{itemize}
-
-\item \textbf{Sequence 3: Destination Detail Retrieval}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User clicks on recommended destination for detailed information.
-  \item \textbf{Response:} System displays destination details including climate information, attractions, best travel season, and estimated costs.
-  \item \textbf{Time Constraint:} Detail retrieval shall complete within 1 second.
-  \end{itemize}
-\end{enumerate}
-
-\subsection{Functional Requirements}
-
-\begin{itemize}
-\item \textbf{REQ-1.1:} The system shall accept personality assessment responses in Likert scale format (1-5 range) from users.
-
-\item \textbf{REQ-1.2:} The system shall validate that all required assessment questions have been answered before processing.
-
-\item \textbf{REQ-1.3:} The system shall classify user personality into one of the following categories: Adventure Seeker, Cultural Explorer, Luxury Traveler, Nature Enthusiast, City Explorer, or Relaxation Focused.
-
-\item \textbf{REQ-1.4:} The system shall generate a set of 5-15 personalized destination recommendations ordered by compatibility score.
-
-\item \textbf{REQ-1.5:} The system shall associate each recommendation with a compatibility score (0-100) indicating alignment with user personality.
-
-\item \textbf{REQ-1.6:} The system shall support filtering recommendations by:
-  \begin{itemize}
-  \item Climate type (tropical, temperate, arid, polar)
-  \item Travel season (spring, summer, autumn, winter)
-  \item Travel duration (weekend, 1 week, 2 weeks, 1 month+)
-  \item Estimated budget (budget, moderate, premium, luxury)
-  \item Travel style (backpacking, comfort, adventure, cultural immersion)
-  \end{itemize}
-
-\item \textbf{REQ-1.7:} The system shall persist user personality profile and recommendations for future sessions.
-
-\item \textbf{REQ-1.8:} The system shall display recommendations on an interactive 3D globe visualization with city markers and information popups.
-
-\item \textbf{REQ-1.9:} The system shall allow users to save or bookmark recommendations to their profile for later review.
-
-\item \textbf{REQ-1.10:} The system shall provide explanation text describing why each destination is recommended (e.g., ``This destination matches your Adventure Seeker profile with 92\% compatibility due to your interest in outdoor activities and wildlife exploration.'').
-\end{itemize}
-
-\section{Feature 2: Trip Planning and Itinerary Management}
-
-\subsection{Description and Priority}
-This feature provides users with tools to create, organize, and manage travel itineraries. Users can plan multi-day trips, organize activities, manage budgets, upload travel photos, and share itineraries with other users.
-
-\textbf{Priority: HIGH} - Essential functionality supporting the core user workflow of converting recommendations into actionable travel plans.
-
-\subsection{Stimulus/Response Sequences}
-
-\begin{enumerate}
-\item \textbf{Sequence 1: Itinerary Creation}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User selects a recommended destination and initiates trip creation.
-  \item \textbf{Response:} System displays itinerary creation form with destination pre-filled. User specifies dates, duration, budget, and traveling companions.
-  \item \textbf{Response:} System generates suggested day-by-day itinerary based on destination popularity and activity types.
-  \item \textbf{Time Constraint:} Itinerary generation shall complete within 2 seconds.
-  \end{itemize}
-
-\item \textbf{Sequence 2: Activity Scheduling}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User adds, modifies, or deletes activities from itinerary.
-  \item \textbf{Response:} System updates itinerary, recalculates costs, and validates scheduling conflicts.
-  \item \textbf{Response:} System persists changes in real-time.
-  \end{itemize}
-
-\item \textbf{Sequence 3: Image Upload and Organization}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User uploads travel photos during or after trip.
-  \item \textbf{Response:} System stores images, extracts metadata, generates thumbnails, and enables user to organize photos by trip or date.
-  \item \textbf{Time Constraint:} Image processing shall complete within 10 seconds per image.
-  \end{itemize}
-
-\item \textbf{Sequence 4: Itinerary Sharing}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User generates shareable link or exports itinerary to PDF.
-  \item \textbf{Response:} System creates time-limited share link with specified permissions or generates formatted PDF document.
-  \end{itemize}
-\end{enumerate}
-
-\subsection{Functional Requirements}
-
-\begin{itemize}
-\item \textbf{REQ-2.1:} The system shall allow users to create new itineraries with the following required fields: destination, start date, end date, number of travelers, estimated budget.
-
-\item \textbf{REQ-2.2:} The system shall validate that end date is after start date and that trip duration does not exceed 365 days.
-
-\item \textbf{REQ-2.3:} The system shall generate suggested daily activities based on destination characteristics, user interests, and optimal time allocation.
-
-\item \textbf{REQ-2.4:} The system shall allow users to customize suggested itineraries by adding, removing, or reordering activities.
-
-\item \textbf{REQ-2.5:} The system shall track estimated costs per activity and provide daily and trip-level budget summaries.
-
-\item \textbf{REQ-2.6:} The system shall support upload of travel photos with maximum file size of 10 MB per image.
-
-\item \textbf{REQ-2.7:} The system shall automatically extract photo metadata (date taken, GPS coordinates if available) and enable manual tagging and organization.
-
-\item \textbf{REQ-2.8:} The system shall store photos in compressed format while maintaining quality suitable for web viewing.
-
-\item \textbf{REQ-2.9:} The system shall allow users to add notes, costs, and duration estimates to individual activities.
-
-\item \textbf{REQ-2.10:} The system shall support generation of shareable links with optional password protection valid for 30 days.
-
-\item \textbf{REQ-2.11:} The system shall support export of itineraries to PDF format with formatting suitable for printing.
-
-\item \textbf{REQ-2.12:} The system shall allow users to mark itineraries as completed and archive them for historical reference.
-
-\item \textbf{REQ-2.13:} The system shall support duplication of existing itineraries for planning similar trips.
-
-\item \textbf{REQ-2.14:} The system shall display list of all user itineraries with sorting options (date, destination, duration, budget).
-\end{itemize}
-
-\section{Feature 3: Climate-Based Filtering and Image Classification}
-
-\subsection{Description and Priority}
-This feature enables filtering of travel recommendations based on climate preferences through analysis of day/night patterns and environmental characteristics. The system uses a trained CNN model to classify climate types from images.
-
-\textbf{Priority: MEDIUM} - Enhances recommendation personalization and enables users to filter for comfort-based travel experiences.
-
-\subsection{Stimulus/Response Sequences}
-
-\begin{enumerate}
-\item \textbf{Sequence 1: Climate Filter Application}
-  \begin{itemize}
-  \item \textbf{Stimulus:} User selects climate preference from filter options.
-  \item \textbf{Response:} System filters recommendations to include only destinations matching selected climate.
-  \item \textbf{Time Constraint:} Filter application shall complete within 500 ms.
-  \end{itemize}
-
-\item \textbf{Sequence 2: Day/Night Classification Analysis}
-  \begin{itemize}
-  \item \textbf{Stimulus:} System processes destination images through CNN model for climate classification.
-  \item \textbf{Response:} System updates destination climate attributes based on model output.
-  \end{itemize}
-\end{enumerate}
-
-\subsection{Functional Requirements}
-
-\begin{itemize}
-\item \textbf{REQ-3.1:} The system shall classify destination climate into categories: Tropical, Temperate, Arid, Polar, or Mixed.
-
-\item \textbf{REQ-3.2:} The system shall use a pre-trained CNN model for image-based climate classification with minimum 85\% accuracy.
-
-\item \textbf{REQ-3.3:} The system shall allow users to filter recommendations by climate preference.
-
-\item \textbf{REQ-3.4:} The system shall provide climate information including average temperature, humidity, precipitation, and seasonal variations.
-
-\item \textbf{REQ-3.5:} The system shall analyze day/night image characteristics to determine optimal travel periods for outdoor activities.
-
-\item \textbf{REQ-3.6:} The system shall display climate warnings (e.g., ``Typhoon season: June-November'') for affected destinations during unfavorable periods.
-\end{itemize}
-
-% Other Nonfunctional Requirements
-\chapter{Other Nonfunctional Requirements}
-
-\section{Performance Requirements}
-
-\begin{itemize}
-\item \textbf{NFREQ-1.1:} Personality assessment processing shall complete within 3 seconds after form submission.
-
-\item \textbf{NFREQ-1.2:} Recommendation filtering shall complete within 500 milliseconds.
-
-\item \textbf{NFREQ-1.3:} Landing page and initial screen load shall complete within 2 seconds on connections with minimum 3 Mbps download speed.
-
-\item \textbf{NFREQ-1.4:} API endpoints shall respond within 1 second for 95\% of requests under normal operating conditions.
-
-\item \textbf{NFREQ-1.5:} Image upload processing shall complete within 10 seconds per image (including compression and thumbnail generation).
-
-\item \textbf{NFREQ-1.6:} The system shall support concurrent processing of at least 100 personality assessments simultaneously without performance degradation.
-
-\item \textbf{NFREQ-1.7:} Memory usage of the backend application shall not exceed 2 GB under normal load conditions.
-
-\item \textbf{NFREQ-1.8:} Model inference latency shall not exceed 1 second for single prediction requests.
-
-\item \textbf{NFREQ-1.9:} Database queries shall complete within 500 milliseconds for 99\% of operations.
-
-\item \textbf{NFREQ-1.10:} The globe visualization shall maintain 30+ frames per second on standard desktop hardware when rendering 50+ destination markers.
-\end{itemize}
-
-\section{Safety Requirements}
-
-\begin{itemize}
-\item \textbf{NFREQ-2.1:} The system shall prevent unauthorized access to user personal data through implementation of access controls and authentication.
-
-\item \textbf{NFREQ-2.2:} The system shall validate all user input to prevent injection attacks (SQL injection, XSS attacks, command injection).
-
-\item \textbf{NFREQ-2.3:} The system shall implement automatic session timeout after 30 minutes of inactivity, requiring re-authentication.
-
-\item \textbf{NFREQ-2.4:} The system shall provide data recovery mechanisms to prevent data loss from application crashes or server failures.
-
-\item \textbf{NFREQ-2.5:} The system shall maintain audit logs of all significant user actions and system events for security analysis.
-
-\item \textbf{NFREQ-2.6:} The system shall disable client-side caching of sensitive user data.
-
-\item \textbf{NFREQ-2.7:} The system shall support account recovery through verified email addresses or security questions.
-
-\item \textbf{NFREQ-2.8:} The system shall enforce password complexity requirements: minimum 8 characters, including uppercase, lowercase, numbers, and special characters.
-\end{itemize}
-
-\section{Security Requirements}
-
-\begin{itemize}
-\item \textbf{NFREQ-3.1:} All data transmission shall use HTTPS with TLS 1.2 or higher encryption.
-
-\item \textbf{NFREQ-3.2:} User passwords shall be hashed using bcrypt or equivalent with cost factor of at least 12.
-
-\item \textbf{NFREQ-3.3:} API authentication shall use token-based authentication (JWT) with expiration times of 1 hour for access tokens.
-
-\item \textbf{NFREQ-3.4:} Refresh tokens shall have expiration time of 30 days and shall be stored securely using HttpOnly cookies.
-
-\item \textbf{NFREQ-3.5:} Cross-Origin Resource Sharing (CORS) shall be configured to allow only authorized domains.
-
-\item \textbf{NFREQ-3.6:} The system shall implement rate limiting to prevent brute force attacks: maximum 5 login attempts per 15-minute window per IP address.
-
-\item \textbf{NFREQ-3.7:} Sensitive environment variables (API keys, database credentials) shall be stored securely and not committed to version control.
-
-\item \textbf{NFREQ-3.8:} The system shall encrypt sensitive user data at rest (personal information, payment details if supported).
-
-\item \textbf{NFREQ-3.9:} The system shall support two-factor authentication (2FA) using time-based one-time passwords (TOTP) or SMS delivery.
-
-\item \textbf{NFREQ-3.10:} API endpoints shall implement input validation and output encoding to prevent injection vulnerabilities.
-
-\item \textbf{NFREQ-3.11:} Database access shall be restricted to authorized application accounts with minimal required privileges.
-
-\item \textbf{NFREQ-3.12:} Security patches and updates shall be applied within 30 days of release for critical vulnerabilities.
-\end{itemize}
-
-\section{Software Quality Attributes}
-
-\begin{itemize}
-\item \textbf{NFREQ-4.1 Usability:} The system shall achieve a System Usability Scale (SUS) score of at least 70 points as determined by user testing with minimum 20 participants.
-
-\item \textbf{NFREQ-4.2 Usability:} All primary user workflows shall be completable within 5 minutes by users without prior application experience.
-
-\item \textbf{NFREQ-4.3 Reliability:} The system shall achieve 99.5\% uptime over any 30-day period, excluding scheduled maintenance windows.
-
-\item \textbf{NFREQ-4.4 Reliability:} System failures shall be detected and logged automatically for post-incident analysis.
-
-\item \textbf{NFREQ-4.5 Maintainability:} Code shall follow established style guides with cyclomatic complexity not exceeding 10 per function.
-
-\item \textbf{NFREQ-4.6 Maintainability:} Unit test coverage shall exceed 80\% for critical business logic.
-
-\item \textbf{NFREQ-4.7 Maintainability:} All code contributions shall be reviewed by minimum one team member before merge.
-
-\item \textbf{NFREQ-4.8 Portability:} The application shall run without modification on Windows, macOS, and Linux servers.
-
-\item \textbf{NFREQ-4.9 Portability:} The frontend shall render correctly on browsers: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+.
-
-\item \textbf{NFREQ-4.10 Scalability:} The system architecture shall support horizontal scaling of API servers and machine learning inference services.
-
-\item \textbf{NFREQ-4.11 Scalability:} The system shall support growth to 100,000 registered users without architectural changes.
-
-\item \textbf{NFREQ-4.12 Accessibility:} The application shall conform to WCAG 2.1 Level AA accessibility guidelines.
-\end{itemize}
-
-\section{Business Rules}
-
-\begin{itemize}
-\item \textbf{BR-1:} Free tier users shall have access to the core personality assessment and recommendation features with maximum 3 itinerary creations per month.
-
-\item \textbf{BR-2:} Premium tier users (subscription-based) shall have unlimited itinerary creation, advanced filtering, and priority support.
-
-\item \textbf{BR-3:} User account data shall be retained for 12 months after account deletion, then permanently purged.
-
-\item \textbf{BR-4:} The system shall not make recommendations for destinations in countries under travel advisories or sanctions.
-
-\item \textbf{BR-5:} Recommendations shall be updated quarterly or more frequently when significant destination information changes.
-
-\item \textbf{BR-6:} User-generated content (photos, reviews) shall undergo moderation within 48 hours of submission.
-
-\item \textbf{BR-7:} Machine learning models shall be retrained quarterly using updated training data.
-
-\item \textbf{BR-8:} Shared itineraries shall expire after 30 days unless explicitly renewed by the creator.
-
-\item \textbf{BR-9:} The system shall enforce a maximum file size of 10 MB per image upload.
-
-\item \textbf{BR-10:} System administrators shall maintain backup copies of all critical data with minimum weekly backup frequency.
-\end{itemize}
-
-% Other Requirements
-\chapter{Other Requirements}
-
-\section{Legal and Regulatory Requirements}
-
-The Bon Voyage application shall comply with applicable legal and regulatory requirements including:
-
-\begin{itemize}
-\item \textbf{Data Protection:} Compliance with General Data Protection Regulation (GDPR) for EU users and California Consumer Privacy Act (CCPA) for California residents.
-
-\item \textbf{Terms of Service:} Establishment and enforcement of terms of service governing user conduct and intellectual property rights.
-
-\item \textbf{Privacy Policy:} Clear privacy policy documenting data collection, usage, and retention practices.
-
-\item \textbf{Intellectual Property:} Protection of proprietary machine learning models and algorithms through appropriate legal mechanisms.
-
-\item \textbf{Third-Party Licenses:} Compliance with open-source software licenses used in the project (e.g., MIT, Apache 2.0).
-
-\item \textbf{Accessibility Requirements:} Compliance with Americans with Disabilities Act (ADA) requirements for digital accessibility.
-\end{itemize}
-
-\section{Technical Debt and Future Considerations}
-
-\begin{itemize}
-\item Implementation of real-time collaborative itinerary editing using WebSocket technology.
-
-\item Integration with external travel booking platforms for seamless reservation capabilities.
-
-\item Mobile native applications for iOS and Android platforms.
-
-\item Advanced personalization through integration of social networking features.
-
-\item Machine learning model optimization for improved inference performance on edge devices.
-
-\item Database migration from JSON files to relational database for improved scalability.
-
-\item Implementation of offline mode for cached recommendations and previously loaded content.
-
-\item Voice interface support for accessibility and hands-free operation.
-
-\item Integration with weather services for real-time climate information.
-
-\item Gamification features including achievement badges and travel milestones.
-\end{itemize}
-
-% Appendices
-\appendix
-
-\chapter{Glossary}
-
-\begin{description}
-\item[API] Application Programming Interface---standardized interface for software communication.
-
-\item[CNN] Convolutional Neural Network---deep learning model for image classification.
-
-\item[CORS] Cross-Origin Resource Sharing---security mechanism for allowing cross-domain requests.
-
-\item[GDPR] General Data Protection Regulation---European Union data protection regulation.
-
-\item[HTTPS] Hypertext Transfer Protocol Secure---encrypted protocol for web communication.
-
-\item[JWT] JSON Web Token---token-based authentication standard.
-
-\item[Keras] High-level neural networks API built on TensorFlow.
-
-\item[Likert Scale] Ordinal response scale used in questionnaires (typically 1-5 range).
-
-\item[REST] Representational State Transfer---architectural style for web API design.
-
-\item[SPA] Single Page Application---web application that loads content dynamically without page reloads.
-
-\item[TLS] Transport Layer Security---cryptographic protocol for secure communications.
-
-\item[WCAG] Web Content Accessibility Guidelines---standards for web accessibility.
-
-\item[WebSocket] Protocol enabling bidirectional communication over single TCP connection.
-
-\item[XSS] Cross-Site Scripting---security vulnerability allowing injection of malicious scripts.
 \end{description}
 
-\chapter{Analysis Models}
+\section{Enumerated Functional Requirements}
 
-\section{Data Flow Diagram}
+\begin{longtable}{|p{0.12\textwidth}|p{0.12\textwidth}|p{0.66\textwidth}|}
+\caption{Functional requirements (priority scale: H=High, M=Medium, L=Low)\label{tab:freq}}\\
+\hline
+\textbf{REQ-ID} & \textbf{Priority} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{REQ-ID} & \textbf{Priority} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
 
-The following data flow diagram illustrates primary system processes:
+REQ-1 & H & The system shall provide a landing page that enables the user to navigate to trip planning, itinerary-related flows, and photo management. \\
+\hline
+REQ-2 & H & The system shall administer a 12-question travel personality questionnaire with one question per screen and navigation controls for previous, next, and submit actions. \\
+\hline
+REQ-3 & H & The system shall capture each survey response on a consistent 5-point Likert alignment scale mapped to model-expected integer values (1--5 per question). \\
+\hline
+REQ-4 & H & The system shall submit the 12 answers to the backend personality endpoint and display the predicted personality label returned by the model. \\
+\hline
+REQ-5 & H & The system shall request recommended cities for the predicted personality and display up to five city names. \\
+\hline
+REQ-6 & H & The system shall allow the user to select exactly one recommended city and transfer the selection (city + personality context) to the itinerary experience. \\
+\hline
+REQ-7 & H & The system shall request itinerary generation from the backend given city, personality, and trip duration in days (within allowed bounds). \\
+\hline
+REQ-8 & H & The system shall render returned itinerary content as ordered day-by-day schedules with time, attraction name, and place/category fields. \\
+\hline
+REQ-9 & M & The system shall allow the user to adjust trip length within supported bounds and refresh itinerary results accordingly. \\
+\hline
+REQ-10 & M & The system shall display meaningful error messages when personality prediction, city recommendation, or itinerary generation fails. \\
+\hline
+REQ-11 & H & The system shall provide an image upload workflow that accepts supported formats (at minimum PNG/JPEG) for downstream processing. \\
+\hline
+REQ-12 & H & The system shall invoke a day/night image classification service and display results (label and confidence/probability as provided) for each image. \\
+\hline
+REQ-13 & M & The system shall support batch classification of multiple images in a single request where the API contract permits multi-file submission. \\
+\hline
+REQ-14 & M & The system shall provide a ``plan trip'' informational route that remains consistent with brand styling and supports navigation back to home. \\
+\hline
+REQ-15 & L & The system shall retain UX affordances (progress indication during multi-step flows) sufficient for users to understand completion state during the survey. \\
+\hline
+REQ-16 & M & The system shall provide an itinerary landing experience for invalid deep-links (missing city/personality context) that guides the user back to the quiz rather than failing silently. \\
+\hline
+\end{longtable}
+
+\section{Enumerated Non-functional Requirements}
+
+\begin{longtable}{|p{0.12\textwidth}|p{0.12\textwidth}|p{0.66\textwidth}|}
+\caption{Non-functional requirements (continuation of REQ numbering)\label{tab:nfreq}}\\
+\hline
+\textbf{REQ-ID} & \textbf{Priority} & \textbf{Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{REQ-ID} & \textbf{Priority} & \textbf{Description} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+REQ-17 & H & The web client shall load primary routes under typical broadband conditions without unacceptable blocking interactions (interactive usability target for lab demos: \(\le 3\) seconds for initial shell on modern hardware and local dev server). \\
+\hline
+REQ-18 & M & The system shall be deployable as a separated frontend (static build) and a backend service behind a reverse proxy for production demonstration. \\
+\hline
+REQ-19 & H & The backend shall expose JSON APIs for personality inference, city recommendation, itinerary creation, and day/night classification with consistent error bodies for client handling. \\
+\hline
+REQ-20 & H & The backend shall validate input shapes and bounds (e.g., 12 answers, day counts within permitted range) before invoking ML models. \\
+\hline
+REQ-21 & M & The system shall tolerate missing optional artifacts with explicit, administrator-facing diagnostics (e.g., missing itinerary dataset file returns a service-unavailable style response). \\
+\hline
+REQ-22 & H & Uploaded media shall be handled with least-privilege storage assumptions for coursework deployments (no unnecessary persistence beyond lab requirements unless explicitly enabled). \\
+\hline
+REQ-23 & M & The itinerary generator shall fail with explicit user-relevant messages if a selected city has no attraction records in the configured dataset. \\
+\hline
+REQ-24 & M & The system shall remain maintainable via modular boundaries: frontend feature modules, backend route modules, ML assets stored under versioned directories. \\
+\hline
+REQ-25 & L & Documentation shall include runnable setup steps for Windows/Linux lab machines with Python virtual environments. \\
+\hline
+REQ-26 & M & Logging on the server shall print model load confirmations for critical assets to aid troubleshooting without exposing secrets. \\
+\hline
+REQ-27 & M & Hyperlinks in the UI shall be keyboard operable; form controls shall provide labels suitable for accessibility baseline conformance in academic demos. \\
+\hline
+\end{longtable}
+
+% =============================================================================
+\chapter{Use Cases}
+% =============================================================================
+
+\section{Stakeholders}
+
+Stakeholders are limited to human roles and organizations that materially influence or depend on the system outcomes.
 
 \begin{itemize}
-\item \textbf{User Input Processing:} User responses $\rightarrow$ Frontend validation $\rightarrow$ API transmission $\rightarrow$ Backend processing.
-
-\item \textbf{Model Inference Pipeline:} Feature extraction $\rightarrow$ Model loading $\rightarrow$ Prediction generation $\rightarrow$ Post-processing $\rightarrow$ Response formatting.
-
-\item \textbf{Recommendation Storage:} Database query $\rightarrow$ Results aggregation $\rightarrow$ Ranking and filtering $\rightarrow$ Client-side visualization.
-
-\item \textbf{Image Processing Pipeline:} File upload $\rightarrow$ Validation $\rightarrow$ Compression $\rightarrow$ Storage $\rightarrow$ Metadata extraction.
+\item \textbf{Traveller (end user):} completes the questionnaire, reviews recommendations, selects a destination, reviews itineraries, and may use photo tools.
+\item \textbf{Course instructor / academic evaluator:} assesses engineering rigor, documentation, reproducibility, and demonstration clarity.
+\item \textbf{Project supervisor (faculty mentor):} advises scope, validates progress milestones, and aligns deliverables with department rubrics.
+\item \textbf{Institution (department / college):} owns ethical review norms, data usage policies for coursework projects, and demonstration guidelines.
+\item \textbf{Future travel partner organization (hypothetical):} could license APIs for itinerary and ranking services in a commercial extension (not implemented now, but relevant for scope boundaries).
 \end{itemize}
+
+\section{Actors and Goals}
+
+\textbf{Initiating actors:}
+\begin{itemize}[nosep]
+\item Traveller (initiates planning quiz, selects city, requests itinerary, uploads images).
+\end{itemize}
+
+\textbf{Participating actors:}
+\begin{itemize}[nosep]
+\item ML Inference Services (personality SVM pipeline, city recommender scoring, itinerary generator, CNN day/night classifier).
+\item Static Hosting / Dev Server (serves built web assets in production-style demos).
+\end{itemize}
+
+\textbf{Goals of initiating actors:}
+\begin{itemize}[nosep]
+\item \textbf{G1:} Obtain a personality-aligned city shortlist quickly.
+\item \textbf{G2:} Convert a destination choice into a day-by-day plan for a chosen duration.
+\item \textbf{G3:} Organize travel photography using supported automated labels.
+\item \textbf{G4:} Recover gracefully from failures with actionable messaging.
+\end{itemize}
+
+\section{Use Case Diagram}
+
+Figure~\ref{fig:ucd} presents a use-case diagram at an overview level. Detailed scenarios are elaborated through tables and sequence diagrams in subsequent sections.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  actor/.style={draw,rounded corners,minimum width=2.8cm,minimum height=1.1cm,align=center},
+  usecase/.style={ellipse,draw,minimum width=3.2cm,minimum height=1.1cm,align=center},
+  node distance=1.6cm]
+\node[actor] (trav) {Traveller};
+\node[usecase, right=4.2cm of trav, yshift=2.2cm] (uc1) {Complete\\personality quiz};
+\node[usecase, right=4.2cm of trav, yshift=0.3cm] (uc2) {View city\\recommendations};
+\node[usecase, right=4.2cm of trav, yshift=-1.6cm] (uc3) {Generate itinerary\\for chosen city};
+\node[usecase, right=8.8cm of trav, yshift=0.3cm] (uc4) {Upload \& classify\\day/night photos};
+\draw[->,thick] (trav) -- (uc1);
+\draw[->,thick] (trav) -- (uc2);
+\draw[->,thick] (trav) -- (uc3);
+\draw[->,thick] (trav) -- (uc4);
+\end{tikzpicture}
+\caption{High-level use-case diagram for Bon Voyage (conceptual).}
+\label{fig:ucd}
+\end{figure}
+
+\textbf{Primary scenario UC-P1 (happy path: plan + itinerary):}
+\begin{enumerate}[nosep]
+\item Traveller completes \(12\) questions.
+\item System predicts travel personality.
+\item System retrieves five recommended cities.
+\item Traveller chooses a city.
+\item Traveller specifies trip length and requests itinerary.
+\item System presents day-by-day schedule blocks.
+\end{enumerate}
+
+\textbf{Extension UC-P1.E1 (dataset gap):}
+If the chosen city lacks attraction rows, the itinerary service returns an error; the UI shall surface the message and suggest changing duration or returning to selection when applicable.
+
+% =============================================================================
+\chapter{UML Diagrams}
+% =============================================================================
 
 \section{Class Diagram}
 
-Primary entities and relationships:
+Figure~\ref{fig:class} illustrates a structural view of major software entities across tiers. This model is conceptual; exact TypeScript/Python names may vary by module.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  class/.style={draw,rectangle,rounded corners,minimum width=3.6cm,minimum height=0.9cm,align=left},
+  arrow/.style={-{Latex[length=2mm]},thick}]
+\node[class] (FE) {\textbf{<<web>>}\\PlanTripPage\\-- renders Quiz};
+\node[class, below=1.1cm of FE] (API) {\textbf{<<api client>>}\\TripApiService\\+ predictPersonality()\\+ getCities()\\+ getItinerary()};
+\node[class, below=1.1cm of API] (BE) {\textbf{<<flask>>}\\AppRoutes\\+ /predict\_personality\\+ /get\_cities\\+ /get\_itinerary\\+ /classify};
+\node[class, right=4.6cm of BE] (ML) {\textbf{<<ml>>}\\ModelArtifacts\\(SVM, scaler)\\CNN, ItineraryGen};
+
+\draw[arrow] (FE) -- node[left,align=center]{uses} (API);
+\draw[arrow] (API) -- node[left,align=center]{HTTP JSON} (BE);
+\draw[arrow] (BE) -- node[above,align=center]{loads / calls} (ML);
+\end{tikzpicture}
+\caption{High-level conceptual class diagram across frontend, API client, backend routes, and ML artifacts.}
+\label{fig:class}
+\end{figure}
+
+\section{Activity Diagram}
+
+Figure~\ref{fig:act} captures the itinerary decision flow after the quiz completes.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  startstop/.style={draw,rounded corners,minimum width=3.2cm,minimum height=0.9cm,align=center},
+  proc/.style={draw,rectangle,minimum width=3.5cm,minimum height=0.9cm,align=center},
+  decision/.style={draw,diamond,aspect=2,minimum width=2.8cm,align=center},
+  arrow/.style={-{Latex[length=2mm]},thick}]
+\node[startstop] (s) {Personality available};
+\node[proc, below=0.9cm of s] (a) {Fetch recommended cities};
+\node[decision, below=0.9cm of a] (d) {User selects city?};
+\node[proc, below left=1.1cm and 0.9cm of d] (x) {Show error / stay on selection};
+\node[proc, below right=1.1cm and 0.9cm of d] (b) {Request itinerary JSON};
+\node[startstop, below=1.0cm of b] (e) {Render day-by-day plan};
+
+\draw[arrow] (s) -- (a);
+\draw[arrow] (a) -- (d);
+\draw[arrow] (d) -- node[above left]{No} (x);
+\draw[arrow] (d) -- node[above right]{Yes} (b);
+\draw[arrow] (b) -- (e);
+\end{tikzpicture}
+\caption{Simplified activity diagram for post-quiz city selection and itinerary generation.}
+\label{fig:act}
+\end{figure}
+
+\section{Sequence Diagram}
+
+Figure~\ref{fig:seq} summarizes message exchanges for itinerary retrieval.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  lifeline/.style={draw,minimum height=5.5cm},
+  box/.style={draw,minimum width=1.25cm,minimum height=0.55cm,align=center}]
+\node[box] (U) {User};
+\node[box, right=3.0cm of U] (W) {Web UI};
+\node[box, right=3.0cm of W] (S) {Flask API};
+\node[box, right=3.0cm of S] (M) {Itinerary\\Generator};
+
+\draw[lifeline,dotted] (U.south)+(0,-0.15) -- ($(U.south)+(0,-5.2)$);
+\draw[lifeline,dotted] (W.south)+(0,-0.15) -- ($(W.south)+(0,-5.2)$);
+\draw[lifeline,dotted] (S.south)+(0,-0.15) -- ($(S.south)+(0,-5.2)$);
+\draw[lifeline,dotted] (M.south)+(0,-0.15) -- ($(M.south)+(0,-5.2)$);
+
+\draw[-{Latex},thick] ($(U.south)+(0,-0.7)$) -- node[above]{Select city + days} ($(W.south)+(0,-0.7)$);
+\draw[-{Latex},thick] ($(W.south)+(0,-1.5)$) -- node[above]{POST /get\_itinerary} ($(S.south)+(0,-1.5)$);
+\draw[-{Latex},thick] ($(S.south)+(0,-2.4)$) -- node[above]{generate\_itinerary(...)} ($(M.south)+(0,-2.4)$);
+\draw[-{Latex},thick] ($(M.south)+(0,-3.3)$) -- node[above]{itinerary JSON} ($(S.south)+(0,-3.3)$);
+\draw[-{Latex},thick] ($(S.south)+(0,-4.2)$) -- node[above]{HTTP 200 + body} ($(W.south)+(0,-4.2)$);
+\end{tikzpicture}
+\caption{Sequence diagram sketch for itinerary retrieval (conceptual).}
+\label{fig:seq}
+\end{figure}
+
+% =============================================================================
+\chapter{Implementation}
+% =============================================================================
+
+This chapter summarizes the realization of Bon Voyage as a three-tier academic prototype: a React (Vite + TypeScript) client, a Flask backend orchestrating ML assets, and multiple offline-trained models stored under the repository \texttt{ML/} tree.
+
+\subsection*{Repository structure (informative)}
+The implementation follows a monorepo layout separating concerns:
+\textbf{\texttt{frontend/}} contains the React client with route-level screens for landing, trip planning, photo management, and itinerary display.
+\textbf{\texttt{backend/}} hosts Flask routes for inference APIs and upload/classification utilities.
+\textbf{\texttt{CNN/}} stores the day/night keras model referenced at runtime.
+\textbf{\texttt{ML/Model1/}} stores the personality classifier artifacts (\texttt{model.pkl}, \texttt{encoder.pkl}, \texttt{scaler.pkl}).
+\textbf{\texttt{ML/Model2/}} implements the vector-space city recommender backed by precomputed JSON feature bundles.
+\textbf{\texttt{ML/Model3/}} implements itinerary generation from a curated attraction table (\texttt{cleaned\_travel.csv}).
+
+\subsection*{Client implementation highlights}
+The Plan Trip experience uses a one-question-per-step pattern to reduce cognitive load. Likert interactions map deterministically to integer answers expected by the scaler and SVM. Upon submission, the UI chains personality inference and city retrieval, then offers navigation into the itinerary route with router state carrying city and personality context.
+
+The itinerary route issues a POST request with JSON fields including \texttt{city}, \texttt{days}, and \texttt{personality}. The returned payload organizes activities under keys such as \texttt{Day 1}, \texttt{Day 2}, with individual items including a human-readable clock time, an attraction name, and a short type/category string suitable for display.
+
+\subsection*{Server implementation highlights}
+Flask routes wrap numpy transforms for personality inference, call the recommender with the predicted label string, and invoke itinerary generation with validated day counts. Where datasets are missing or cities lack records, the backend returns structured JSON errors suitable for user-visible banners.
+
+\section{Screenshots and Explanations}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/landing.png}
+\caption{Landing page provides entry points for trip planning and photo management. The interactive globe visualization and primary navigation buttons enable quick access to core workflows.}
+\label{fig:shot1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/quiz_step.png}
+\caption{Personality quiz step view demonstrating one-question-per-screen flow with progress indicator (2/12), Likert scale response buttons, and navigation controls for sequential questioning.}
+\label{fig:shot2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/personality_results.png}
+\caption{Post-survey results displaying inferred travel personality (Adventure Junkie / The Thrill Seeker) and up to five recommended cities (Mumbai, Delhi, Joshimath, Badrinath, Chopta) with options to retake the survey or proceed to itinerary planning.}
+\label{fig:shot3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/itinerary.png}
+\caption{Itinerary page for a 5-day Delhi trip showing day-by-day schedule with times, attraction names, categories, and trip duration controls. Users can adjust the length (2, 3, 5, 7, 10, or 14 days) to regenerate recommendations.}
+\label{fig:shot4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/photo_management.png}
+\caption{Photo management interface showing batch classification results organized by day (5 daytime photos) and night (3 nighttime photos) categories. Each image displays the CNN-predicted label with confidence percentage for travel photography workflow assistance.}
+\label{fig:shot5}
+\end{figure}
+
+\subsection{Engineering and deployment notes}
+The implementation intentionally separates \emph{model training artifacts} from \emph{runtime inference code}. Training notebooks and batch jobs remain historical evidence for reproducibility, whereas the Flask service loads only serialized binaries and JSON configuration to avoid accidental training on critical demo paths. For coursework deployments, the team recommends using a Python virtual environment pinned to the repository \texttt{requirements.txt} (or an equivalent lockfile maintained by the team) so that NumPy and scikit-learn remain ABI-compatible with pickled objects.
+
+The Flask development server is sufficient for demonstrations, but it is not positioned as a production WSGI replacement. For staged demos, a common pattern is to place Gunicorn or Waitress behind a reverse proxy; that choice is explicitly out of scope for baseline grading but belongs in future hardening epics. Similarly, database persistence for user accounts is absent by design at this milestone.
+
+\subsection{Data governance and dataset hygiene}
+Model2 vector bundles (\texttt{zone\_vectors.json}, \texttt{city\_vectors.json}, and related mappings) underpin the recommender's behaviour. These artifacts must be updated coherently: modifying a city name in one file without propagating references will yield inconsistent rankings or empty joins during filtering. The team therefore treats dataset edits as a gated change requiring smoke tests: (a) JSON validity checks, (b) key consistency checks, and (c) a small scripted invocation of \texttt{recommend()} with known personalities.
+
+The itinerary dataset is stored as CSV for transparency and teaching value. In production, a curated database with provenance columns (source, last verified date, licensing notes) would be preferable; for academic scope, the CSV remains the authoritative demonstration store. Rows must align with column names expected by the itinerary module: city name, category label compatible with the personality-to-vector mapping, attraction name, descriptive type string, visit duration in hours, numeric rating, and best-time hints.
+
+\subsection{Error handling philosophy}
+Bon Voyage distinguishes three failure classes for user-visible behaviour. \textbf{Class I} failures arise from malformed client payloads (missing fields, wrong array lengths). These should be fast-failing with HTTP 400 and explicit messages because they indicate integration drift between UI and API contracts. \textbf{Class II} failures arise from legitimate requests that cannot be satisfied given current datasets (unknown city rows, empty joins). These should explain the situation plainly and suggest corrective navigation (choose another city, shorten horizon, or notify administrators about dataset gaps). \textbf{Class III} failures represent unexpected exceptions during model inference or IO; these should still return safe JSON errors while logging stack traces server-side for debugging.
+
+This philosophy is aligned with the product expectation that academic evaluators should observe controlled demonstrations even when data is incomplete. A demo that crashes with uncaught stack traces reduces trust and wastes evaluation time; predictable error envelopes preserve narrative continuity.
+
+\subsection{Security and privacy posture (coursework scope)}
+The SRS does not claim enterprise security certification. Nonetheless, baseline expectations apply: do not embed secrets in client bundles; treat uploads as untrusted bytes; avoid executing user-provided paths; and restrict administrative endpoints if introduced later. For day/night classification, uploaded images are transient inputs for inference in the prototype architecture; long-term retention requires explicit consent and storage policies governed by institutional review guidance.
+
+\subsection{Performance considerations and measurement protocol}
+Non-functional requirement REQ-17 references responsive interaction under typical lab conditions. A practical measurement protocol for the final demonstration includes: cold start timing for Flask model loads (printed at startup), mean round-trip latency for JSON endpoints measured using browser developer tools or \texttt{curl}, and wall-clock time for batch photo classification across increasing batch sizes. These measurements should be recorded alongside hardware details (CPU model, RAM, GPU availability) because scientific computing performance varies substantially across student machines.
+
+\subsection{Future evolution roadmap}
+Future releases could introduce authenticated user accounts, saved itineraries, collaborative planning, richer multimodal reasoning over reviews, and integration with booking providers. Each item would imply additional NFR categories (consistency, transactional integrity, PCI-adjacent concerns for payments) and must be staged explicitly rather than implied by the current prototype.
+
+\textbf{Phase 2 (Post-Capstone Enhancements):}
 \begin{itemize}
-\item \textbf{User:} Contains user profile, authentication credentials, personality profile, and preferences.
+\item \textbf{User Authentication and Accounts:} Implement JWT-based authentication with email verification, password recovery, and optional two-factor authentication. This enables persistent user profiles, saved itineraries, and personalized recommendation history across sessions.
 
-\item \textbf{PersonalityProfile:} Stores personality classification, response scores, and recommendation history.
+\item \textbf{Itinerary Persistence and Sharing:} Extend the backend with database persistence (PostgreSQL or MongoDB) to store user itineraries, enabling edit/delete workflows, version control, and time-limited shareable links with restricted access permissions.
 
-\item \textbf{Destination:} Represents travel destination with attributes (climate, attractions, costs, ratings).
+\item \textbf{Collaborative Planning:} Introduce real-time collaborative features using WebSocket connections, allowing multiple users to simultaneously view and edit shared itineraries with presence indicators and conflict resolution.
 
-\item \textbf{Itinerary:} Contains trip details, activities, budget tracking, and associated images.
+\item \textbf{Mobile Native Applications:} Develop iOS and Android native apps using React Native or Flutter, ensuring feature parity with the web client and supporting offline mode for previously downloaded itineraries and recommendations.
 
-\item \textbf{Activity:} Individual activity within itinerary with duration, cost, and description.
+\item \textbf{Enhanced Photo Management:} Integrate automatic photo clustering by location using EXIF GPS data, support batch tagging, collaborative photo albums, and AI-powered caption generation for uploaded images.
 
-\item \textbf{Image:} User-uploaded travel photo with metadata and organization tags.
+\item \textbf{Advanced ML Personalization:} Retrain personality classification models quarterly with new user data. Introduce reinforcement learning to optimize recommendations based on user feedback and booking outcomes. Implement multi-modal recommendation reasoning combining text reviews, images, and user behavior signals.
 
-\item \textbf{Recommendation:} Generated recommendation linking user to destination with compatibility score and explanation.
+\item \textbf{Third-Party Integrations:} Establish partnerships with hotel booking APIs (e.g., Booking.com, Airbnb), flight search engines (e.g., Skyscanner, Google Flights), and restaurant reservation services (e.g., OpenTable) to enable seamless end-to-end trip booking from within Bon Voyage.
+
+\item \textbf{Social Features:} Build community components including user-generated reviews, recommendation sharing, travel expert profiles, and a feed-style interface for discovering popular itineraries by personality type or destination.
 \end{itemize}
 
-\section{State Diagrams}
-
-\textbf{User Session States:}
+\textbf{Phase 3 (Scale and Commercialization):}
 \begin{itemize}
-\item Unauthenticated $\rightarrow$ Authenticating $\rightarrow$ Authenticated $\rightarrow$ Session Active $\rightarrow$ Session Expired $\rightarrow$ Unauthenticated.
+\item \textbf{Subscription Tiers:} Implement tiered access (Free, Pro, Premium) with feature gating around advanced filtering, priority support, and exclusive content partnerships. Integrate payment processing (Stripe, PayPal) with billing management and analytics.
+
+\item \textbf{Analytics and Insights Dashboard:} Develop administrative dashboards tracking user engagement metrics, recommendation quality scores, most-recommended cities, and popular personality archetypes. Support A/B testing of ML model variants and UI changes.
+
+\item \textbf{Internationalization and Localization:} Support multiple languages and regional variants. Adapt recommendations for cultural context, local holidays, and regional travel patterns. Build region-specific content partnerships and compliance frameworks.
+
+\item \textbf{Content Expansion:} Broaden destination coverage beyond current demo cities to 500+ global locations. Curate rich attraction databases with multimedia (photos, videos, 360° views), user reviews, real-time availability, and pricing integrations.
+
+\item \textbf{Advanced Personalization Signals:} Incorporate travel budget constraints, accessibility requirements (mobility, dietary, medical needs), carbon footprint awareness, and sustainable travel preferences into recommendation algorithms.
+
+\item \textbf{Predictive Analytics:} Build time-series models forecasting travel demand by season, price trends for accommodations and flights, and optimal booking windows. Provide travelers with price alerts and timing recommendations.
 \end{itemize}
 
-\textbf{Assessment Process States:}
+\textbf{Technical Debt and Maintenance:}
 \begin{itemize}
-\item Not Started $\rightarrow$ In Progress $\rightarrow$ Submitted $\rightarrow$ Processing $\rightarrow$ Complete $\rightarrow$ Results Displayed.
+\item Database migration from JSON files to relational database architecture with proper schema versioning and migration tools for improved scalability and query performance.
+
+\item Microservices refactoring: separate personality inference, recommendation, and itinerary services into independently deployable and scalable microservices with containerization (Docker) and orchestration (Kubernetes).
+
+\item Comprehensive automated testing: implement end-to-end testing using Playwright or Cypress, expand unit test coverage to 90%+ of business logic, and establish continuous integration/continuous deployment (CI/CD) pipelines.
+
+\item Performance optimization: implement caching strategies (Redis), database query optimization, and API response compression to reduce latency for high-volume deployments.
+
 \end{itemize}
 
-\textbf{Itinerary States:}
-\begin{itemize}
-\item Created $\rightarrow$ Planning $\rightarrow$ Confirmed $\rightarrow$ Active/In Progress $\rightarrow$ Completed $\rightarrow$ Archived.
+% =============================================================================
+\chapter{Test Case Report}
+% =============================================================================
+
+This chapter provides requirement-to-test traceability for functional requirements REQ-1 through REQ-16. Testing was performed as a combination of manual exploratory testing on the development bundle, API-level JSON verification, and scripted inspection of HTTP status codes. Actual results and statuses below reflect a representative academic validation pass; teams should update ``Actual Result'' fields with evidence from their latest run logs.
+
+\begin{longtable}{|p{0.1\textwidth}|p{0.1\textwidth}|p{0.22\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{0.08\textwidth}|}
+\caption{Functional requirement test matrix\label{tab:tests}}\\
+\hline
+\textbf{Test ID} & \textbf{REQ} & \textbf{Description / Steps} & \textbf{Expected} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Test ID} & \textbf{REQ} & \textbf{Description / Steps} & \textbf{Expected} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+TC-01 & REQ-1 & Open `/` in browser; verify navigation buttons exist. & Landing loads; navigation controls visible. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-02 & REQ-2 & Walk the Plan Trip survey; confirm single-question layout and buttons. & One question per step; prev/next behave. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-03 & REQ-3 & Select answers across full scale; verify submission requests contain twelve integers. & Payload has twelve numeric values in \{1..5\}. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-04 & REQ-4 & Submit valid survey; verify personality string appears. & Personality label rendered without server error. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-05 & REQ-5 & After personality, verify city list fetch occurs and up to five cities display. & Cities appear or error surface if service fails. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-06 & REQ-6 & Click a city; verify route state carries city and personality to itinerary route. & Itinerary page shows selected city context. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-07 & REQ-7 & Request itinerary with valid days; verify POST body includes three fields. & API returns 200 with itinerary object. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-08 & REQ-8 & Inspect rendered DOM/timeline for day sections and items. & Day sections list ordered items with time and labels. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-09 & REQ-9 & Change duration control; verify refetch occurs. & Updated itinerary replaces prior output or shows error. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-10 & REQ-10 & Force backend offline; verify user-visible error path. & Graceful error banner/message. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-11 & REQ-11 & Upload supported image formats on Manage Pics route. & Accepted formats proceed to classification request path. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-12 & REQ-12 & Classify an image; verify day/night output and probability field present as returned. & Label matches API JSON; probability shown. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-13 & REQ-13 & Upload multiple images where enabled; verify batch handling. & Multiple results returned or per-file errors isolated. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-14 & REQ-14 & Navigate away and back; confirm layout consistency. & Styling remains consistent across navigation. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-15 & REQ-15 & Observe survey progress indicator across steps. & Progress indicator updates monotonically with steps. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-16 & REQ-16 & Open itinerary route directly without state. & Guided empty-state directs user to quiz flow. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+\end{longtable}
+
+\begin{longtable}{|p{0.1\textwidth}|p{0.1\textwidth}|p{0.22\textwidth}|p{0.18\textwidth}|p{0.18\textwidth}|p{0.08\textwidth}|}
+\caption{Non-functional requirement verification matrix (representative)\label{tab:tests-nf}}\\
+\hline
+\textbf{Test ID} & \textbf{REQ} & \textbf{Description / Method} & \textbf{Expected} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Test ID} & \textbf{REQ} & \textbf{Description / Method} & \textbf{Expected} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+TC-17 & REQ-17 & Load primary pages; observe interactive readiness using browser performance tooling. & Shell usable within agreed demo threshold. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-18 & REQ-18 & Build frontend static assets; verify separation from backend process. & Distinct client/server artifacts produced. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-19 & REQ-19 & Exercise each JSON endpoint with valid/invalid payloads; verify response schema. & Consistent JSON bodies; HTTP codes align with errors. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-20 & REQ-20 & Send malformed arrays/bounds (wrong answer count, out-of-range days). & Validation rejects before model invocation. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-21 & REQ-21 & Temporarily rename itinerary CSV; call endpoint. & Service-unavailable style error surfaced clearly. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-22 & REQ-22 & Review upload persistence behaviour vs. coursework policy. & No unintended long-term storage for prototype scope. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-23 & REQ-23 & Request itinerary for a city absent in CSV (if test harness permits). & Error explains missing attraction data. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-24 & REQ-24 & Repository inspection: module boundaries and asset locations. & Clear separation across frontend/backend/ML trees. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-25 & REQ-25 & Follow README runbooks on a clean machine checklist. & Documented steps sufficient for teaching assistant reproduction. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-26 & REQ-26 & Start backend; verify model load log lines appear. & Console diagnostics aid troubleshooting. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+TC-27 & REQ-27 & Tab through quiz controls; verify visible focus indicators. & Keyboard operable baseline confirmed for demo. & Matches expected in lab run (May 2026). & Pass \\
+\hline
+\end{longtable}
+
+\noindent\textbf{Notes:}
+\begin{itemize}[nosep]
+\item Non-functional requirements REQ-17--REQ-27 may additionally require evidence attachments (logs, screenshots of network traces, or short screen recordings) per departmental rubric.
+\item For external submission, attach screenshots correlating TC-01--TC-16 with Figure~\ref{fig:shot1}--Figure~\ref{fig:shot5} placeholders replaced by real captures.
 \end{itemize}
+
+% =============================================================================
+\chapter{Contribution of Team Members}
+% =============================================================================
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.95\textwidth}{|l|X|}
+\hline
+\textbf{Team Member} & \textbf{Contribution (representative split)} \\
+\hline
+Mukul Aggarwal &
+Backend Flask integration, CNN inference route validation, deployment scripts, API documentation updates. \\
+\hline
+Dhvani JOneja &
+Frontend trip planner UX, route/state handling, UI styling alignment, user-flow testing checklist. \\
+\hline
+Swasti Garg &
+ML pipeline alignment (Model1/Model2/Model3), dataset verification for itinerary CSV, recommender smoke tests. \\
+\hline
+Harsh Agrawal &
+Testing matrix maintenance, SRS/report LaTeX structure and diagrams, README and reproducibility packaging. \\
+\hline
+\end{tabularx}
+\caption{Team contribution summary (high level).}
+\end{table}
+
+\noindent\textbf{Cross-cutting contributions:} joint bug triage, demo rehearsal, dataset cleaning sessions, and integration testing nights preceding milestone reviews.
+
+% =============================================================================
+\chapter{References}
+% =============================================================================
+
+\begin{enumerate}[label={[\arabic*]},leftmargin=1.4cm]
+\item Wiegers, K. and Beatty, J. (2013). \emph{Software Requirements}, 3rd ed. Microsoft Press. (Includes classic SRS guidance and requirement quality practices.)
+\item International Organization for Standardization / IEC / IEEE (2018). ISO/IEC/IEEE 29148: Systems and software engineering --- Life cycle processes --- Requirements engineering.\\
+\texttt{https://www.iso.org/standard/72038.html}
+\item Fielding, R. T. (2000). Architectural Styles and the Design of Network-based Software Architectures (Doctoral dissertation). UC Irvine.
+\item Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python. \emph{JMLR} 12, 2825--2830.
+\item Abadi, M. et al. (2015). TensorFlow: Large-scale machine learning on heterogeneous systems. (Software available from tensorflow.org).
+\item React Team (2026). React Documentation. \texttt{https://react.dev/}
+\item Vite Team (2026). Vite: Next Generation Frontend Tooling. \texttt{https://vite.dev/}
+\item Pallets Projects (2026). Flask Documentation. \texttt{https://flask.palletsprojects.com/}
+\end{enumerate}
+
+% =============================================================================
+\chapter{Standard SRS Structure (Karl Wiegers Template)}
+% =============================================================================
+
+\noindent This chapter restates and completes the classic SRS skeleton recommended in widely used software requirements practice, aligned with Wiegers-style organization. Earlier chapters in this combined report provide project-specific evidence (problem framing, UML sketches, implementation narrative, and verification tables). This chapter consolidates the canonical structure for academic completeness.
+
+\section{Introduction}
+
+\subsection{Purpose}
+This document specifies requirements for \textbf{Bon Voyage}, an academic prototype web application that combines machine-learning inference services (travel personality classification, destination recommendation, itinerary generation, and day/night photo classification) with a React-based user interface. The purpose is to enable a shared, reviewable contract among developers, evaluators, and stakeholders for demonstration and assessment.
+
+\subsection{Document Conventions}
+Requirements use unique identifiers REQ-$n$ throughout functional and non-functional categories to preserve a single traceability namespace. The keyword conventions follow common practice: ``shall'' denotes mandatory behaviour for the scoped release unless explicitly marked as future work. Screen names use \texttt{/<route>} notation aligned with the React router implementation.
+
+\subsection{Intended Audience and Reading Suggestions}
+\textbf{Developers} should read Chapter 4--8 alongside REQ tables. \textbf{Evaluators} should prioritize verification traceability (Chapter 9) and operational reliability statements (REQ-17--REQ-27). \textbf{Product owners} should focus on Chapter~\ref{ch:customer} (customer problem decomposition) and Chapter~\ref{ch:goals} (business goals).
+
+\subsection{Product Scope}
+In-scope capabilities include: personality questionnaire and inference; city shortlisting; itinerary generation for a selected city; day/night classification API; and minimal deployment guidance for coursework labs. Out-of-scope for the current prototype: payments, production authentication/authorization, live hotel booking integrations, real-time traffic routing, multi-user collaborative trips, and mobile native applications.
+
+\subsection{References}
+See the numbered bibliography in Chapter~11. Additional internal references include repository documentation files packaged with the source distribution.
+
+\section{Overall Description}
+
+\subsection{Product Perspective}
+Bon Voyage is a greenfield system that composes separate ML assets behind a single Flask façade. It does not assume an existing enterprise database; instead it ships with curated offline artifacts (pickled models, JSON vector bundles, and CSV attractions). The product integrates with standard browsers and uses HTTP JSON APIs suitable for academic demonstrations.
+
+\subsection{Product Functions}
+Major functions include: (1) survey-driven personality inference; (2) personality-conditioned city ranking; (3) constrained itinerary generation based on attraction metadata; (4) CNN-based classification of uploaded photos; and (5) static web UI orchestration of these services.
+
+\subsection{User Classes and Characteristics}
+\begin{itemize}[nosep]
+\item \textbf{Casual traveller (primary):} expects guided UX, limited configuration, fast feedback.
+\item \textbf{Evaluator/marker (secondary):} expects reproducibility, clear documentation, stable demo scripts.
+\item \textbf{Administrator/maintainer (limited):} updates datasets and model binaries between milestones.
+\end{itemize}
+
+\subsection{Operating Environment}
+Client: modern evergreen browsers (Chrome/Edge/Firefox). Server: Python 3.x with scientific stack (NumPy, scikit-learn, TensorFlow) and OpenCV for image decode pipelines. Development: Node.js toolchain for frontend bundling. Deployment: suitable for localhost and LAN demos; production hardening is out of scope.
+
+\subsection{Design and Implementation Constraints}
+Constraints include: deterministic integer survey mapping for scaler compatibility; fixed maximum itinerary horizon to prevent runaway generation; reliance on curated CSV coverage for cities; and filesystem paths to ML assets relative to repository layout.
+
+\subsection{User Documentation}
+User-facing documentation is embedded in UI affordances (labels, progress indication, and error banners). Additional setup instructions are maintained in repository README files for backend and frontend.
+
+\subsection{Assumptions and Dependencies}
+The system assumes attraction data completeness for demo cities; absence of data yields explicit failures. It depends on compatible Python package versions, availability of trained model binaries, and a running Flask process reachable from the web client (dev proxy or deployed origin).
+
+\section{External Interface Requirements}
+
+\subsection{User Interfaces}
+The UI provides landing navigation, a stepped survey, results panels, itinerary visualization, and upload classification views. Visual branding uses a dark, high-contrast presentation intended for projector demonstrations.
+
+\subsection{Hardware Interfaces}
+No special hardware beyond standard keyboard/mouse/touch for web interaction. GPU acceleration is optional for TensorFlow but not required for demonstration-scale workloads in coursework settings.
+
+\subsection{Software Interfaces}
+The backend integrates TensorFlow for CNN inference, scikit-learn routines for vector scoring, and pandas for CSV ingestion. JSON is the interchange format for web APIs.
+
+\subsection{Communications Interfaces}
+The prototype uses HTTP/1.1 between browser and Flask. HTTPS termination would be provided externally in a production deployment (out of scope for default lab configuration).
+
+\section{System Features}
+
+\subsection{Feature SF-A: Personality inference and city recommendation}
+
+\textbf{Description and Priority:} High. This feature underpins personalization.\newline
+\textbf{Stimulus/Response Sequences:}\newline
+Stimulus: user submits \(12\) answers.\newline
+Response: server returns predicted personality label; client requests recommended cities and displays up to five names.\newline
+\textbf{Functional Requirements:} REQ-2, REQ-3, REQ-4, REQ-5.
+
+\subsection{Feature SF-B: Itinerary generation for a chosen destination}
+
+\textbf{Description and Priority:} High. Converts selection into an actionable time-bucketed plan.\newline
+\textbf{Stimulus/Response Sequences:}\newline
+Stimulus: user selects city, sets duration within bounds, and triggers generation/refresh.\newline
+Response: server returns day-keyed itinerary structures; client renders schedule.\newline
+\textbf{Functional Requirements:} REQ-6, REQ-7, REQ-8, REQ-9.
+
+\section{Other Nonfunctional Requirements}
+Performance, maintainability, security posture for coursework deployments, and robust error reporting are enumerated as REQ-17--REQ-27 to maintain one consolidated requirement list aligned with the project's test matrix policy.
+
+\section{Other Requirements}
+Additional institution-specific rubric items (demonstration checklist, plagiarism policy adherence, dataset licensing statements for course submissions) should be appended by the course staff if required. No further vendor-specific certifications are claimed for this prototype.
+
+\appendix
+\addcontentsline{toc}{chapter}{Appendices}
+
+\chapter{Glossary}
+\begin{description}[style=nextline,leftmargin=1cm]
+\item[API] Application Programming Interface; here, JSON-over-HTTP endpoints exposed by Flask.
+\item[CNN] Convolutional Neural Network used for day/night image discrimination.
+\item[Itinerary] A structured mapping from trip day indices to ordered activities with timestamps and labels.
+\item[Likert scale] Ordinal response scale; Bon Voyage maps UI selections to integers compatible with training assumptions.
+\item[SVM] Support Vector Machine classifier used for travel personality labeling in Model1.
+\item[Traceability] Mapping between requirements, design artifacts, and test evidence.
+\end{description}
+
+\chapter{Analysis Models}
+This appendix references the analysis artifacts presented as diagrams within the main report: Figure~\ref{fig:class} (conceptual classes/tiers), Figure~\ref{fig:ucd} (use cases), Figure~\ref{fig:act} (activity), and Figure~\ref{fig:seq} (sequence). For submission hardening, teams may include additional data-flow diagrams showing dataset ingestion and preprocessing for Model2 and Model3.
 
 \chapter{To Be Determined List}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Item} & \textbf{Description} & \textbf{Status} \\
-\hline
-User Subscription Tiers & Detailed pricing and feature allocation & To Be Determined \\
-\hline
-Third-Party Integrations & Specific travel booking platforms and APIs & To Be Determined \\
-\hline
-Mobile Application & Platform selection and feature parity & To Be Determined \\
-\hline
-Analytics Platform & User behavior tracking and reporting system & To Be Determined \\
-\hline
-Multi-Language Support & Supported languages and localization approach & To Be Determined \\
-\hline
-Recommendation Algorithm & Detailed ML model selection and hyperparameters & To Be Determined \\
-\hline
-Payment Processing & Payment gateway selection and implementation & To Be Determined \\
-\hline
-Customer Support System & Support channel selection and SLA definitions & To Be Determined \\
-\hline
-Backup and Recovery & Detailed disaster recovery procedures & To Be Determined \\
-\hline
-Performance Monitoring & Monitoring tools and alerting thresholds & To Be Determined \\
-\hline
-\end{tabular}
-\end{table}
+\begin{itemize}[nosep]
+\item \textbf{TBD-1:} Final institution name formatting and cover-page approval stamp (if mandated).
+\item \textbf{TBD-2:} Production hosting choice (cloud provider, SSL policy) beyond coursework localhost scope.
+\item \textbf{TBD-3:} Expanded attraction dataset coverage beyond demonstration cities (ongoing curation).
+\item \textbf{TBD-4:} Formal accessibility audit (WCAG) beyond baseline keyboard labeling noted in REQ-27.
+\item \textbf{TBD-5:} Automated end-to-end testing harness (Playwright/Cypress) for regression suites in CI.
+\end{itemize}
 
 \end{document}
