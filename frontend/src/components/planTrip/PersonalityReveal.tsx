@@ -18,8 +18,7 @@ export function PersonalityReveal({
         {personality}
       </h2>
       <p className="text-slate-400 text-sm mb-10 leading-relaxed">
-        We matched your answers to the same model used in Bon Voyage. You can refine your
-        trip preferences from here as we expand the planner.
+        We Calculated Your Travel Personality Based on Your Answers.
       </p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <button
