@@ -49,7 +49,15 @@ if not _cnn_model_path:
         "Ensure CNN/best_daynight_model.keras exists."
     )
 
-cnn_model = tf.keras.models.load_model(_cnn_model_path)
+class _LegacyBatchNorm(tf.keras.layers.BatchNormalization):
+    def __init__(self, *args, renorm=False, renorm_clipping=None, renorm_momentum=0.99, **kwargs):
+        super().__init__(*args, **kwargs)
+
+cnn_model = tf.keras.models.load_model(
+    _cnn_model_path,
+    custom_objects={"BatchNormalization": _LegacyBatchNorm},
+    compile=False,
+)
 print(f"CNN model loaded from {_cnn_model_path}")
 
 # Determine personality model directory - works in both local and Docker deployment
