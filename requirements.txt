@@ -84,3 +84,4 @@ wrapt==2.1.2
 imbalanced-learn==0.12.3
 gunicorn==21.2.0
 python-dotenv==1.0.0
+tensorflow==2.15.0
