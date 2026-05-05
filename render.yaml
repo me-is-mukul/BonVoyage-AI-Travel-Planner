@@ -1,0 +1,28 @@
+# render.yaml - Deployment configuration for Render.com
+
+# This file is optional but helpful for Render deployments
+# For manual setup, create a new Web Service and connect your GitHub repo
+
+services:
+  - type: web
+    name: bon-voyage
+    env: docker
+    region: oregon
+    plan: free
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: bon-voyage
+          envVarKey: RENDER_EXTERNAL_URL
+        scope: build,runtime
+    dockerCommand: 'docker-compose up'
+    healthCheckPath: /
+    healthCheckInterval: 30
+    healthCheckTimeout: 10
+    maxShutdownDelay: 30

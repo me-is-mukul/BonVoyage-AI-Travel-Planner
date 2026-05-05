@@ -1,0 +1,44 @@
+{
+    "Central": {
+        "Adventure": 0.0,
+        "Historical": 0.38461538461538464,
+        "Nature": 0.23076923076923078,
+        "Religious": 0.2564102564102564,
+        "Urban": 0.1282051282051282
+    },
+    "Eastern": {
+        "Adventure": 0.0,
+        "Historical": 0.17777777777777778,
+        "Nature": 0.35555555555555557,
+        "Religious": 0.35555555555555557,
+        "Urban": 0.1111111111111111
+    },
+    "North Eastern": {
+        "Adventure": 0.0,
+        "Historical": 0.14285714285714285,
+        "Nature": 0.5714285714285714,
+        "Religious": 0.2857142857142857,
+        "Urban": 0.0
+    },
+    "Northern": {
+        "Adventure": 0.056179775280898875,
+        "Historical": 0.2808988764044944,
+        "Nature": 0.3595505617977528,
+        "Religious": 0.23595505617977527,
+        "Urban": 0.06741573033707865
+    },
+    "Southern": {
+        "Adventure": 0.0,
+        "Historical": 0.23469387755102042,
+        "Nature": 0.45918367346938777,
+        "Religious": 0.20408163265306123,
+        "Urban": 0.10204081632653061
+    },
+    "Western": {
+        "Adventure": 0.0,
+        "Historical": 0.325,
+        "Nature": 0.325,
+        "Religious": 0.225,
+        "Urban": 0.125
+    }
+}

@@ -1,0 +1,1910 @@
+{
+    "Agartala": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Agra": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.55,
+        "rating_norm": 0.7749999999999999
+    },
+    "Ahmedabad": {
+        "Adventure": 0.0,
+        "Historical": 0.4,
+        "Nature": 0.2,
+        "Religious": 0.0,
+        "Urban": 0.4,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Ajanta": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Ajmer": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Alappuzha": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Alibaug": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    },
+    "Aligarh": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Allahabad": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Almora": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Amarkantak": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Amravati": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Amritsar": {
+        "Adventure": 0.0,
+        "Historical": 0.6666666666666666,
+        "Nature": 0.0,
+        "Religious": 0.3333333333333333,
+        "Urban": 0.0,
+        "Google review rating": 4.833333333333333,
+        "rating_norm": 0.9166666666666665
+    },
+    "Anantapur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Anantnag": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Auli": {
+        "Adventure": 1.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Aurangabad": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Auroville": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 1.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Ayodhya": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Badami": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Badrinath": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Balasore": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    },
+    "Bandhavgarh": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Bandipur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Bangalore": {
+        "Adventure": 0.0,
+        "Historical": 0.4,
+        "Nature": 0.4,
+        "Religious": 0.2,
+        "Urban": 0.0,
+        "Google review rating": 4.4399999999999995,
+        "rating_norm": 0.7199999999999998
+    },
+    "Baratang Island": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Barot": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Bastar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Bekal": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Bengaluru": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 1.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Berhampur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Bhimbetka": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Bhopal": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Bhubaneswar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.5,
+        "Urban": 0.5,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Bhuj": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Bijapur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Bikaner": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Bir Billing": {
+        "Adventure": 1.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Bodh Gaya": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Bolpur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Chamba": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Chandigarh": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Chennai": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.9,
+        "rating_norm": 0.44999999999999996
+    },
+    "Cherrapunji": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Chidambaram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Chikmagalur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Chilika": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.9,
+        "rating_norm": 0.44999999999999996
+    },
+    "Chitrakoot": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Chittorgarh": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Chopta": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Coimbatore": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Cooch Behar": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Coorg": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Cuttack": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Dalhousie": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.5,
+        "Religious": 0.5,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Darjeeling": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Dehradun": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Delhi": {
+        "Adventure": 0.0,
+        "Historical": 0.47368421052631576,
+        "Nature": 0.15789473684210525,
+        "Religious": 0.21052631578947367,
+        "Urban": 0.15789473684210525,
+        "Google review rating": 4.410526315789474,
+        "rating_norm": 0.7052631578947368
+    },
+    "Deoghar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Digha": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Diskit": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Diu": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.5,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.55,
+        "rating_norm": 0.7749999999999999
+    },
+    "Dras": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Dumboor": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Dwarka": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Dz\u00fckou Valley": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Fatehpur Sikri": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Gandhinagar": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.0,
+        "Religious": 0.5,
+        "Urban": 0.0,
+        "Google review rating": 4.55,
+        "rating_norm": 0.7749999999999999
+    },
+    "Gangtok": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.5,
+        "Religious": 0.5,
+        "Urban": 0.0,
+        "Google review rating": 4.525,
+        "rating_norm": 0.7625000000000002
+    },
+    "Goa": {
+        "Adventure": 0.0,
+        "Historical": 0.14285714285714285,
+        "Nature": 0.7142857142857143,
+        "Religious": 0.14285714285714285,
+        "Urban": 0.0,
+        "Google review rating": 4.385714285714285,
+        "rating_norm": 0.6928571428571426
+    },
+    "Gokarna": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Greater Noida": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 1.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Guntur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Gurugram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 1.0,
+        "Google review rating": 4.566666666666666,
+        "rating_norm": 0.7833333333333332
+    },
+    "Guwahati": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.6666666666666666,
+        "Religious": 0.3333333333333333,
+        "Urban": 0.0,
+        "Google review rating": 4.366666666666666,
+        "rating_norm": 0.6833333333333331
+    },
+    "Gwalior": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Hajo": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Halebidu": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Hampi": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Haridwar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Havelock Island": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Hemis": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Hooghly": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Hyderabad": {
+        "Adventure": 0.0,
+        "Historical": 0.45454545454545453,
+        "Nature": 0.18181818181818182,
+        "Religious": 0.09090909090909091,
+        "Urban": 0.2727272727272727,
+        "Google review rating": 4.3909090909090915,
+        "rating_norm": 0.6954545454545458
+    },
+    "Indore": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Jabalpur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Jaipur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4799999999999995,
+        "rating_norm": 0.7399999999999998
+    },
+    "Jaisalmer": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Jalpaiguri": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Jammu": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Jhansi": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Jim Corbett": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Jodhpur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Joshimath": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Junagadh": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kadapa": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kangra": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Kanha": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kannur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Kanpur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 1.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    },
+    "Kanyakumari": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Kargil": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Kaziranga": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kedarnath": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Kendujhar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Keonjhar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Kevadia": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Khajuraho": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Kinnaur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kishtwar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Kochi": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.5,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kodaikanal": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.9,
+        "rating_norm": 0.44999999999999996
+    },
+    "Kolhapur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Kolkata": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.0,
+        "Religious": 0.2,
+        "Urban": 0.3,
+        "Google review rating": 4.4799999999999995,
+        "rating_norm": 0.7399999999999998
+    },
+    "Konark": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Kovalam": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Kozhikode": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.9,
+        "rating_norm": 0.44999999999999996
+    },
+    "Kufri": {
+        "Adventure": 1.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.8,
+        "rating_norm": 0.3999999999999999
+    },
+    "Kullu": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Kumarakom": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.8,
+        "rating_norm": 0.3999999999999999
+    },
+    "Kurnool": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Leh": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.6,
+        "Religious": 0.4,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Lonavala": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.5,
+        "Religious": 0.0,
+        "Urban": 0.5,
+        "Google review rating": 2.9000000000000004,
+        "rating_norm": -0.04999999999999982
+    },
+    "Lucknow": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.5,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Madurai": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Mahabalipuram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Majuli": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Manali": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Manas": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Mandi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Mandu": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 3.9,
+        "rating_norm": 0.44999999999999996
+    },
+    "Mangalore": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Manikaran": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Matheran": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Mathura": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.3333333333333333,
+        "Religious": 0.6666666666666666,
+        "Urban": 0.0,
+        "Google review rating": 4.533333333333333,
+        "rating_norm": 0.7666666666666666
+    },
+    "Mcleod Ganj": {
+        "Adventure": 1.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Meerut": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Mount Abu": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Mumbai": {
+        "Adventure": 0.0,
+        "Historical": 0.3,
+        "Nature": 0.2,
+        "Religious": 0.3,
+        "Urban": 0.2,
+        "Google review rating": 4.4799999999999995,
+        "rating_norm": 0.7399999999999998
+    },
+    "Munnar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Murshidabad": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Murudeshwar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Mussoorie": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    },
+    "Mysore": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Nagpur": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Nainital": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    },
+    "Namchi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Narkanda": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Nashik": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Neil Island": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Nelliyampathy": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Noida": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.5,
+        "Religious": 0.0,
+        "Urban": 0.5,
+        "Google review rating": 4.449999999999999,
+        "rating_norm": 0.7249999999999996
+    },
+    "Nubra Valley": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Ooty": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Orchha": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Pachmarhi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Pahalgam": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Palampur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Patna": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.3333333333333333,
+        "Religious": 0.3333333333333333,
+        "Urban": 0.3333333333333333,
+        "Google review rating": 4.466666666666667,
+        "rating_norm": 0.7333333333333334
+    },
+    "Pelling": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Porbandar": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Port Blair": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Puducherry": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Pune": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Puri": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Purulia": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Pushkar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Puttaparthi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Rajahmundry": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Rameswaram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.65,
+        "rating_norm": 0.8250000000000002
+    },
+    "Ranchi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Ranikhet": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.0,
+        "rating_norm": 0.5
+    },
+    "Rann Of Kutch": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.9,
+        "rating_norm": 0.9500000000000002
+    },
+    "Ratnagiri": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Ravangla": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Rishikesh": {
+        "Adventure": 1.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Rourkela": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Sambalpur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Sarnath": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Satara": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Sawai Madhopur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Shimla": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Shirdi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Shivamogga": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Shoja": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Siliguri": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Sivasagar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Somnath": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Spiti Valley": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Srinagar": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Srisailam": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Sundarbans": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Tarkarli": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Tawang": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Thanjavur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Thekkady": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.3,
+        "rating_norm": 0.6499999999999999
+    },
+    "Thiruvananthapuram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Tirunelveli": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Udaipur": {
+        "Adventure": 0.0,
+        "Historical": 0.5,
+        "Nature": 0.5,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Udhampur": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.1,
+        "rating_norm": 0.5499999999999998
+    },
+    "Ujjain": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Unakoti": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Uttarkashi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Vadodara": {
+        "Adventure": 0.0,
+        "Historical": 1.0,
+        "Nature": 0.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.4,
+        "rating_norm": 0.7000000000000002
+    },
+    "Varanasi": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Varkala": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.6,
+        "rating_norm": 0.7999999999999998
+    },
+    "Vijayawada": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Visakhapatnam": {
+        "Adventure": 0.0,
+        "Historical": 0.375,
+        "Nature": 0.375,
+        "Religious": 0.0,
+        "Urban": 0.25,
+        "Google review rating": 4.3625,
+        "rating_norm": 0.6812499999999999
+    },
+    "Vizianagaram": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.7,
+        "rating_norm": 0.8500000000000001
+    },
+    "Vrindavan": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 0.0,
+        "Religious": 1.0,
+        "Urban": 0.0,
+        "Google review rating": 4.8,
+        "rating_norm": 0.8999999999999999
+    },
+    "Wayanad": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.5,
+        "rating_norm": 0.75
+    },
+    "Yercaud": {
+        "Adventure": 0.0,
+        "Historical": 0.0,
+        "Nature": 1.0,
+        "Religious": 0.0,
+        "Urban": 0.0,
+        "Google review rating": 4.2,
+        "rating_norm": 0.6000000000000001
+    }
+}

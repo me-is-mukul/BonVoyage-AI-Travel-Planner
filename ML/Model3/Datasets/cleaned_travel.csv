@@ -1,0 +1,326 @@
+Zone,State,City,Name,Type,Google review rating,Best Time to visit,time needed to visit in hrs,Airport with 50km Radius,Category,Category_ID
+Northern,Delhi,Delhi,India Gate,War Memorial,4.6,Evening,0.5,Yes,Historical,1
+Northern,Delhi,Delhi,Humayun's Tomb,Tomb,4.5,Afternoon,2.0,Yes,Historical,1
+Northern,Delhi,Delhi,Akshardham Temple,Temple,4.6,Afternoon,5.0,Yes,Religious,2
+Northern,Delhi,Delhi,Waste to Wonder Park,Theme Park,4.1,Evening,2.0,Yes,Urban,4
+Northern,Delhi,Delhi,Jantar Mantar,Observatory,4.2,Morning,2.0,Yes,Historical,1
+Northern,Delhi,Delhi,Chandni Chowk,Market,4.2,Afternoon,3.0,Yes,Urban,4
+Northern,Delhi,Delhi,Lotus Temple,Temple,4.5,Evening,1.0,Yes,Religious,2
+Northern,Delhi,Delhi,Red Fort,Fort,4.5,Afternoon,2.0,Yes,Historical,1
+Northern,Delhi,Delhi,Agrasen ki Baoli,Stepwell,4.2,Afternoon,1.0,Yes,Historical,1
+Northern,Delhi,Delhi,Sunder Nursery,Park,4.6,Afternoon,2.0,Yes,Nature,0
+Northern,Delhi,Delhi,Garden of Five Senses,Park,4.1,Morning,2.0,Yes,Nature,0
+Northern,Delhi,Delhi,Lodhi Garden,Park,4.5,Anytime,1.0,Yes,Nature,0
+Northern,Delhi,Delhi,National Gallery of Modern Art,Museum,4.5,Anytime,3.0,Yes,Historical,1
+Northern,Delhi,Delhi,National Zoological Park ,Zoo,4.1,Anytime,3.0,Yes,Urban,4
+Northern,Delhi,Delhi,Qutub Minar,Monument,4.5,Afternoon,1.0,Yes,Historical,1
+Northern,Delhi,Delhi,National Science Centre,Science,4.4,Anytime,5.0,Yes,Historical,1
+Western,Maharastra,Mumbai,Marine Drive,Promenade,4.5,Evening,2.0,Yes,Urban,4
+Western,Maharastra,Mumbai,Gateway of India,Monument,4.6,Anytime,1.0,Yes,Historical,1
+Western,Maharastra,Mumbai,Chhatrapati Shivaji Maharaj Vastu Sangrahalaya,Museum,4.6,Anytime,1.0,Yes,Historical,1
+Western,Maharastra,Mumbai,Sanjay Gandhi National Park,National Park,4.3,Anytime,3.0,Yes,Nature,0
+Western,Maharastra,Mumbai,Siddhivinayak Temple,Temple,4.8,Anytime,2.0,Yes,Religious,2
+Western,Maharastra,Mumbai,Mahalaxmi Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Western,Maharastra,Mumbai,Haji Ali Dargah,Religious Shrine,4.4,Anytime,2.0,Yes,Religious,2
+Western,Maharastra,Mumbai,Chowpatty Beach,Beach,4.3,Evening,2.0,Yes,Nature,0
+Western,Maharastra,Mumbai,Essel World,Amusement Park,4.3,Anytime,5.0,Yes,Urban,4
+Western,Maharastra,Mumbai,Elephanta Caves,Monument,4.3,Anytime,4.0,Yes,Historical,1
+Western,Maharastra,Lonavala,Imagicaa,Amusement Park,1.4,Anytime,5.0,No,Urban,4
+Southern,Karnataka,Bangalore,Bangalore Palace,Palace,4.2,Morning,2.0,Yes,Historical,1
+Southern,Karnataka,Bangalore,Lalbagh Botanical Garden,Botanical Garden,4.4,Evening,1.5,Yes,Nature,0
+Southern,Karnataka,Bangalore,Cubbon Park,Park,4.4,Morning,1.0,Yes,Nature,0
+Southern,Karnataka,Bangalore,Vidhana Soudha,Government Building,4.6,Morning,0.5,Yes,Historical,1
+Southern,Karnataka,Bangalore,ISKCON Temple Bangalore,Temple,4.6,Evening,1.0,Yes,Religious,2
+Southern,Telangana,Hyderabad,Charminar,Landmark,4.5,Morning,1.0,Yes,Historical,1
+Southern,Telangana,Hyderabad,Golconda Fort,Fort,4.4,Morning,2.0,Yes,Historical,1
+Southern,Telangana,Hyderabad,Hussain Sagar Lake,Lake,4.3,Evening,1.0,Yes,Nature,0
+Southern,Telangana,Hyderabad,Ramoji Film City,Film Studio,4.4,Anytime,4.0,Yes,Urban,4
+Southern,Telangana,Hyderabad,Salar Jung Museum,Museum,4.4,Anytime,2.0,Yes,Historical,1
+Southern,Telangana,Hyderabad,Qutb Shahi Tombs,Tombs,4.4,Morning,1.0,Yes,Historical,1
+Southern,Telangana,Hyderabad,Birla Mandir,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Telangana,Hyderabad,Chowmahalla Palace,Palace,4.4,Morning,1.5,Yes,Historical,1
+Southern,Telangana,Hyderabad,Nehru Zoological Park,Zoo,4.2,Morning,3.0,Yes,Urban,4
+Southern,Telangana,Hyderabad,Lumbini Park,Park,4.1,Evening,1.0,Yes,Nature,0
+Eastern,West Bengal,Kolkata,Victoria Memorial,Museum,4.6,Morning,1.5,Yes,Historical,1
+Eastern,West Bengal,Kolkata,Howrah Bridge,Bridge,4.6,Anytime,0.5,Yes,Urban,4
+Eastern,West Bengal,Kolkata,Indian Museum,Museum,4.6,Morning,2.0,Yes,Historical,1
+Eastern,West Bengal,Kolkata,Dakshineswar Kali Temple,Temple,4.7,Morning,1.0,Yes,Religious,2
+Eastern,West Bengal,Kolkata,Kalighat Kali Temple,Temple,4.4,Morning,1.0,Yes,Religious,2
+Eastern,West Bengal,Kolkata,Eden Gardens,Cricket Ground,4.1,Anytime,3.0,Yes,Urban,4
+Eastern,West Bengal,Kolkata,Alipore Zoological Gardens,Zoo,4.3,Afternoon,2.0,Yes,Urban,4
+Eastern,West Bengal,Kolkata,Science City Kolkata,Science,4.4,Anytime,3.0,Yes,Historical,1
+Eastern,West Bengal,Kolkata,Belur Math,Site,4.7,Morning,1.5,Yes,Historical,1
+Eastern,West Bengal,Kolkata,Marble Palace,Palace,4.4,Afternoon,1.0,Yes,Historical,1
+Southern,Goa,Goa,Calangute Beach,Beach,4.4,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Basilica of Bom Jesus,Church,4.5,Afternoon,1.0,Yes,Religious,2
+Southern,Goa,Goa,Fort Aguada,Fort,4.2,Morning,1.5,Yes,Historical,1
+Southern,Goa,Goa,Dudhsagar Falls,Waterfall,4.6,Afternoon,3.0,Yes,Nature,0
+Southern,Goa,Goa,Anjuna Beach,Beach,4.4,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Chapora Fort,Fort,4.2,Evening,1.0,Yes,Historical,1
+Southern,Goa,Goa,Se Cathedral,Church,4.5,Afternoon,1.0,Yes,Religious,2
+Southern,Goa,Goa,Baga Beach,Beach,4.5,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Arambol Beach,Beach,4.6,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Palolem Beach,Beach,4.6,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Colva Beach,Beach,4.3,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Miramar Beach,Beach,4.2,Evening,1.5,Yes,Nature,0
+Southern,Goa,Goa,Aguada Beach,Beach,4.5,Evening,2.0,Yes,Nature,0
+Southern,Goa,Goa,Dr. Salim Ali Bird Santuary,Bird Sanctuary,3.9,Afternoon,2.0,Yes,Nature,0
+Western,Gujarat,Ahmedabad,Sabarmati Ashram,Historical,4.6,Morning,1.5,Yes,Historical,1
+Western,Gujarat,Dwarka,Dwarkadhish Temple,Temple,4.7,Evening,2.0,No,Religious,2
+Western,Gujarat,Junagadh,Gir National Park,National Park,4.5,Morning,3.0,No,Nature,0
+Western,Gujarat,Bhuj,White Desert,Site,4.6,Evening,2.5,Yes,Historical,1
+Western,Gujarat,Vadodara,Laxmi Vilas Palace,Palace,4.4,Afternoon,2.0,Yes,Historical,1
+Western,Gujarat,Somnath,Somnath Temple,Temple,4.8,Morning,2.0,No,Religious,2
+Western,Gujarat,Rann Of Kutch,Rann Utsav,Cultural,4.9,Evening,3.0,Yes,Historical,1
+Western,Gujarat,Kevadia,Statue of Unity,Monument,4.6,Anytime,3.0,No,Historical,1
+Western,Gujarat,Gandhinagar,Dandi Kutir,Museum,4.5,Anytime,1.5,No,Historical,1
+Western,Gujarat,Ahmedabad,Sabarmati Riverfront,Urban Development Project,4.6,Evening,1.0,Yes,Urban,4
+Western,Gujarat,Ahmedabad,Manek Chowk,Market,4.4,Night,2.0,Yes,Urban,4
+Western,Gujarat,Ahmedabad,Kankaria Lake,Lake,4.5,Afternoon,3.0,Yes,Nature,0
+Western,Gujarat,Ahmedabad,Science City,Science,4.4,Anytime,7.0,Yes,Historical,1
+Northern,Rajasthan,Jaipur,Hawa Mahal,Palace,4.4,Morning,1.0,Yes,Historical,1
+Northern,Rajasthan,Udaipur,City Palace,Palace,4.4,Anytime,2.0,Yes,Historical,1
+Northern,Rajasthan,Jaisalmer,Jaisalmer Fort,Fort,4.4,Anytime,2.5,No,Historical,1
+Northern,Rajasthan,Sawai Madhopur,Ranthambore National Park,Wildlife Sanctuary,4.6,Anytime,3.0,No,Nature,0
+Northern,Rajasthan,Pushkar,Pushkar Lake,Temple,4.4,Anytime,1.5,No,Religious,2
+Northern,Rajasthan,Ajmer,Ajmer Sharif Dargah,Shrine,4.6,Anytime,1.0,Yes,Religious,2
+Northern,Rajasthan,Jodhpur,Mehrangarh Fort,Fort,4.6,Anytime,2.0,Yes,Historical,1
+Northern,Rajasthan,Chittorgarh,Chittorgarh Fort,Fort,4.6,Anytime,2.0,No,Historical,1
+Northern,Rajasthan,Mount Abu,Dilwara Temples,Temple,4.6,Anytime,1.0,No,Religious,2
+Northern,Rajasthan,Bikaner,Junagarh Fort,Fort,4.5,Anytime,2.0,Yes,Historical,1
+Northern,Rajasthan,Jaipur,Amber Fort,Fort,4.6,Anytime,2.0,Yes,Historical,1
+Northern,Rajasthan,Jaipur,Jaigarh Fort,Fort,4.5,Anytime,1.5,Yes,Historical,1
+Northern,Rajasthan,Udaipur,Lake Pichola,Lake,4.6,Anytime,1.0,Yes,Nature,0
+Northern,Punjab,Amritsar,Golden Temple (Harmandir Sahib),Religious Site,4.9,Anytime,1.5,Yes,Religious,2
+Northern,Punjab,Amritsar,Jallianwala Bagh,Memorial,4.8,Afternoon,1.0,Yes,Historical,1
+Northern,Punjab,Amritsar,Wagah Border,Border Crossing,4.8,Evening,2.0,Yes,Historical,1
+Northern,Punjab,Chandigarh,Rock Garden,Sculpture Garden,4.5,Anytime,2.0,Yes,Historical,1
+Southern,Kerala,Alappuzha,Alappuzha Beach,Beach,4.5,Anytime,1.5,Yes,Nature,0
+Southern,Kerala,Munnar,Munnar Tea Gardens,Scenic Area,4.3,Anytime,2.0,No,Nature,0
+Southern,Kerala,Kochi,Fort Kochi,Site,4.4,Anytime,1.0,Yes,Historical,1
+Southern,Kerala,Thiruvananthapuram,Padmanabhaswamy Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Kerala,Kozhikode,Kozhikode Beach,Beach,3.9,Anytime,1.5,Yes,Nature,0
+Southern,Kerala,Wayanad,Wayanad Wildlife Sanctuary,Wildlife Sanctuary,4.5,Anytime,3.0,No,Nature,0
+Southern,Kerala,Thekkady,Periyar National Park,National Park,4.3,Anytime,3.0,No,Nature,0
+Southern,Kerala,Kumarakom,Kumarakom Bird Sanctuary,Bird Sanctuary,3.8,Anytime,2.0,Yes,Nature,0
+Southern,Kerala,Varkala,Varkala Beach,Beach,4.6,Anytime,2.0,Yes,Nature,0
+Southern,Kerala,Bekal,Bekal Fort,Fort,4.5,Anytime,1.5,No,Historical,1
+Southern,Kerala,Kovalam,Kovalam Beach,Beach,4.4,Anytime,2.0,Yes,Nature,0
+Southern,Kerala,Kannur,St. Angelo Fort,Fort,4.4,Anytime,1.0,Yes,Historical,1
+Southern,Kerala,Nelliyampathy,Seethargundu Viewpoint,Viewpoint,4.5,Morning,1.0,No,Nature,0
+Southern,Kerala,Kochi,Kerala Folklore Museum,Cultural,4.4,Anytime,1.5,Yes,Historical,1
+Southern,Kerala,Kochi,Wonderla Amusement Park,Amusement Park,4.6,Anytime,5.5,Yes,Urban,4
+Southern,Karnataka,Mysore,Mysore Palace,Palace,4.6,Anytime,2.0,Yes,Historical,1
+Southern,Karnataka,Hampi,Hampi Archaeological Ruins,Site,4.7,Anytime,3.0,No,Historical,1
+Southern,Karnataka,Coorg,Abbey Falls,Waterfall,4.1,Morning,1.0,No,Nature,0
+Southern,Karnataka,Gokarna,Om Beach,Beach,4.5,Anytime,2.0,No,Nature,0
+Southern,Karnataka,Chikmagalur,Mullayanagiri,Mountain Peak,4.5,Anytime,3.0,No,Nature,0
+Southern,Karnataka,Badami,Badami Cave Temples,Cave,4.6,Anytime,1.5,No,Nature,0
+Southern,Karnataka,Shivamogga,Jog Falls,Waterfall,4.6,Morning,1.5,No,Nature,0
+Southern,Karnataka,Mangalore,Panambur Beach,Beach,4.5,Anytime,1.5,Yes,Nature,0
+Southern,Karnataka,Murudeshwar,Murudeshwar Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Karnataka,Bijapur,Gol Gumbaz,Mausoleum,4.5,Anytime,1.5,No,Historical,1
+Southern,Karnataka,Bandipur,Bandipur National Park,National Park,4.4,Morning,3.0,No,Nature,0
+Southern,Karnataka,Halebidu,Halebidu Hoysaleswara Temple,Temple,4.7,Anytime,1.0,No,Religious,2
+Western,Maharastra,Pune,Shaniwar Wada,Fort,4.4,Anytime,2.0,Yes,Historical,1
+Western,Maharastra,Aurangabad,Ajanta Caves,Cave,4.6,Afternoon,3.0,Yes,Nature,0
+Western,Maharastra,Nashik,Sula Vineyards,Vineyard,4.1,Afternoon,2.0,Yes,Nature,0
+Western,Maharastra,Shirdi,Sai Baba Temple,Temple,4.7,Anytime,1.5,Yes,Religious,2
+Western,Maharastra,Alibaug,Alibaug Beach,Beach,4.2,Evening,1.5,Yes,Nature,0
+Western,Maharastra,Ratnagiri,Ganapatipule Temple,Temple,4.7,Anytime,1.0,No,Religious,2
+Western,Maharastra,Nagpur,Deekshabhoomi,Monument,4.5,Afternoon,1.0,Yes,Historical,1
+Western,Maharastra,Kolhapur,Mahalakshmi Temple,Temple,4.8,Anytime,1.0,Yes,Religious,2
+Western,Maharastra,Lonavala,Karla Caves,Cave,4.4,Afternoon,1.5,Yes,Nature,0
+Western,Maharashtra,Tarkarli,Tarkarli Beach,Beach,4.6,Evening,2.0,No,Nature,0
+Western,Maharashtra,Satara,Kaas Plateau,Valley,4.4,Afternoon,2.0,No,Nature,0
+Western,Maharashtra,Matheran,Echo Point,Viewpoint,4.4,Morning,1.5,Yes,Nature,0
+Western,Maharashtra,Ajanta,Ellora Caves,Cave,4.7,Afternoon,3.0,Yes,Nature,0
+Central,Madhya Pradesh,Khajuraho,Khajuraho Group of Monuments,Temples,4.7,Afternoon,2.0,No,Religious,2
+Central,Madhya Pradesh,Bhopal,Sanchi Stupa,Monument,4.7,Afternoon,1.5,Yes,Historical,1
+Central,Madhya Pradesh,Indore,Rajwada Palace,Palace,4.4,Afternoon,1.0,Yes,Historical,1
+Central,Madhya Pradesh,Gwalior,Gwalior Fort,Fort,4.5,Morning,2.5,Yes,Historical,1
+Central,Madhya Pradesh,Ujjain,Mahakaleshwar Jyotirlinga,Temple,4.8,Anytime,1.5,Yes,Religious,2
+Central,Madhya Pradesh,Jabalpur,Dhuandhar Falls,Waterfall,4.5,Morning,1.0,No,Nature,0
+Central,Madhya Pradesh,Pachmarhi,Bee Falls,Waterfall,4.6,Morning,1.5,No,Nature,0
+Central,Madhya Pradesh,Kanha,Kanha National Park,Wildlife Sanctuary,4.5,Morning,3.0,No,Nature,0
+Central,Madhya Pradesh,Bandhavgarh,Bandhavgarh National Park,National Park,4.5,Morning,3.0,No,Nature,0
+Central,Madhya Pradesh,Orchha,Orchha Fort,Fort,4.8,Afternoon,1.5,No,Historical,1
+Central,Madhya Pradesh,Mandu,Jahaz Mahal,Site,3.9,Afternoon,1.0,No,Historical,1
+Central,Madhya Pradesh,Bhimbetka,Bhimbetka Rock Shelters,Prehistoric Site,4.6,Afternoon,2.0,No,Historical,1
+Central,Madhya Pradesh,Amarkantak,Narmada Udgam Temple,Temple,4.4,Anytime,1.0,No,Religious,2
+Central,Madhya Pradesh,Chitrakoot,Chitrakoot Falls,Waterfall,4.4,Morning,1.5,No,Nature,0
+Northern,Himachal Pradesh,Shimla,The Ridge,Scenic Point,4.7,Morning,1.0,Yes,Nature,0
+Northern,Himachal Pradesh,Manali,Solang Valley,Valley,4.1,Morning,2.0,No,Nature,0
+Northern,Himachal Pradesh,Dalhousie,Dalai Lama Temple,Temple,4.7,Anytime,1.5,Yes,Religious,2
+Northern,Himachal Pradesh,Dalhousie,Khajjiar Lake,Lake,4.5,Morning,1.5,No,Nature,0
+Northern,Himachal Pradesh,Spiti Valley,Key Monastery,Monastery,4.8,Morning,1.0,No,Religious,2
+Northern,Himachal Pradesh,Kullu,Great Himalayan National Park,National Park,4.5,Anytime,3.0,No,Nature,0
+Northern,Himachal Pradesh,Chamba,Chamera Lake,Lake,4.4,Morning,2.0,No,Nature,0
+Northern,Himachal Pradesh,Kinnaur,Sangla Valley,Valley,4.5,Morning,2.0,No,Nature,0
+Northern,Himachal Pradesh,Kangra,Kangra Fort,Fort,4.4,Anytime,2.0,Yes,Historical,1
+Northern,Himachal Pradesh,Palampur,Tea Gardens,Tea Plantation,4.6,Morning,1.5,Yes,Nature,0
+Northern,Himachal Pradesh,Mandi,Prashar Lake,Lake,4.6,Morning,1.5,No,Nature,0
+Northern,Himachal Pradesh,Bir Billing,Paragliding Site,Adventure Sport,4.8,Anytime,2.0,No,Adventure,3
+Northern,Himachal Pradesh,Mcleod Ganj,Triund Trek,Trekking,4.8,Morning,5.0,Yes,Adventure,3
+Northern,Himachal Pradesh,Manikaran,Manikaran Sahib,Gurudwara,4.6,Morning,1.0,No,Religious,2
+Northern,Himachal Pradesh,Narkanda,Hatu Peak,Viewpoint,4.5,Anytime,2.0,Yes,Nature,0
+Northern,Himachal Pradesh,Barot,Barot Valley,Valley,4.7,Morning,2.0,No,Nature,0
+Northern,Himachal Pradesh,Shoja,Serolsar Lake,Lake,4.4,Morning,2.5,No,Nature,0
+Northern,Himachal Pradesh,Kufri,Kufri Fun World,Ski Resort,3.8,Anytime,5.0,Yes,Adventure,3
+Northern,Uttarakhand,Nainital,Naini Lake,Lake,4.2,Morning,1.5,Yes,Nature,0
+Northern,Uttarakhand,Rishikesh,Laxman Jhula,Suspension Bridge,4.4,Morning,1.0,Yes,Adventure,3
+Northern,Uttarakhand,Haridwar,Har Ki Pauri,Ghat,4.5,Anytime,1.0,Yes,Religious,2
+Northern,Uttarakhand,Dehradun,Robber's Cave,Cave,4.5,Morning,1.5,Yes,Nature,0
+Northern,Uttarakhand,Mussoorie,Kempty Falls,Waterfall,4.2,Morning,1.5,Yes,Nature,0
+Northern,Uttarakhand,Auli,Auli Ski Resort,Ski Resort,4.5,Morning,3.0,No,Adventure,3
+Northern,Uttarakhand,Badrinath,Badrinath Temple,Temple,4.8,Anytime,1.0,No,Religious,2
+Northern,Uttarakhand,Almora,Binsar Wildlife Sanctuary,Wildlife Sanctuary,4.3,Anytime,2.0,No,Nature,0
+Northern,Uttarakhand,Ranikhet,Chaubatia Gardens,Orchard,4.0,Anytime,1.0,No,Nature,0
+Northern,Uttarakhand,Jim Corbett,Jim Corbett National Park,National Park,4.4,Anytime,3.0,Yes,Nature,0
+Northern,Uttarakhand,Uttarkashi,Gangotri Temple,Temple,4.8,Anytime,1.0,No,Religious,2
+Northern,Uttarakhand,Chopta,Tungnath Temple,Temple,4.8,Anytime,2.0,No,Religious,2
+Northern,Uttarakhand,Joshimath,Valley of Flowers,National Park,4.7,Morning,5.0,No,Nature,0
+Central,Uttar Pradesh,Agra,Taj Mahal,Mausoleum,4.6,Morning,2.0,Yes,Historical,1
+Central,Uttar Pradesh,Varanasi,Kashi Vishwanath Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Central,Uttar Pradesh,Lucknow,Bara Imambara,Monument,4.4,Anytime,1.5,Yes,Historical,1
+Central,Uttar Pradesh,Mathura,Krishna Janmabhoomi,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Central,Uttar Pradesh,Ayodhya,Ram Janmabhoomi,Religious Site,4.8,Anytime,1.0,Yes,Religious,2
+Central,Uttar Pradesh,Vrindavan,Banke Bihari Temple,Temple,4.8,Anytime,1.0,Yes,Religious,2
+Central,Uttar Pradesh,Allahabad,Triveni Sangam,Confluence,4.5,Morning,1.0,Yes,Nature,0
+Central,Uttar Pradesh,Jhansi,Jhansi Fort,Fort,4.4,Anytime,1.5,Yes,Historical,1
+Central,Uttar Pradesh,Sarnath,Dhamek Stupa,Monument,4.6,Anytime,1.0,Yes,Historical,1
+Central,Uttar Pradesh,Fatehpur Sikri,Buland Darwaza,Monument,4.4,Afternoon,2.0,Yes,Historical,1
+Central,Uttar Pradesh,Noida,Okhla Bird Sanctuary,Bird Sanctuary,4.3,Anytime,1.5,Yes,Nature,0
+Central,Uttar Pradesh,Aligarh,Aligarh Fort,Fort,4.1,Afternoon,1.0,Yes,Historical,1
+Central,Uttar Pradesh,Meerut,Augarnath Temple,Temple,4.8,Anytime,1.0,Yes,Religious,2
+Central,Uttar Pradesh,Kanpur,Allen Forest Zoo,Zoo,4.2,Anytime,2.0,Yes,Urban,4
+Northern,Jammu And Kashmir,Srinagar,Dal Lake,Lake,4.6,Morning,2.0,Yes,Nature,0
+Northern,Ladakh,Leh,Pangong Tso,Lake,4.9,Morning,2.0,Yes,Nature,0
+Northern,Jammu And Kashmir,Pahalgam,Betaab Valley,Valley,4.6,Anytime,2.0,No,Nature,0
+Northern,Jammu And Kashmir,Jammu,Vaishno Devi,Temple,4.7,Anytime,5.0,Yes,Religious,2
+Northern,Jammu And Kashmir,Udhampur,Patnitop Height,Hill,4.1,Anytime,2.0,No,Nature,0
+Northern,Jammu And Kashmir,Anantnag,Amarnath Cave,Temple,4.5,Anytime,6.0,No,Religious,2
+Northern,Ladakh,Leh,Thiksey Monastery,Monastery,4.7,Anytime,1.5,Yes,Religious,2
+Northern,Ladakh,Nubra Valley,Nubra Valley,Valley,4.5,Anytime,2.0,No,Nature,0
+Northern,Ladakh,Kargil,Kargil War Memorial,War Memorial,4.8,Anytime,1.0,No,Historical,1
+Northern,Ladakh,Diskit,Diskit Monastery,Monastery,4.7,Morning,1.0,No,Religious,2
+Northern,Jammu And Kashmir,Kishtwar,Kishtwar National Park,National Park,4.3,Anytime,3.0,No,Nature,0
+Northern,Ladakh,Hemis,Hemis National Park,National Park,4.4,Anytime,4.0,No,Nature,0
+Northern,Ladakh,Dras,Dras War Memorial,War Memorial,4.8,Anytime,1.0,No,Historical,1
+Northern,Ladakh,Leh,Magnetic Hill,Gravity Hill,3.7,Anytime,0.5,Yes,Nature,0
+Northern,Ladakh,Leh,Khardung La Pass,Hill,4.5,Afternoon,1.0,Yes,Nature,0
+Northern,Ladakh,Leh,Thiksey Monastery,Monastery,4.7,Anytime,1.5,Yes,Religious,2
+Central,Uttar Pradesh,Vrindavan,Prem Mandir,Temple,4.8,Evening,1.5,Yes,Religious,2
+Central,Uttar Pradesh,Porbandar,Kirti Mandir,Memorial,4.8,Morning,1.0,Yes,Historical,1
+Central,Uttar Pradesh,Mathura,Nand Gaon,Village,4.1,Morning,1.0,Yes,Nature,0
+Central,Uttar Pradesh,Mathura,Barsana Mandir,Temple,4.8,Morning,1.0,Yes,Religious,2
+Eastern,West Bengal,Darjeeling,Tiger Hill,Sunrise Point,4.5,Anytime,1.0,No,Nature,0
+Eastern,West Bengal,Siliguri,Jaldapara National Park,Wildlife Sanctuary,4.4,Anytime,3.0,Yes,Nature,0
+Eastern,West Bengal,Sundarbans,Sundarbans National Park,National Park,4.4,Anytime,4.0,No,Nature,0
+Eastern,West Bengal,Digha,Digha Beach,Beach,4.5,Morning,1.5,No,Nature,0
+Eastern,West Bengal,Murshidabad,Hazarduari Palace,Palace,4.5,Morning,1.5,Yes,Historical,1
+Eastern,West Bengal,Bolpur,Kankalitala Temple,Temple,4.7,Anytime,0.5,Yes,Religious,2
+Eastern,West Bengal,Hooghly,Hangseswari Temple,Temple,4.6,Anytime,0.5,Yes,Religious,2
+Eastern,West Bengal,Jalpaiguri,Gorumara National Park,National Park,4.4,Anytime,3.0,Yes,Nature,0
+Eastern,West Bengal,Cooch Behar,Cooch Behar Palace,Palace,4.5,Anytime,1.0,Yes,Historical,1
+Eastern,West Bengal,Purulia,Ayodhya Hills,Hill,4.5,Anytime,2.5,No,Nature,0
+Eastern,Odisha,Puri,Jagannath Temple,Temple,4.7,Anytime,2.0,Yes,Religious,2
+Eastern,Odisha,Konark,Sun Temple,Temple,4.7,Anytime,1.5,Yes,Religious,2
+Eastern,Odisha,Bhubaneswar,Lingaraj Temple,Temple,4.6,Anytime,1.0,Yes,Religious,2
+Eastern,Odisha,Rourkela,Khandadhar Waterfall,Waterfall,4.5,Anytime,1.5,No,Nature,0
+Eastern,Odisha,Cuttack,Barabati Fort,Fort,4.5,Anytime,1.0,Yes,Historical,1
+Eastern,Odisha,Sambalpur,Hirakud Dam,Dam,4.5,Anytime,1.0,No,Nature,0
+Eastern,Odisha,Chilika,Chilika Lake,Lake,3.9,Morning,2.0,Yes,Nature,0
+Eastern,Odisha,Berhampur,Tara Tarini Temple,Temple,4.6,Anytime,1.0,Yes,Religious,2
+Eastern,Odisha,Keonjhar,Badaghagara Waterfall,Waterfall,4.3,Morning,1.0,No,Nature,0
+Eastern,Odisha,Balasore,Chandipur Beach,Beach,4.2,Morning,1.5,Yes,Nature,0
+Eastern,Odisha,Kendujhar,Sanaghagara Waterfall,Waterfall,4.4,Anytime,1.0,No,Nature,0
+Southern,Tamil Nadu,Chennai,Marina Beach,Beach,3.9,Morning,1.5,Yes,Nature,0
+Southern,Tamil Nadu,Madurai,Meenakshi Amman Temple,Temple,4.7,Anytime,2.0,Yes,Religious,2
+Southern,Tamil Nadu,Rameswaram,Ramanathaswamy Temple,Temple,4.6,Anytime,1.5,No,Religious,2
+Southern,Tamil Nadu,Kanyakumari,Vivekananda Rock Memorial,Memorial,4.6,Morning,1.0,Yes,Historical,1
+Southern,Tamil Nadu,Ooty,Ooty Lake,Lake,4.1,Morning,1.0,Yes,Nature,0
+Southern,Tamil Nadu,Coimbatore,Marudamalai Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Tamil Nadu,Kodaikanal,Kodaikanal Lake,Lake,3.9,Morning,2.0,No,Nature,0
+Southern,Tamil Nadu,Thanjavur,Brihadeeswarar Temple,Temple,4.8,Anytime,1.5,Yes,Religious,2
+Southern,Tamil Nadu,Mahabalipuram,Shore Temple,Temple,4.6,Anytime,1.0,Yes,Religious,2
+Southern,Tamil Nadu,Yercaud,Yercaud Lake,Lake,4.2,Morning,1.0,No,Nature,0
+Southern,Tamil Nadu,Tirunelveli,Nellaiappar Temple,Temple,4.6,Anytime,1.0,Yes,Religious,2
+Southern,Tamil Nadu,Chidambaram,Nataraja Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Andhra Pradesh,Vijayawada,Kanaka Durga Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Andhra Pradesh,Visakhapatnam,Rishikonda Beach,Beach,4.5,Morning,1.5,Yes,Nature,0
+Southern,Andhra Pradesh,Srisailam,Mallikarjuna Swamy Temple,Temple,4.7,Anytime,1.0,No,Religious,2
+Southern,Andhra Pradesh,Rajahmundry,Papikondalu,Hill,4.3,Anytime,2.0,Yes,Nature,0
+Southern,Andhra Pradesh,Anantapur,Lepakshi,Site,4.6,Anytime,1.5,No,Historical,1
+Southern,Andhra Pradesh,Kurnool,Belum Caves,Cave,4.4,Afternoon,1.5,Yes,Nature,0
+Southern,Andhra Pradesh,Amravati,Amaravathi Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Andhra Pradesh,Guntur,Uppalapadu Bird Sanctuary,Bird Sanctuary,4.4,Anytime,1.0,Yes,Nature,0
+Southern,Andhra Pradesh,Kadapa,Gandikota Fort,Fort,4.5,Morning,1.5,No,Historical,1
+Southern,Andhra Pradesh,Puttaparthi,Prasanthi Nilayam,Spiritual Center,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Andhra Pradesh,Vizianagaram,Simhachalam Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Southern,Andhra Pradesh,Visakhapatnam,Kailasagiri,Hill,4.5,Anytime,2.0,Yes,Nature,0
+Southern,Andhra Pradesh,Visakhapatnam,Submarine Museum,Museum,4.6,Anytime,1.0,Yes,Historical,1
+Southern,Andhra Pradesh,Visakhapatnam,Borra Caves,Cave,4.5,Afternoon,2.0,No,Nature,0
+Southern,Andhra Pradesh,Visakhapatnam,War Memorial,War Memorial,4.6,Anytime,1.0,Yes,Historical,1
+Southern,Andhra Pradesh,Visakhapatnam,Indira Gandhi Zoological Park,Zoo,4.1,Afternoon,2.0,Yes,Urban,4
+Southern,Andhra Pradesh,Visakhapatnam,Matsyadarshini Aquarium,Aquarium,3.8,Anytime,1.0,Yes,Urban,4
+Southern,Andhra Pradesh,Visakhapatnam,Visakha Museum,Museum,4.3,Anytime,1.0,Yes,Historical,1
+Eastern,Sikkim,Gangtok,Nathula Pass,Hill,4.3,Afternoon,2.0,Yes,Nature,0
+Eastern,Sikkim,Pelling,Pemayangtse Monastery,Monastery,4.6,Morning,1.0,No,Religious,2
+Eastern,Sikkim,Namchi,Char Dham,Religious Complex,4.7,Anytime,2.0,Yes,Religious,2
+Eastern,Sikkim,Gangtok,Rumtek Monastery,Monastery,4.6,Morning,1.0,Yes,Religious,2
+Eastern,Sikkim,Ravangla,Buddha Park,Park,4.8,Anytime,1.0,Yes,Nature,0
+Eastern,Sikkim,Gangtok,Baba Harbhajan Singh Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Eastern,Sikkim,Gangtok,Tsomgo Lake,Lake,4.5,Morning,2.0,Yes,Nature,0
+North Eastern,Assam,Guwahati,Kamakhya Temple,Temple,4.6,Anytime,2.0,Yes,Religious,2
+North Eastern,Assam,Kaziranga,Kaziranga National Park,National Park,4.5,Morning,3.0,No,Nature,0
+North Eastern,Assam,Guwahati,Umananda Island,Island,4.1,Morning,1.0,Yes,Nature,0
+North Eastern,Assam,Sivasagar,Sivasagar Sivadol,Temple,4.7,Anytime,1.0,No,Religious,2
+North Eastern,Assam,Majuli,Majuli Island,River Island,4.7,Morning,2.0,No,Nature,0
+North Eastern,Assam,Manas,Manas National Park,National Park,4.6,Morning,3.0,No,Nature,0
+North Eastern,Assam,Hajo,Hayagriva Madhava Temple,Temple,4.5,Anytime,1.0,No,Religious,2
+North Eastern,Assam,Guwahati,Pobitora Wildlife Sanctuary,Wildlife Sanctuary,4.4,Anytime,2.0,Yes,Nature,0
+North Eastern,Arunachal Pradesh,Tawang,Tawang Monastery,Monastery,4.7,Morning,2.0,No,Religious,2
+North Eastern,Tripura,Agartala,Ujjayanta Palace,Palace,4.5,Anytime,1.5,Yes,Historical,1
+North Eastern,Tripura,Dumboor,Dumboor Lake,Lake,4.5,Morning,1.0,No,Nature,0
+North Eastern,Tripura,Unakoti,Unakoti Rock Carvings,Rock Carvings,4.5,Morning,1.5,No,Historical,1
+Central,Chhattisgarh,Bastar,Chitrakote Falls,Waterfall,4.6,Morning,1.5,No,Nature,0
+North Eastern,Nagaland,Dzükou Valley,Dzükou Valley,Valley,4.7,Afternoon,3.0,No,Nature,0
+Southern,Puducherry,Puducherry,Promenade Beach,Beach,4.5,Morning,1.0,Yes,Nature,0
+Southern,Puducherry,Auroville,Auroville,Township,4.1,Anytime,2.0,Yes,Urban,4
+Southern,Puducherry,Puducherry,Paradise Beach,Beach,4.5,Morning,1.0,Yes,Nature,0
+Southern,Andaman And Nicobar Islands,Port Blair,Cellular Jail,Landmark,4.7,Afternoon,1.5,Yes,Historical,1
+Southern,Andaman And Nicobar Islands,Havelock Island,Radhanagar Beach,Beach,4.8,Morning,1.0,No,Nature,0
+Southern,Andaman And Nicobar Islands,Neil Island,Bharatpur Beach,Beach,4.5,Morning,1.0,No,Nature,0
+Southern,Andaman And Nicobar Islands,Baratang Island,Limestone Caves,Natural Feature,4.4,Morning,1.5,No,Nature,0
+Western,Daman And Diu,Diu,Naida Caves,Cave,4.5,Afternoon,1.0,No,Nature,0
+Western,Daman And Diu,Diu,Diu Fort,Fort,4.6,Afternoon,1.5,No,Historical,1
+Eastern,Jharkhand,Deoghar,Baba Baidyanath Temple,Temple,4.7,Anytime,1.0,Yes,Religious,2
+Eastern,Jharkhand,Ranchi,Pahari Mandir,Temple,4.6,Anytime,1.0,Yes,Religious,2
+Eastern,Bihar,Bodh Gaya,Mahabodhi Temple,Temple,4.7,Anytime,1.5,Yes,Religious,2
+Eastern,Bihar,Patna,Sanjay Gandhi Biological Park,Zoo,4.3,Anytime,2.5,Yes,Urban,4
+Eastern,Bihar,Patna,Takhat Shri Harimandir Ji Patna Sahib,Gurudwara,4.7,Anytime,1.0,Yes,Religious,2
+Eastern,Bihar,Patna,Budhha Smriti Park,Park,4.4,Anytime,1.0,Yes,Nature,0
+Northern,Haryana,Gurugram,Kingdom of Dreams,Entertainment,4.4,Afternoon,3.0,Yes,Urban,4
+Northern,Haryana,Gurugram,Ambience Mall,Mall,4.6,Afternoon,2.0,Yes,Urban,4
+Northern,Haryana,Gurugram,DLF CyberHub,Commercial Complex,4.7,Afternoon,2.0,Yes,Urban,4
+Northern,Delhi,Delhi,Gurudwara Bangla Sahib,Gurudwara,4.8,Anytime,1.0,Yes,Religious,2
+Northern,Uttarakhand,Kedarnath,Kedarnath,Temple,4.8,Anytime,1.5,No,Religious,2
+Central,Uttar Pradesh,Noida,DLF Mall of India,Mall,4.6,Anytime,2.0,Yes,Urban,4
+Central,Uttar Pradesh,Greater Noida,The Grand Venice Mall,Mall,4.2,Anytime,2.0,Yes,Urban,4
+Southern,Karnataka,Bengaluru,Wonderla Amusement Park,Amusement Park,4.5,Anytime,4.0,Yes,Urban,4
+Eastern,Odisha,Bhubaneswar,Nandankanan Zoological Park,Zoo,4.4,Afternoon,3.0,Yes,Urban,4
+Southern,Karnataka,Bengaluru,Orion Mall,Mall,4.5,Anytime,2.0,Yes,Urban,4
+Southern,Telangana,Hyderabad,Inorbit Mall Cyberabad,Mall,4.5,Anytime,2.0,Yes,Urban,4
+Northern,Delhi,Delhi,Jama Masjid,Mosque,4.5,Anytime,1.0,Yes,Religious,2
+Southern,Tamil Nadu,Rameswaram,Ramanathaswamy Temple,Temple,4.7,Anytime,1.5,Yes,Religious,2
+Central,Uttar Pradesh,Greater Noida,Buddh International Circuit,Race Track,4.6,Anytime,2.0,Yes,Urban,4
+Central,Uttar Pradesh,Lucknow,Phoenix Palassio,Mall,4.6,Anytime,2.0,Yes,Urban,4
+Southern,Kerala,Kochi,LuLu International Shopping Mall,Mall,4.6,Anytime,3.0,Yes,Urban,4
+Northern,Delhi,Delhi,Rail Museum,Museum,4.4,Morning,2.0,Yes,Historical,1
+North Eastern,Meghalaya,Cherrapunji,Living Root Bridge,Natural Feature,4.6,Morning,2.0,No,Nature,0
+Western,Gujarat,Gandhinagar,Akshardham,Temple,4.6,Anytime,3.0,Yes,Religious,2
+Central,Uttar Pradesh,Agra,Agra Fort,Fort,4.5,Afternoon,2.0,Yes,Historical,1
+Central,Madhya Pradesh,Bhopal,Madhya Pradesh Tribal Museum,Museum,4.7,Anytime,2.0,Yes,Historical,1
+Northern,Rajasthan,Jaipur,City Palace,Palace,4.4,Morning,2.0,Yes,Historical,1
+Northern,Rajasthan,Jaipur,Albert Hall Museum,Museum,4.5,Anytime,2.0,Yes,Historical,1

@@ -10,6 +10,8 @@ export type ItineraryLocationState = {
   personality?: string;
   /** Optional initial trip length (defaults to 5 on this page). */
   days?: number;
+  /** Recommended cities for this personality */
+  cities?: string[];
 };
 
 const DAY_PRESETS = [2, 3, 5, 7, 10, 14] as const;
@@ -23,8 +25,9 @@ export const Itinerary = () => {
     [location.state],
   );
 
-  const city = fromNav.city?.trim() ?? '';
+  const [city, setCity] = useState(fromNav.city?.trim() ?? '');
   const personality = fromNav.personality?.trim() ?? '';
+  const recommendedCities = fromNav.cities ?? [];
 
   const [days, setDays] = useState(() => {
     const d = fromNav.days;
@@ -33,6 +36,10 @@ export const Itinerary = () => {
     }
     return 5;
   });
+
+  const handleCityChange = useCallback((newCity: string) => {
+    setCity(newCity);
+  }, []);
 
   const [itinerary, setItinerary] = useState<ItineraryByDay | null>(null);
   const [loading, setLoading] = useState(false);
@@ -211,6 +218,33 @@ export const Itinerary = () => {
                       className="w-full rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-sm text-white tabular-nums focus:outline-none focus:ring-2 focus:ring-teal-400/70 disabled:opacity-55"
                     />
                   </div>
+                  {recommendedCities.length > 0 && (
+                    <div className="mt-4">
+                      <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-2">
+                        Other destinations
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {recommendedCities.map((c) => {
+                          const isSelected = city === c;
+                          return (
+                            <button
+                              key={c}
+                              type="button"
+                              disabled={loading}
+                              onClick={() => handleCityChange(c)}
+                              className={`rounded-lg px-3 py-2 text-sm font-medium transition-all disabled:opacity-55 cursor-pointer ${
+                                isSelected
+                                  ? 'bg-linear-to-br from-teal-500 to-sky-500 text-white shadow-lg shadow-teal-900/50'
+                                  : 'border border-white/20 bg-white/5 text-slate-200 hover:bg-white/10 hover:border-white/30'
+                              }`}
+                            >
+                              {c}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </header>
