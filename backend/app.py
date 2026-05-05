@@ -17,8 +17,6 @@ CORS(app)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = Path(BASE_DIR).parent
 
-# In Docker, ML and CNN are at /app/../ML, but when build context is root, they're copied to /app/
-# Try parent first (local dev), then current directory level (Docker with root context)
 ml_dir = ROOT_DIR / "ML"
 if not ml_dir.exists():
     ml_dir = Path(BASE_DIR) / "ML"
@@ -33,10 +31,10 @@ ALLOWED = {"png", "jpg", "jpeg"}
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Determine CNN model path - works in both local and Docker deployment
+
 _cnn_candidates = [
-    os.path.join(BASE_DIR, '..', 'CNN', 'best_daynight_model.keras'),  # Local dev
-    os.path.join(BASE_DIR, 'CNN', 'best_daynight_model.keras'),  # Docker with root context
+    os.path.join(BASE_DIR, '..', 'CNN', 'best_daynight_model.keras'),  
+    os.path.join(BASE_DIR, 'CNN', 'best_daynight_model.keras'), 
 ]
 _cnn_model_path = None
 for candidate in _cnn_candidates:
@@ -54,10 +52,10 @@ if not _cnn_model_path:
 cnn_model = tf.keras.models.load_model(_cnn_model_path)
 print(f"CNN model loaded from {_cnn_model_path}")
 
-# Determine personality model directory - works in both local and Docker deployment
+
 _personality_candidates = [
-    os.path.join(BASE_DIR, '..', 'ML', 'Model1', 'model'),  # Local dev
-    os.path.join(BASE_DIR, 'ML', 'Model1', 'model'),  # Docker with root context
+    os.path.join(BASE_DIR, '..', 'ML', 'Model1', 'model'),  
+    os.path.join(BASE_DIR, 'ML', 'Model1', 'model'),  
 ]
 _personality_dir = None
 for candidate in _personality_candidates:
