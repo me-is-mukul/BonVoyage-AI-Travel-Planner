@@ -31,5 +31,6 @@ python app.py
 <div style="display: flex">
 <img src="media/image.png" alt="image" width="200"/>
 <img src="media/image2.png" alt="image" width="200"/>
+<img src="media/image3.png" alt="image" width="200"/>
 </div>
 
