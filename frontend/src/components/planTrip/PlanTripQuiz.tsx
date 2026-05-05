@@ -100,7 +100,7 @@ export function PlanTripQuiz() {
         cities={cities}
         loadingCities={isFetchingCities}
         cityError={citiesError}
-        onSelectCity={(city) => navigate('/itinerary', { state: { city, personality } })}
+        onSelectCity={(city) => navigate('/itinerary', { state: { city, personality, cities } })}
         onRetake={() => {
           setPersonality(null);
           setStep(0);

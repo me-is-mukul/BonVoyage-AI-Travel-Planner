@@ -15,7 +15,12 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = Path(BASE_DIR).parent
 
+# In Docker, ML and CNN are at /app/../ML, but when build context is root, they're copied to /app/
+# Try parent first (local dev), then current directory level (Docker with root context)
 ml_dir = ROOT_DIR / "ML"
+if not ml_dir.exists():
+    ml_dir = Path(BASE_DIR) / "ML"
+
 if str(ml_dir) not in sys.path:
     sys.path.append(str(ml_dir))
 
@@ -26,24 +31,53 @@ ALLOWED = {"png", "jpg", "jpeg"}
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-_cnn_model_path = os.path.normpath(
-    os.path.join(BASE_DIR, '..', 'CNN', 'best_daynight_model.keras')
-)
-if not os.path.exists(_cnn_model_path):
+# Determine CNN model path - works in both local and Docker deployment
+_cnn_candidates = [
+    os.path.join(BASE_DIR, '..', 'CNN', 'best_daynight_model.keras'),  # Local dev
+    os.path.join(BASE_DIR, 'CNN', 'best_daynight_model.keras'),  # Docker with root context
+]
+_cnn_model_path = None
+for candidate in _cnn_candidates:
+    normalized = os.path.normpath(candidate)
+    if os.path.exists(normalized):
+        _cnn_model_path = normalized
+        break
+
+if not _cnn_model_path:
     raise FileNotFoundError(
-        f"Model not found at {_cnn_model_path}\n"
-        "Run the CNN/main.ipynb notebook end-to-end first to train and save the model."
+        f"Model not found. Tried: {_cnn_candidates}\n"
+        "Ensure CNN/best_daynight_model.keras exists."
     )
+
 cnn_model = tf.keras.models.load_model(_cnn_model_path)
 print(f"CNN model loaded from {_cnn_model_path}")
 
-_personality_dir = os.path.normpath(os.path.join(BASE_DIR, '..', 'ML', 'Model1', 'model'))
+# Determine personality model directory - works in both local and Docker deployment
+_personality_candidates = [
+    os.path.join(BASE_DIR, '..', 'ML', 'Model1', 'model'),  # Local dev
+    os.path.join(BASE_DIR, 'ML', 'Model1', 'model'),  # Docker with root context
+]
+_personality_dir = None
+for candidate in _personality_candidates:
+    normalized = os.path.normpath(candidate)
+    if os.path.exists(normalized):
+        _personality_dir = normalized
+        break
+
+if not _personality_dir:
+    raise FileNotFoundError(
+        f"Personality model not found. Tried: {_personality_candidates}\n"
+        "Ensure ML/Model1/model/*.pkl files exist."
+    )
+
 with open(os.path.join(_personality_dir, "model.pkl"), "rb") as f:
     personality_model = pickle.load(f)
 with open(os.path.join(_personality_dir, "encoder.pkl"), "rb") as f:
     encoder = pickle.load(f)
 with open(os.path.join(_personality_dir, "scaler.pkl"), "rb") as f:
     scaler = pickle.load(f)
+
+print(f"Personality model loaded from {_personality_dir}")
 
 
 def allowed_file(filename: str) -> bool:
